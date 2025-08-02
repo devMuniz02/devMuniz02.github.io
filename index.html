@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio - Emma N.</title>
+    <meta name="description" content="Welcome to Emma N.'s personal portfolio website. Discover information about Emma's background, skills, projects, and how to get in touch.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header role="banner">
+        <h1>Welcome to My Website</h1>
+        <!-- Hamburger Menu -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav role="navigation">
+            <ul id="nav-menu">
+                <li><a href="#about-me" tabindex="0">Home</a></li>
+                <li><a href="#about-me" tabindex="0">About Me</a></li>
+                <li><a href="#projects" tabindex="0">Projects</a></li>
+                <li><a href="#contact" tabindex="0">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about-me" role="region" aria-label="About Me">
+        <h2>About Me</h2>
+        <p>Hello! I'm glad you're visiting my website. Here you'll find information about my background, interests, and the services I offer. Feel free to explore and contact me if you have any questions!</p>
+        <h3>Skills</h3>
+        <ul>
+            <li>HTML &amp; CSS</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Version Control (Git)</li>
+            <li>Problem Solving</li>
+            <li>Debugging</li>
+            <li>Team Collaboration</li>
+        </ul>
+    </section>
+    
+    <section id="projects" role="region" aria-label="My Projects">
+        <h2>My Projects</h2>
+        <p>Here are some of the projects I've worked on recently:</p>
+        
+        <!-- Project Filter Buttons -->
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="mobile">Mobile</button>
+            <button class="filter-btn" data-filter="design">Design</button>
+        </div>
+        
+        <div class="projects-grid">
+            <div class="project-card" data-category="web">
+                <img src="https://via.placeholder.com/300x200/007bff/ffffff?text=Task+Manager" alt="Task Management App" class="project-image">
+                <div class="project-content">
+                    <h3>Task Management App</h3>
+                    <p>A responsive web application for managing daily tasks and productivity.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card" data-category="web">
+                <img src="https://via.placeholder.com/300x200/28a745/ffffff?text=Blog+Platform" alt="Personal Blog Platform" class="project-image">
+                <div class="project-content">
+                    <h3>Personal Blog Platform</h3>
+                    <p>A modern blog platform with content management and responsive design.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card" data-category="design">
+                <img src="https://via.placeholder.com/300x200/dc3545/ffffff?text=E-commerce+Site" alt="E-commerce Website" class="project-image">
+                <div class="project-content">
+                    <h3>E-commerce Website</h3>
+                    <p>An online store for handmade crafts with shopping cart functionality.</p>
+                    <div class="project-tags">
+                        <span class="tag">UI/UX</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card" data-category="mobile">
+                <img src="https://via.placeholder.com/300x200/6f42c1/ffffff?text=Mobile+App" alt="Mobile App" class="project-image">
+                <div class="project-content">
+                    <h3>Weather Mobile App</h3>
+                    <p>A cross-platform mobile app for weather forecasting and alerts.</p>
+                    <div class="project-tags">
+                        <span class="tag">React Native</span>
+                        <span class="tag">API</span>
+                        <span class="tag">Firebase</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" role="form">
+        <h2>Contact Me</h2>
+        <form id="contact-form" action="#" method="post" novalidate>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error-message" id="name-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="email-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <span class="error-message" id="message-error"></span>
+            </div>
+            <button type="submit">Send Message</button>
+            <div class="form-feedback" id="form-feedback"></div>
+        </form>
+    </section>
+    
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <img id="lightbox-image" src="" alt="">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+    
+    <button onclick="showAlert()">Click Me</button>
+    <script src="script.js"></script>
+    <script>
+        // Ensure button and links have visible focus style
+        document.addEventListener('DOMContentLoaded', function() {
+            const style = document.createElement('style');
+            style.innerHTML = `
+                a:focus, button:focus, input:focus, textarea:focus {
+                    outline: 2px solid #005fcc;
+                    outline-offset: 2px;
+                }
+                body {
+                    background-color: #ffffff;
+                    color: #1a1a1a;
+                }
+                header, nav, section, footer {
+                    background-color: #f5f5f5;
+                    color: #1a1a1a;
+                }
+                a {
+                    color: #005fcc;
+                }
+                a:visited {
+                    color: #003366;
+                }
+                button, input, textarea {
+                    background-color: #ffffff;
+                    color: #1a1a1a;
+                    border: 1px solid #005fcc;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
