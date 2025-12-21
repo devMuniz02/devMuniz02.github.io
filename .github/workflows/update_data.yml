@@ -1,0 +1,65 @@
+name: Update Portfolio Data
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight
+  workflow_dispatch: # Allows you to run it manually
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate Data
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          USER: "devMuniz02"
+        run: |
+          # This script fetches repos, filters ignored ones, and finds assets
+          python3 -c "
+          import requests, json, os
+
+          # Load config for ignore list and links
+          with open('config.local.json', 'r') as f:
+              cfg = json.load(f)
+
+          headers = {'Authorization': f'token {os.environ[\"GH_PAT\"]}'}
+          repos_url = f'https://api.github.com/users/{os.environ[\"USER\"]}/repos?per_page=100'
+          repos = requests.get(repos_url, headers=headers).json()
+
+          data = { 'huggingface': cfg.get('huggingface'), 'linkedin': cfg.get('linkedin'), 'projects': [] }
+
+          for r in repos:
+              if r['name'] in cfg.get('ignoreRepos', []) or r['fork']: continue
+              
+              # Fetch topics
+              topics = requests.get(f\"https://api.github.com/repos/{r['full_name']}/topics\", headers=headers).json().get('names', [])
+              
+              # Fetch images in assets/
+              assets = []
+              assets_res = requests.get(f\"https://api.github.com/repos/{r['full_name']}/contents/assets\", headers=headers)
+              if assets_res.status_code == 200:
+                  assets = [f\"https://raw.githubusercontent.com/{r['full_name']}/{r['default_branch']}/{item['path']}\" 
+                            for item in assets_res.json() if item['name'].lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.webp'))]
+
+              data['projects'].append({
+                  'name': r['name'],
+                  'description': r['description'],
+                  'url': r['html_url'],
+                  'topics': topics,
+                  'assets': assets,
+                  'updated_at': r['pushed_at'],
+                  'stars': r['stargazers_count']
+              })
+
+          with open('data.json', 'w') as f:
+              json.dump(data, f, indent=2)
+          "
+      - name: Commit and Push
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add data.json
+          git commit -m "Update portfolio data" || exit 0
+          git push

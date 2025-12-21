@@ -1,178 +1,228 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio - Emma N.</title>
-    <meta name="description" content="Welcome to Emma N.'s personal portfolio website. Discover information about Emma's background, skills, projects, and how to get in touch.">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Emmanuel Muñiz | Portfolio</title>
+  <style>
+    :root { 
+      --accent: #4f7cff; 
+      --accent-glow: rgba(79, 124, 255, 0.2);
+      --bg: #030712; 
+      --card-bg: rgba(17, 24, 39, 0.7); 
+      --border: rgba(255, 255, 255, 0.08); 
+      --text-main: #f9fafb;
+      --text-dim: #9ca3af;
+    }
+
+    body { 
+      font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+      margin: 40px 0 0; 
+      background: var(--bg); 
+      color: var(--text-main); 
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 0% 0%, rgba(79, 124, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(126, 166, 255, 0.05) 0%, transparent 50%);
+      background-attachment: fixed;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 60px 24px 60px; text-align: center; }
+    
+    .profile-tag {
+      font-family: monospace; color: var(--accent); background: rgba(79, 124, 255, 0.1);
+      padding: 6px 14px; border-radius: 30px; font-size: 0.85rem;
+      border: 1px solid var(--accent-glow); margin-bottom: 20px; display: inline-block;
+    }
+
+    h1 { 
+      margin: 0 0 16px; font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 800; 
+      letter-spacing: -0.04em; background: linear-gradient(to bottom, #fff 40%, #64748b);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    .hero-p { font-size: 1.2rem; color: var(--text-dim); max-width: 600px; margin: 0 auto 32px; }
+
+    .header-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn { 
+      padding: 12px 24px; border-radius: 12px; font-weight: 600; text-decoration: none;
+      transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.95rem; border: 1px solid var(--border); color: var(--text-main);
+      background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px);
+    }
+    .btn:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 10px 20px -10px var(--accent); }
+
+    .section-header { display: flex; align-items: center; gap: 15px; margin: 60px 0 30px; }
+    .section-header h2 { font-size: 1.5rem; font-weight: 700; margin: 0; }
+    .section-header .line { flex-grow: 1; height: 1px; background: var(--border); }
+
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+    .gallery-item { 
+      background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; 
+      overflow: hidden; position: relative; transition: transform 0.4s ease;
+    }
+    .gallery-item:hover { transform: scale(1.03); border-color: var(--accent); z-index: 5; }
+    .gallery-item img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
+    .gallery-caption { 
+      padding: 10px; font-size: 11px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); 
+      position: absolute; bottom: 0; width: 100%; color: #fff;
+    }
+
+    .controls { display: flex; gap: 15px; margin: 40px 0; padding: 15px; background: rgba(255,255,255,0.02); border-radius: 16px; border: 1px solid var(--border); }
+    input, select { background: transparent; border: 1px solid var(--border); color: white; padding: 12px; border-radius: 10px; outline: none; flex-grow: 1; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; backdrop-filter: blur(12px); transition: all 0.3s ease; display: flex; flex-direction: column; }
+    .card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    
+    .thumb-container { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; overflow: hidden; }
+    .thumb { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.6s ease; }
+    
+    .card-body { padding: 24px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1; }
+    .card-title { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.25rem; display: block; }
+    .desc { font-size: 0.95rem; color: var(--text-dim); line-height: 1.5; }
+    
+    .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; padding-top: 15px; }
+    .tag { font-size: 0.75rem; padding: 4px 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); }
+
+    footer { padding: 80px 24px 40px; text-align: center; color: var(--text-dim); font-size: 0.85rem; }
+
+    /* Loading state */
+    #loader { text-align: center; padding: 50px; color: var(--accent); font-weight: bold; }
+  </style>
 </head>
 <body>
-    <header role="banner">
-        <h1>Welcome to My Website</h1>
-        <!-- Hamburger Menu -->
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <nav role="navigation">
-            <ul id="nav-menu">
-                <li><a href="#about-me" tabindex="0">Home</a></li>
-                <li><a href="#about-me" tabindex="0">About Me</a></li>
-                <li><a href="#projects" tabindex="0">Projects</a></li>
-                <li><a href="#contact" tabindex="0">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="about-me" role="region" aria-label="About Me">
-        <h2>About Me</h2>
-        <p>Hello! I'm glad you're visiting my website. Here you'll find information about my background, interests, and the services I offer. Feel free to explore and contact me if you have any questions!</p>
-        <h3>Skills</h3>
-        <ul>
-            <li>HTML &amp; CSS</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>Version Control (Git)</li>
-            <li>Problem Solving</li>
-            <li>Debugging</li>
-            <li>Team Collaboration</li>
-        </ul>
-    </section>
-    
-    <section id="projects" role="region" aria-label="My Projects">
-        <h2>My Projects</h2>
-        <p>Here are some of the projects I've worked on recently:</p>
-        
-        <!-- Project Filter Buttons -->
-        <div class="project-filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="web">Web</button>
-            <button class="filter-btn" data-filter="mobile">Mobile</button>
-            <button class="filter-btn" data-filter="design">Design</button>
-        </div>
-        
-        <div class="projects-grid">
-            <div class="project-card" data-category="web">
-                <img src="https://via.placeholder.com/300x200/007bff/ffffff?text=Task+Manager" alt="Task Management App" class="project-image">
-                <div class="project-content">
-                    <h3>Task Management App</h3>
-                    <p>A responsive web application for managing daily tasks and productivity.</p>
-                    <div class="project-tags">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JavaScript</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" data-category="web">
-                <img src="https://via.placeholder.com/300x200/28a745/ffffff?text=Blog+Platform" alt="Personal Blog Platform" class="project-image">
-                <div class="project-content">
-                    <h3>Personal Blog Platform</h3>
-                    <p>A modern blog platform with content management and responsive design.</p>
-                    <div class="project-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">MongoDB</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" data-category="design">
-                <img src="https://via.placeholder.com/300x200/dc3545/ffffff?text=E-commerce+Site" alt="E-commerce Website" class="project-image">
-                <div class="project-content">
-                    <h3>E-commerce Website</h3>
-                    <p>An online store for handmade crafts with shopping cart functionality.</p>
-                    <div class="project-tags">
-                        <span class="tag">UI/UX</span>
-                        <span class="tag">PHP</span>
-                        <span class="tag">MySQL</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" data-category="mobile">
-                <img src="https://via.placeholder.com/300x200/6f42c1/ffffff?text=Mobile+App" alt="Mobile App" class="project-image">
-                <div class="project-content">
-                    <h3>Weather Mobile App</h3>
-                    <p>A cross-platform mobile app for weather forecasting and alerts.</p>
-                    <div class="project-tags">
-                        <span class="tag">React Native</span>
-                        <span class="tag">API</span>
-                        <span class="tag">Firebase</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="contact" role="form">
-        <h2>Contact Me</h2>
-        <form id="contact-form" action="#" method="post" novalidate>
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <span class="error-message" id="name-error"></span>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <span class="error-message" id="email-error"></span>
-            </div>
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-                <span class="error-message" id="message-error"></span>
-            </div>
-            <button type="submit">Send Message</button>
-            <div class="form-feedback" id="form-feedback"></div>
-        </form>
-    </section>
-    
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox">
-        <div class="lightbox-content">
-            <span class="lightbox-close">&times;</span>
-            <img id="lightbox-image" src="" alt="">
-            <div class="lightbox-caption" id="lightbox-caption"></div>
-        </div>
+
+  <header class="container">
+    <span class="profile-tag">@devMuniz02</span>
+    <h1>Emmanuel Muñiz</h1>
+    <p class="hero-p">A collection of technical projects, open-source experiments, and architectural explorations.</p>
+    <div class="header-actions">
+      <a class="btn" href="https://github.com/devMuniz02" target="_blank">GitHub</a>
+      <a id="hfBtn" class="btn" href="#" target="_blank">Hugging Face</a>
+      <a id="liBtn" class="btn" href="#" target="_blank">LinkedIn</a>
     </div>
-    
-    <button onclick="showAlert()">Click Me</button>
-    <script src="script.js"></script>
-    <script>
-        // Ensure button and links have visible focus style
-        document.addEventListener('DOMContentLoaded', function() {
-            const style = document.createElement('style');
-            style.innerHTML = `
-                a:focus, button:focus, input:focus, textarea:focus {
-                    outline: 2px solid #005fcc;
-                    outline-offset: 2px;
-                }
-                body {
-                    background-color: #ffffff;
-                    color: #1a1a1a;
-                }
-                header, nav, section, footer {
-                    background-color: #f5f5f5;
-                    color: #1a1a1a;
-                }
-                a {
-                    color: #005fcc;
-                }
-                a:visited {
-                    color: #003366;
-                }
-                button, input, textarea {
-                    background-color: #ffffff;
-                    color: #1a1a1a;
-                    border: 1px solid #005fcc;
-                }
-            `;
-            document.head.appendChild(style);
-        });
-    </script>
+  </header>
+
+  <main class="container">
+    <div id="loader">Fetching latest project data...</div>
+
+    <div id="content-area" style="display: none;">
+        <div class="section-header"><h2>Visual Reel</h2><div class="line"></div></div>
+        <div id="gallery" class="gallery"></div>
+
+        <div class="section-header"><h2>Project Index</h2><div class="line"></div></div>
+        <div class="controls">
+          <input id="search" placeholder="Search by name, description or tag..." />
+          <select id="sort">
+            <option value="updated">Recently Updated</option>
+            <option value="stars">Most Stars</option>
+            <option value="name">A-Z</option>
+          </select>
+        </div>
+        <div id="grid" class="grid"></div>
+    </div>
+  </main>
+
+  <script>
+    async function main() {
+      try {
+        // Fetch the pre-generated data file from your repo
+        const res = await fetch("data.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("Data file not found. Ensure GitHub Action has run successfully.");
+        
+        const data = await res.json();
+        const repos = data.projects;
+
+        // Hide loader and show content
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("content-area").style.display = "block";
+        
+        // Update Social Links from data.json
+        if (data.huggingface) document.getElementById("hfBtn").href = data.huggingface;
+        if (data.linkedin) document.getElementById("liBtn").href = data.linkedin;
+
+        // 1. Render Gallery (Top Visual Reel)
+        const galleryEl = document.getElementById("gallery");
+        const allAssets = repos.flatMap(r => 
+          (r.assets || []).map(url => ({ url, name: r.name, href: r.url }))
+        );
+        
+        if (allAssets.length > 0) {
+          galleryEl.innerHTML = allAssets.slice(0, 20).map(a => `
+            <div class="gallery-item">
+              <a href="${a.href}" target="_blank"><img src="${a.url}" loading="lazy"></a>
+              <div class="gallery-caption">${a.name}</div>
+            </div>
+          `).join('');
+        } else {
+          galleryEl.innerHTML = "<p style='color: var(--text-dim)'>No visual assets found in /assets folders.</p>";
+        }
+
+        // 2. Setup Automatic Slideshow for Cards
+        function initSlideshow(repo, imgElement) {
+          if (!repo.assets || repo.assets.length <= 1) return;
+          let idx = 0;
+          setInterval(() => {
+            idx = (idx + 1) % repo.assets.length;
+            imgElement.style.opacity = 0;
+            setTimeout(() => { 
+                imgElement.src = repo.assets[idx]; 
+                imgElement.style.opacity = 1; 
+            }, 600);
+          }, 5000);
+        }
+
+        // 3. Render Project Grid
+        function render() {
+          const q = document.getElementById("search").value.toLowerCase();
+          const sort = document.getElementById("sort").value;
+          
+          let filtered = repos.filter(r => 
+            `${r.name} ${r.description} ${r.topics.join(' ')}`.toLowerCase().includes(q)
+          );
+          
+          if (sort === "updated") filtered.sort((a,b) => new Date(b.updated_at) - new Date(a.updated_at));
+          if (sort === "stars") filtered.sort((a,b) => b.stars - a.stars);
+          if (sort === "name") filtered.sort((a,b) => a.name.localeCompare(b.name));
+
+          const gridEl = document.getElementById("grid");
+          gridEl.innerHTML = filtered.map(r => `
+            <div class="card">
+              <div class="thumb-container">
+                <img class="thumb" id="img-${r.name.replace(/\s+/g, '-')}" 
+                     src="${r.assets[0] || 'https://placehold.co/600x400/030712/4f7cff?text='+r.name}" 
+                     alt="${r.name}">
+              </div>
+              <div class="card-body">
+                <a href="${r.url}" target="_blank" class="card-title">${r.name}</a>
+                <p class="desc">${r.description || "Experimental implementation and technical research."}</p>
+                <div class="tags">${r.topics.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+              </div>
+            </div>
+          `).join('');
+
+          // Re-initialize slideshows for the new set of filtered cards
+          filtered.forEach(r => {
+            const el = document.getElementById(`img-${r.name.replace(/\s+/g, '-')}`);
+            if (el) initSlideshow(r, el);
+          });
+        }
+
+        // Initial render and listeners
+        render();
+        document.getElementById("search").addEventListener("input", render);
+        document.getElementById("sort").addEventListener("change", render);
+
+      } catch (e) { 
+        document.getElementById("loader").innerHTML = `<span style="color: #ef4444;">Error: ${e.message}</span>`;
+        console.error(e); 
+      }
+    }
+
+    main();
+  </script>
+  <footer><p>Created by Emmanuel Muñiz • 2025</p></footer>
 </body>
 </html>

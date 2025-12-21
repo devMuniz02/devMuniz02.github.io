@@ -1,0 +1,202 @@
+{
+  "huggingface": "https://huggingface.co/manu02",
+  "linkedin": "https://www.linkedin.com/in/devmuniz",
+  "projects": [
+    {
+      "name": "Autonomous-car-control",
+      "description": "Code to control Hiwonder car ",
+      "url": "https://github.com/devMuniz02/Autonomous-car-control",
+      "topics": [],
+      "assets": [],
+      "updated_at": "2025-01-22T01:22:02Z",
+      "stars": 0
+    },
+    {
+      "name": "Autonomous-warehouse-car",
+      "description": "Autonomous warehouse car with the use of Hiwonder omnidirectional car and Universal robot UR3e in a warehouse grid-like route.",
+      "url": "https://github.com/devMuniz02/Autonomous-warehouse-car",
+      "topics": [],
+      "assets": [],
+      "updated_at": "2025-04-04T18:10:03Z",
+      "stars": 0
+    },
+    {
+      "name": "ball-beam-vision",
+      "description": "Arduino and Python system for real-time ball-and-beam stabilization using computer vision feedback, PID control, and MPU-6050 tilt sensing.",
+      "url": "https://github.com/devMuniz02/ball-beam-vision",
+      "topics": [],
+      "assets": [],
+      "updated_at": "2025-10-16T18:54:34Z",
+      "stars": 0
+    },
+    {
+      "name": "Car-lane-detector",
+      "description": "Car lane detector based on images",
+      "url": "https://github.com/devMuniz02/Car-lane-detector",
+      "topics": [],
+      "assets": [],
+      "updated_at": "2025-01-22T00:56:13Z",
+      "stars": 0
+    },
+    {
+      "name": "CV-People-Tracker-Counter-RealTime",
+      "description": "A real-time computer vision application for tracking and counting people using video streams. Built with OpenCV, Python, and deep learning models.",
+      "url": "https://github.com/devMuniz02/CV-People-Tracker-Counter-RealTime",
+      "topics": [],
+      "assets": [],
+      "updated_at": "2025-10-12T22:00:39Z",
+      "stars": 0
+    },
+    {
+      "name": "DINOv3-Interactive-Patch-Cosine-Similarity",
+      "description": "Interactive tool to visualize patch-wise similarity in images using DINOv3 models. Select any Hugging Face DINOv3 model, load an image, and explore cosine similarity heatmaps for educational and research purposes.",
+      "url": "https://github.com/devMuniz02/DINOv3-Interactive-Patch-Cosine-Similarity",
+      "topics": [],
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/DINOv3-Interactive-Patch-Cosine-Similarity/main/assets/GradioAppTest.gif",
+        "https://raw.githubusercontent.com/devMuniz02/DINOv3-Interactive-Patch-Cosine-Similarity/main/assets/Multiple_Interactive_test_video.gif",
+        "https://raw.githubusercontent.com/devMuniz02/DINOv3-Interactive-Patch-Cosine-Similarity/main/assets/Test_Interactive_video.gif"
+      ],
+      "updated_at": "2025-10-03T01:51:00Z",
+      "stars": 14
+    },
+    {
+      "name": "Image-Attention-Visualizer",
+      "description": "Interactive Gradio app for visualizing image-to-text attention maps in custom vision\u2013language models.",
+      "url": "https://github.com/devMuniz02/Image-Attention-Visualizer",
+      "topics": [],
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/Image-Attention-Visualizer/main/assets/app_view.png"
+      ],
+      "updated_at": "2025-11-05T15:47:04Z",
+      "stars": 0
+    },
+    {
+      "name": "Image-Color-Detection",
+      "description": "Code to detect RGB colors in images",
+      "url": "https://github.com/devMuniz02/Image-Color-Detection",
+      "topics": [],
+      "assets": [],
+      "updated_at": "2025-01-22T00:59:17Z",
+      "stars": 0
+    },
+    {
+      "name": "Job-Search-scraper",
+      "description": "This is the scrapper i use to find jobs that fit my description",
+      "url": "https://github.com/devMuniz02/Job-Search-scraper",
+      "topics": [],
+      "assets": [],
+      "updated_at": "2025-12-20T07:13:45Z",
+      "stars": 1
+    },
+    {
+      "name": "Porfolio-Code-AI-projects",
+      "description": "AI, ML, RL, CV Projects | Portfolio",
+      "url": "https://github.com/devMuniz02/Porfolio-Code-AI-projects",
+      "topics": [
+        "autonomous-car",
+        "cnn",
+        "computer-vision",
+        "imitation-learning",
+        "neural-networks",
+        "optimization",
+        "python",
+        "pytorch",
+        "quantization",
+        "reinforcement-learning",
+        "stable-baselines3",
+        "tensorflow",
+        "transfer-learning"
+      ],
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/Porfolio-Code-AI-projects/main/assets/GradioAppTest.gif",
+        "https://raw.githubusercontent.com/devMuniz02/Porfolio-Code-AI-projects/main/assets/LSMT_StockTest.png",
+        "https://raw.githubusercontent.com/devMuniz02/Porfolio-Code-AI-projects/main/assets/LSTM_TextGen_Test.png",
+        "https://raw.githubusercontent.com/devMuniz02/Porfolio-Code-AI-projects/main/assets/Multiple_Interactive_test_video.gif",
+        "https://raw.githubusercontent.com/devMuniz02/Porfolio-Code-AI-projects/main/assets/cartpole_policy.gif",
+        "https://raw.githubusercontent.com/devMuniz02/Porfolio-Code-AI-projects/main/assets/cartpole_training_graph.png"
+      ],
+      "updated_at": "2025-11-03T22:37:52Z",
+      "stars": 1
+    },
+    {
+      "name": "QR-Reader",
+      "description": "Code to create and read QR codes",
+      "url": "https://github.com/devMuniz02/QR-Reader",
+      "topics": [],
+      "assets": [],
+      "updated_at": "2025-01-22T00:23:25Z",
+      "stars": 0
+    },
+    {
+      "name": "Reinforcement-Learning-Stock-Porfolio-Managment",
+      "description": "Reinforcement-Learning-Stock-Porfolio-Managment",
+      "url": "https://github.com/devMuniz02/Reinforcement-Learning-Stock-Porfolio-Managment",
+      "topics": [],
+      "assets": [],
+      "updated_at": "2025-01-22T00:12:45Z",
+      "stars": 0
+    },
+    {
+      "name": "Robot-3-DOF-Reinforcement-learning-control",
+      "description": "RL control of 3-DOF robot using stable baselines to achieve certain positions",
+      "url": "https://github.com/devMuniz02/Robot-3-DOF-Reinforcement-learning-control",
+      "topics": [],
+      "assets": [],
+      "updated_at": "2025-02-22T03:24:33Z",
+      "stars": 1
+    },
+    {
+      "name": "Stock-prediction-LSTM-Sentiment-Analysis-Python",
+      "description": "Project to predict stock prices of next day data using a LSTM model in python and sentiment analysis of news related to the stock market in general and the news of the stock to predict.  ",
+      "url": "https://github.com/devMuniz02/Stock-prediction-LSTM-Sentiment-Analysis-Python",
+      "topics": [],
+      "assets": [],
+      "updated_at": "2025-01-22T00:10:49Z",
+      "stars": 1
+    },
+    {
+      "name": "Token-Attention-Viewer",
+      "description": "Token Attention Viewer is an interactive Gradio app that visualizes the self-attention weights inside transformer language models for every generated token. It helps researchers, students, and developers explore how models like GPT-2 or LLaMA focus on different parts of the input as they generate text.",
+      "url": "https://github.com/devMuniz02/Token-Attention-Viewer",
+      "topics": [],
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/Token-Attention-Viewer/main/assets/app_view.png"
+      ],
+      "updated_at": "2025-11-04T17:49:48Z",
+      "stars": 0
+    },
+    {
+      "name": "Translate-EN-to-ES-from-image-",
+      "description": null,
+      "url": "https://github.com/devMuniz02/Translate-EN-to-ES-from-image-",
+      "topics": [],
+      "assets": [],
+      "updated_at": "2025-02-04T21:42:03Z",
+      "stars": 0
+    },
+    {
+      "name": "UDEM-CXR-Reporting-Thesis-2025",
+      "description": "Multimodal chest X-ray diagnosis + AI report generation using DINOv3 and a GPT-based model with modified transformer attention. UDEM thesis project.",
+      "url": "https://github.com/devMuniz02/UDEM-CXR-Reporting-Thesis-2025",
+      "topics": [],
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/UDEM-CXR-Reporting-Thesis-2025/main/assets/barplot_MIMIC_Complete_Analysis_color.png",
+        "https://raw.githubusercontent.com/devMuniz02/UDEM-CXR-Reporting-Thesis-2025/main/assets/barplot_mimic_performance.png",
+        "https://raw.githubusercontent.com/devMuniz02/UDEM-CXR-Reporting-Thesis-2025/main/assets/hf_space_qr.png",
+        "https://raw.githubusercontent.com/devMuniz02/UDEM-CXR-Reporting-Thesis-2025/main/assets/training_loss_color.png"
+      ],
+      "updated_at": "2025-12-21T05:19:27Z",
+      "stars": 0
+    },
+    {
+      "name": "Universal-Robots-UR3e-3-Multi-Tool-Station",
+      "description": "Custom 3-tool system (screwdriver, wrench, gripper) for the Universal Robot UR3e, with programmed path execution for automated workstation tasks.",
+      "url": "https://github.com/devMuniz02/Universal-Robots-UR3e-3-Multi-Tool-Station",
+      "topics": [],
+      "assets": [],
+      "updated_at": "2025-02-28T20:39:57Z",
+      "stars": 1
+    }
+  ]
+}
