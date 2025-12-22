@@ -7,8 +7,10 @@
       "description": "Code to control Hiwonder car ",
       "url": "https://github.com/devMuniz02/Autonomous-car-control",
       "topics": [],
-      "assets": [],
-      "updated_at": "2025-01-22T01:22:02Z",
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/Autonomous-car-control/main/assets/CarControl.gif"
+      ],
+      "updated_at": "2025-12-22T04:58:13Z",
       "stars": 0
     },
     {
@@ -16,8 +18,14 @@
       "description": "Autonomous warehouse car with the use of Hiwonder omnidirectional car and Universal robot UR3e in a warehouse grid-like route.",
       "url": "https://github.com/devMuniz02/Autonomous-warehouse-car",
       "topics": [],
-      "assets": [],
-      "updated_at": "2025-04-04T18:10:03Z",
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/Autonomous-warehouse-car/main/assets/RobotUR_Pick&Place.gif",
+        "https://raw.githubusercontent.com/devMuniz02/Autonomous-warehouse-car/main/assets/RobotUR_Pick&PlaceInspection.gif",
+        "https://raw.githubusercontent.com/devMuniz02/Autonomous-warehouse-car/main/assets/TESTRUN.gif",
+        "https://raw.githubusercontent.com/devMuniz02/Autonomous-warehouse-car/main/assets/TRACK.jpg",
+        "https://raw.githubusercontent.com/devMuniz02/Autonomous-warehouse-car/main/assets/TRIALRUN.gif"
+      ],
+      "updated_at": "2025-12-22T01:49:19Z",
       "stars": 0
     },
     {
@@ -25,8 +33,11 @@
       "description": "Arduino and Python system for real-time ball-and-beam stabilization using computer vision feedback, PID control, and MPU-6050 tilt sensing.",
       "url": "https://github.com/devMuniz02/ball-beam-vision",
       "topics": [],
-      "assets": [],
-      "updated_at": "2025-10-16T18:54:34Z",
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/ball-beam-vision/main/assets/simballandbeam.gif",
+        "https://raw.githubusercontent.com/devMuniz02/ball-beam-vision/main/assets/test.gif"
+      ],
+      "updated_at": "2025-12-22T02:07:02Z",
       "stars": 0
     },
     {
@@ -34,8 +45,10 @@
       "description": "Car lane detector based on images",
       "url": "https://github.com/devMuniz02/Car-lane-detector",
       "topics": [],
-      "assets": [],
-      "updated_at": "2025-01-22T00:56:13Z",
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/Car-lane-detector/main/assets/linedetection.jpg"
+      ],
+      "updated_at": "2025-12-22T04:25:27Z",
       "stars": 0
     },
     {
@@ -43,8 +56,10 @@
       "description": "A real-time computer vision application for tracking and counting people using video streams. Built with OpenCV, Python, and deep learning models.",
       "url": "https://github.com/devMuniz02/CV-People-Tracker-Counter-RealTime",
       "topics": [],
-      "assets": [],
-      "updated_at": "2025-10-12T22:00:39Z",
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/CV-People-Tracker-Counter-RealTime/main/assets/PeopleCounter.gif"
+      ],
+      "updated_at": "2025-12-22T00:07:42Z",
       "stars": 0
     },
     {
@@ -76,8 +91,10 @@
       "description": "Code to detect RGB colors in images",
       "url": "https://github.com/devMuniz02/Image-Color-Detection",
       "topics": [],
-      "assets": [],
-      "updated_at": "2025-01-22T00:59:17Z",
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/Image-Color-Detection/main/assets/colordetection.jpg"
+      ],
+      "updated_at": "2025-12-22T04:27:20Z",
       "stars": 0
     },
     {
@@ -85,8 +102,10 @@
       "description": "This is the scrapper i use to find jobs that fit my description",
       "url": "https://github.com/devMuniz02/Job-Search-scraper",
       "topics": [],
-      "assets": [],
-      "updated_at": "2025-12-20T07:13:45Z",
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/Job-Search-scraper/master/assets/scrapexample.png"
+      ],
+      "updated_at": "2025-12-22T03:04:21Z",
       "stars": 1
     },
     {
@@ -124,8 +143,10 @@
       "description": "Code to create and read QR codes",
       "url": "https://github.com/devMuniz02/QR-Reader",
       "topics": [],
-      "assets": [],
-      "updated_at": "2025-01-22T00:23:25Z",
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/QR-Reader/main/assets/readqr.jpg"
+      ],
+      "updated_at": "2025-12-22T02:56:28Z",
       "stars": 0
     },
     {
@@ -133,8 +154,10 @@
       "description": "Reinforcement-Learning-Stock-Porfolio-Managment",
       "url": "https://github.com/devMuniz02/Reinforcement-Learning-Stock-Porfolio-Managment",
       "topics": [],
-      "assets": [],
-      "updated_at": "2025-01-22T00:12:45Z",
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/Reinforcement-Learning-Stock-Porfolio-Managment/main/assets/RLPortfolio.jpg"
+      ],
+      "updated_at": "2025-12-22T03:25:57Z",
       "stars": 0
     },
     {
@@ -142,17 +165,33 @@
       "description": "RL control of 3-DOF robot using stable baselines to achieve certain positions",
       "url": "https://github.com/devMuniz02/Robot-3-DOF-Reinforcement-learning-control",
       "topics": [],
-      "assets": [],
-      "updated_at": "2025-02-22T03:24:33Z",
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/Robot-3-DOF-Reinforcement-learning-control/main/assets/3d_arm_animation_with_target.gif",
+        "https://raw.githubusercontent.com/devMuniz02/Robot-3-DOF-Reinforcement-learning-control/main/assets/robot_after_training_500k.gif"
+      ],
+      "updated_at": "2025-12-22T04:23:18Z",
       "stars": 1
+    },
+    {
+      "name": "Self-Drive-Airism",
+      "description": "A robust lane detection and tracking pipeline for autonomous vehicles in Microsoft AirSim. Utilizing OpenCV to process real-time video feeds from Unreal Engine, this project implements color filtering, perspective transforms (bird's-eye view), and polynomial fitting to identify lane boundaries and calculate curvature for steering control.",
+      "url": "https://github.com/devMuniz02/Self-Drive-Airism",
+      "topics": [],
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/Self-Drive-Airism/main/assets/selfdrive.gif"
+      ],
+      "updated_at": "2025-12-22T02:40:17Z",
+      "stars": 0
     },
     {
       "name": "Stock-prediction-LSTM-Sentiment-Analysis-Python",
       "description": "Project to predict stock prices of next day data using a LSTM model in python and sentiment analysis of news related to the stock market in general and the news of the stock to predict.  ",
       "url": "https://github.com/devMuniz02/Stock-prediction-LSTM-Sentiment-Analysis-Python",
       "topics": [],
-      "assets": [],
-      "updated_at": "2025-01-22T00:10:49Z",
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/Stock-prediction-LSTM-Sentiment-Analysis-Python/main/assets/LSMT_StockTest.png"
+      ],
+      "updated_at": "2025-12-22T03:09:10Z",
       "stars": 1
     },
     {
@@ -164,6 +203,17 @@
         "https://raw.githubusercontent.com/devMuniz02/Token-Attention-Viewer/main/assets/app_view.png"
       ],
       "updated_at": "2025-11-04T17:49:48Z",
+      "stars": 0
+    },
+    {
+      "name": "Tomato-Detect-YOLO",
+      "description": "An end-to-end computer vision pipeline designed to detect, count, and track tomatoes in real-time. This project uses the YOLO (You Only Look Once) architecture to achieve high-precision detection in complex agricultural environments.",
+      "url": "https://github.com/devMuniz02/Tomato-Detect-YOLO",
+      "topics": [],
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/Tomato-Detect-YOLO/main/assets/tomateyolo.gif"
+      ],
+      "updated_at": "2025-12-22T02:13:25Z",
       "stars": 0
     },
     {
@@ -194,8 +244,10 @@
       "description": "Custom 3-tool system (screwdriver, wrench, gripper) for the Universal Robot UR3e, with programmed path execution for automated workstation tasks.",
       "url": "https://github.com/devMuniz02/Universal-Robots-UR3e-3-Multi-Tool-Station",
       "topics": [],
-      "assets": [],
-      "updated_at": "2025-02-28T20:39:57Z",
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/Universal-Robots-UR3e-3-Multi-Tool-Station/main/assets/toolcad.png"
+      ],
+      "updated_at": "2025-12-22T02:53:42Z",
       "stars": 1
     }
   ]

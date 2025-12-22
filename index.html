@@ -70,7 +70,13 @@
     }
 
     .controls { display: flex; gap: 15px; margin: 40px 0; padding: 15px; background: rgba(255,255,255,0.02); border-radius: 16px; border: 1px solid var(--border); }
-    input, select { background: transparent; border: 1px solid var(--border); color: white; padding: 12px; border-radius: 10px; outline: none; flex-grow: 1; }
+    input, select { background: transparent; border: 1px solid var(--border); color: var(--text-main); padding: 12px; border-radius: 10px; outline: none; flex-grow: 1; }
+
+    /* Ensure native <select> dropdown text is readable */
+    select option { color: var(--text-main); background-color: var(--bg); }
+    select optgroup { color: var(--text-main); background-color: var(--bg); }
+    /* Improve placeholder visibility on dark background */
+    input::placeholder { color: var(--text-dim); opacity: 1; }
 
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
     .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; backdrop-filter: blur(12px); transition: all 0.3s ease; display: flex; flex-direction: column; }
@@ -133,6 +139,12 @@
         if (!res.ok) throw new Error("Data file not found. Ensure GitHub Action has run successfully.");
         
         const data = await res.json();
+        // Try loading optional local config overrides (e.g., starred repos)
+        let config = {};
+        try {
+          const confRes = await fetch("config.local.json", { cache: "no-store" });
+          if (confRes.ok) config = await confRes.json();
+        } catch {}
         const repos = data.projects;
 
         // Hide loader and show content
@@ -145,7 +157,18 @@
 
         // 1. Render Gallery (Top Visual Reel)
         const galleryEl = document.getElementById("gallery");
-        const allAssets = repos.flatMap(r => 
+        // Prioritize starred repos (from config), then the rest by most recent
+        const starredList = (config.staredrepos || data.staredrepos || []).filter(Boolean);
+        const starOrder = new Map(starredList.map((name, idx) => [name, idx]));
+        const starredRepos = repos
+          .filter(r => starOrder.has(r.name))
+          .sort((a, b) => starOrder.get(a.name) - starOrder.get(b.name));
+        const remainingRepos = repos
+          .filter(r => !starOrder.has(r.name))
+          .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+        const orderedRepos = [...starredRepos, ...remainingRepos];
+
+        const allAssets = orderedRepos.flatMap(r =>
           (r.assets || []).map(url => ({ url, name: r.name, href: r.url }))
         );
         
