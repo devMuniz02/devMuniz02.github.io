@@ -18,14 +18,8 @@
       "description": "Autonomous warehouse car with the use of Hiwonder omnidirectional car and Universal robot UR3e in a warehouse grid-like route.",
       "url": "https://github.com/devMuniz02/Autonomous-warehouse-car",
       "topics": [],
-      "assets": [
-        "https://raw.githubusercontent.com/devMuniz02/Autonomous-warehouse-car/main/assets/RobotUR_Pick&Place.gif",
-        "https://raw.githubusercontent.com/devMuniz02/Autonomous-warehouse-car/main/assets/RobotUR_Pick&PlaceInspection.gif",
-        "https://raw.githubusercontent.com/devMuniz02/Autonomous-warehouse-car/main/assets/TESTRUN.gif",
-        "https://raw.githubusercontent.com/devMuniz02/Autonomous-warehouse-car/main/assets/TRACK.jpg",
-        "https://raw.githubusercontent.com/devMuniz02/Autonomous-warehouse-car/main/assets/TRIALRUN.gif"
-      ],
-      "updated_at": "2025-12-22T01:49:19Z",
+      "assets": [],
+      "updated_at": "2025-04-04T18:10:03Z",
       "stars": 0
     },
     {
@@ -33,11 +27,8 @@
       "description": "Arduino and Python system for real-time ball-and-beam stabilization using computer vision feedback, PID control, and MPU-6050 tilt sensing.",
       "url": "https://github.com/devMuniz02/ball-beam-vision",
       "topics": [],
-      "assets": [
-        "https://raw.githubusercontent.com/devMuniz02/ball-beam-vision/main/assets/simballandbeam.gif",
-        "https://raw.githubusercontent.com/devMuniz02/ball-beam-vision/main/assets/test.gif"
-      ],
-      "updated_at": "2025-12-22T02:07:02Z",
+      "assets": [],
+      "updated_at": "2025-10-16T18:54:34Z",
       "stars": 0
     },
     {
@@ -56,10 +47,8 @@
       "description": "A real-time computer vision application for tracking and counting people using video streams. Built with OpenCV, Python, and deep learning models.",
       "url": "https://github.com/devMuniz02/CV-People-Tracker-Counter-RealTime",
       "topics": [],
-      "assets": [
-        "https://raw.githubusercontent.com/devMuniz02/CV-People-Tracker-Counter-RealTime/main/assets/PeopleCounter.gif"
-      ],
-      "updated_at": "2025-12-22T00:07:42Z",
+      "assets": [],
+      "updated_at": "2025-10-12T22:00:39Z",
       "stars": 0
     },
     {
@@ -102,10 +91,8 @@
       "description": "This is the scrapper i use to find jobs that fit my description",
       "url": "https://github.com/devMuniz02/Job-Search-scraper",
       "topics": [],
-      "assets": [
-        "https://raw.githubusercontent.com/devMuniz02/Job-Search-scraper/master/assets/scrapexample.png"
-      ],
-      "updated_at": "2025-12-22T03:04:21Z",
+      "assets": [],
+      "updated_at": "2025-12-20T07:13:45Z",
       "stars": 1
     },
     {
@@ -203,17 +190,6 @@
         "https://raw.githubusercontent.com/devMuniz02/Token-Attention-Viewer/main/assets/app_view.png"
       ],
       "updated_at": "2025-11-04T17:49:48Z",
-      "stars": 0
-    },
-    {
-      "name": "Tomato-Detect-YOLO",
-      "description": "An end-to-end computer vision pipeline designed to detect, count, and track tomatoes in real-time. This project uses the YOLO (You Only Look Once) architecture to achieve high-precision detection in complex agricultural environments.",
-      "url": "https://github.com/devMuniz02/Tomato-Detect-YOLO",
-      "topics": [],
-      "assets": [
-        "https://raw.githubusercontent.com/devMuniz02/Tomato-Detect-YOLO/main/assets/tomateyolo.gif"
-      ],
-      "updated_at": "2025-12-22T02:13:25Z",
       "stars": 0
     },
     {
