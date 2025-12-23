@@ -231,13 +231,14 @@
       "url": "https://github.com/devMuniz02/UDEM-CXR-Reporting-Thesis-2025",
       "topics": [],
       "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/UDEM-CXR-Reporting-Thesis-2025/main/assets/AnatomicalAttention.gif",
         "https://raw.githubusercontent.com/devMuniz02/UDEM-CXR-Reporting-Thesis-2025/main/assets/barplot_MIMIC_Complete_Analysis_color.png",
         "https://raw.githubusercontent.com/devMuniz02/UDEM-CXR-Reporting-Thesis-2025/main/assets/barplot_mimic_performance.png",
         "https://raw.githubusercontent.com/devMuniz02/UDEM-CXR-Reporting-Thesis-2025/main/assets/hf_space_qr.png",
         "https://raw.githubusercontent.com/devMuniz02/UDEM-CXR-Reporting-Thesis-2025/main/assets/reportresults.png",
         "https://raw.githubusercontent.com/devMuniz02/UDEM-CXR-Reporting-Thesis-2025/main/assets/training_loss_color.png"
       ],
-      "updated_at": "2025-12-22T05:18:02Z",
+      "updated_at": "2025-12-23T06:10:03Z",
       "stars": 0
     },
     {
