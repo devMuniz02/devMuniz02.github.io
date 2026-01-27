@@ -105,7 +105,7 @@
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/Job-Search-scraper/master/assets/scrapexample.png"
       ],
-      "updated_at": "2026-01-25T07:17:54Z",
+      "updated_at": "2026-01-26T07:23:18Z",
       "stars": 1
     },
     {
@@ -181,6 +181,15 @@
         "https://raw.githubusercontent.com/devMuniz02/Self-Drive-Airism/main/assets/selfdrive.gif"
       ],
       "updated_at": "2025-12-22T02:40:17Z",
+      "stars": 0
+    },
+    {
+      "name": "Slides-helper",
+      "description": "A local-first, multimodal AI agent that transforms slides into narrated experiences. Built with LangGraph & LM Studio to analyze visuals, generate executive summaries, and provide real-time presentation assistance.",
+      "url": "https://github.com/devMuniz02/Slides-helper",
+      "topics": [],
+      "assets": [],
+      "updated_at": "2026-01-27T01:14:23Z",
       "stars": 0
     },
     {
