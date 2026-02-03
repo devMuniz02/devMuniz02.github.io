@@ -76,6 +76,17 @@
       "stars": 15
     },
     {
+      "name": "fine-tune-distilbert-imdb-lora",
+      "description": "Fine-tuning DistilBERT for sentiment classification on the IMDB dataset using Low-Rank Adaptation (LoRA) for parameter-efficient training. This repository includes a complete Jupyter notebook with step-by-step implementation, from data preprocessing to model evaluation and deployment on Hugging Face Hub.",
+      "url": "https://github.com/devMuniz02/fine-tune-distilbert-imdb-lora",
+      "topics": [],
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/fine-tune-distilbert-imdb-lora/main/assets/training.png"
+      ],
+      "updated_at": "2026-02-02T23:26:57Z",
+      "stars": 0
+    },
+    {
       "name": "Image-Attention-Visualizer",
       "description": "Interactive Gradio app for visualizing image-to-text attention maps in custom vision\u2013language models.",
       "url": "https://github.com/devMuniz02/Image-Attention-Visualizer",
@@ -105,7 +116,7 @@
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/Job-Search-scraper/master/assets/scrapexample.png"
       ],
-      "updated_at": "2026-02-01T07:33:47Z",
+      "updated_at": "2026-02-02T07:45:25Z",
       "stars": 1
     },
     {
@@ -161,6 +172,15 @@
       "stars": 0
     },
     {
+      "name": "repo-orchestrator",
+      "description": "Automated project generator and repository factory. Transforms high-level ideas into structured GitHub repositories using AI agents.",
+      "url": "https://github.com/devMuniz02/repo-orchestrator",
+      "topics": [],
+      "assets": [],
+      "updated_at": "2026-02-03T01:15:13Z",
+      "stars": 0
+    },
+    {
       "name": "Robot-3-DOF-Reinforcement-learning-control",
       "description": "RL control of 3-DOF robot using stable baselines to achieve certain positions",
       "url": "https://github.com/devMuniz02/Robot-3-DOF-Reinforcement-learning-control",
@@ -202,6 +222,17 @@
       ],
       "updated_at": "2025-12-22T03:09:10Z",
       "stars": 1
+    },
+    {
+      "name": "template-repo",
+      "description": "A standardized boilerplate for new projects. Includes a pre-configured MIT License, universal .gitignore, and a structured README template to ensure consistency across all repositories.",
+      "url": "https://github.com/devMuniz02/template-repo",
+      "topics": [],
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/template-repo/main/assets/templateREADME.png"
+      ],
+      "updated_at": "2026-02-02T23:55:08Z",
+      "stars": 0
     },
     {
       "name": "Token-Attention-Viewer",
