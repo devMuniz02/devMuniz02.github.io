@@ -76,6 +76,17 @@
       "stars": 15
     },
     {
+      "name": "Easy-RAG-PDF",
+      "description": "Chat with your documents, your way. Just select your local PDFs and start asking questions. Use Local Mode to keep your data 100% private on your machine, or switch to API Mode for maximum AI intelligence. It\u2019s a simple, plug-and-play RAG tool that balances privacy with power. Pick your files, choose your mode, and chat.",
+      "url": "https://github.com/devMuniz02/Easy-RAG-PDF",
+      "topics": [],
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/Easy-RAG-PDF/main/assets/templateREADME.png"
+      ],
+      "updated_at": "2026-02-08T23:27:19Z",
+      "stars": 0
+    },
+    {
       "name": "fine-tune-distilbert-imdb-lora",
       "description": "Fine-tuning DistilBERT for sentiment classification on the IMDB dataset using Low-Rank Adaptation (LoRA) for parameter-efficient training. This repository includes a complete Jupyter notebook with step-by-step implementation, from data preprocessing to model evaluation and deployment on Hugging Face Hub.",
       "url": "https://github.com/devMuniz02/fine-tune-distilbert-imdb-lora",
@@ -116,7 +127,7 @@
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/Job-Search-scraper/master/assets/scrapexample.png"
       ],
-      "updated_at": "2026-02-07T07:28:01Z",
+      "updated_at": "2026-02-08T07:34:58Z",
       "stars": 1
     },
     {
