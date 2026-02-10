@@ -77,13 +77,13 @@
     },
     {
       "name": "Easy-RAG-PDF",
-      "description": "Chat with your documents, your way. Just select your local PDFs and start asking questions. Use Local Mode to keep your data 100% private on your machine, or switch to API Mode for maximum AI intelligence. It\u2019s a simple, plug-and-play RAG tool that balances privacy with power. Pick your files, choose your mode, and chat.",
+      "description": "Your PDF library, now with a brain. \ud83e\udde0 Stop wasting hours digging through folders; this dead-simple RAG interface turns your local files into an interactive knowledge base. You control the intelligence: simply point the API connection to a local endpoint for 100% air-gapped privacy where no data ever leaves your machine, or link to a cloud provider",
       "url": "https://github.com/devMuniz02/Easy-RAG-PDF",
       "topics": [],
       "assets": [
-        "https://raw.githubusercontent.com/devMuniz02/Easy-RAG-PDF/main/assets/templateREADME.png"
+        "https://raw.githubusercontent.com/devMuniz02/Easy-RAG-PDF/main/assets/PDFRAG.gif"
       ],
-      "updated_at": "2026-02-08T23:27:19Z",
+      "updated_at": "2026-02-10T00:34:46Z",
       "stars": 0
     },
     {
@@ -127,7 +127,7 @@
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/Job-Search-scraper/master/assets/scrapexample.png"
       ],
-      "updated_at": "2026-02-08T07:34:58Z",
+      "updated_at": "2026-02-09T07:52:39Z",
       "stars": 1
     },
     {
