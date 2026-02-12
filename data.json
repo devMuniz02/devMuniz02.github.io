@@ -127,8 +127,19 @@
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/Job-Search-scraper/master/assets/scrapexample.png"
       ],
-      "updated_at": "2026-02-10T07:55:55Z",
+      "updated_at": "2026-02-11T07:51:33Z",
       "stars": 1
+    },
+    {
+      "name": "Model-Quantization",
+      "description": "Effortlessly quantize and deploy Hugging Face models. This repo provides a streamlined pipeline to convert any HF model into a compressed format and upload it directly to your HF profile. Ideal for optimizing Large Language Models (LLMs) for resource-constrained environments.",
+      "url": "https://github.com/devMuniz02/Model-Quantization",
+      "topics": [],
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/Model-Quantization/main/assets/templateREADME.png"
+      ],
+      "updated_at": "2026-02-11T21:54:21Z",
+      "stars": 0
     },
     {
       "name": "Porfolio-Code-AI-projects",
