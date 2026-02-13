@@ -127,7 +127,7 @@
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/Job-Search-scraper/master/assets/scrapexample.png"
       ],
-      "updated_at": "2026-02-11T07:51:33Z",
+      "updated_at": "2026-02-12T07:46:56Z",
       "stars": 1
     },
     {
@@ -135,10 +135,19 @@
       "description": "Effortlessly quantize and deploy Hugging Face models. This repo provides a streamlined pipeline to convert any HF model into a compressed format and upload it directly to your HF profile. Ideal for optimizing Large Language Models (LLMs) for resource-constrained environments.",
       "url": "https://github.com/devMuniz02/Model-Quantization",
       "topics": [],
+      "assets": [],
+      "updated_at": "2026-02-13T01:01:27Z",
+      "stars": 0
+    },
+    {
+      "name": "Onnx-conversion",
+      "description": "A curated collection of notebooks and scripts demonstrating the end-to-end pipeline for converting Deep Learning models to ONNX. Features performance benchmarks, graph validation, and cross-framework deployment examples.",
+      "url": "https://github.com/devMuniz02/Onnx-conversion",
+      "topics": [],
       "assets": [
-        "https://raw.githubusercontent.com/devMuniz02/Model-Quantization/main/assets/templateREADME.png"
+        "https://raw.githubusercontent.com/devMuniz02/Onnx-conversion/main/assets/templateREADME.png"
       ],
-      "updated_at": "2026-02-11T21:54:21Z",
+      "updated_at": "2026-02-13T01:43:43Z",
       "stars": 0
     },
     {
