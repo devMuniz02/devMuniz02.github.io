@@ -94,7 +94,7 @@
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/EfficientAlign-ONNX/main/assets/templateREADME.png"
       ],
-      "updated_at": "2026-02-13T03:09:58Z",
+      "updated_at": "2026-02-14T03:28:21Z",
       "stars": 0
     },
     {
@@ -138,7 +138,7 @@
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/Job-Search-scraper/master/assets/scrapexample.png"
       ],
-      "updated_at": "2026-02-13T07:45:53Z",
+      "updated_at": "2026-02-14T07:30:26Z",
       "stars": 1
     },
     {
@@ -200,6 +200,17 @@
         "https://raw.githubusercontent.com/devMuniz02/QR-Reader/main/assets/readqr.jpg"
       ],
       "updated_at": "2025-12-22T02:56:28Z",
+      "stars": 0
+    },
+    {
+      "name": "RAG-Any-File",
+      "description": "RAG-Any-File is the ultimate repository to turn your messy folders, complex codebases, and hidden library docs into a private, searchable AI brain. Whether it's a 100-page PDF, a chaotic venv full of source code, or a screenshot of a diagram\u2014if it's a file, this repo can \"read\" it, \"index\" it, and \"chat\" with it.",
+      "url": "https://github.com/devMuniz02/RAG-Any-File",
+      "topics": [],
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/RAG-Any-File/main/assets/templateREADME.png"
+      ],
+      "updated_at": "2026-02-15T00:25:47Z",
       "stars": 0
     },
     {
