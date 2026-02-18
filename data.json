@@ -138,7 +138,7 @@
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/Job-Search-scraper/master/assets/scrapexample.png"
       ],
-      "updated_at": "2026-02-16T07:49:17Z",
+      "updated_at": "2026-02-17T07:45:55Z",
       "stars": 1
     },
     {
@@ -347,6 +347,17 @@
       ],
       "updated_at": "2025-12-22T02:53:42Z",
       "stars": 1
+    },
+    {
+      "name": "VoiceCloning",
+      "description": "This repository provides a seamless \"all-in-one\" solution to clone any voice found on YouTube. By simply providing a URL, the application extracts the audio, uses AI to transcribe the speaker's unique speech patterns, and allows you to generate new dialogue in that exact voice.",
+      "url": "https://github.com/devMuniz02/VoiceCloning",
+      "topics": [],
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/VoiceCloning/main/assets/GRADIO.png"
+      ],
+      "updated_at": "2026-02-17T03:51:23Z",
+      "stars": 0
     }
   ]
 }
