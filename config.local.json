@@ -8,15 +8,16 @@
     "Courses-taken"
   ],
   "staredrepos": [
+    "my-trade-portfolio",
     "VoiceCloning",
     "RAG-Any-File",
-    "Easy-RAG-PDF",
-    "Slides-helper",
     "UDEM-CXR-Reporting-Thesis-2025",
     "Image-Attention-Visualizer",
     "DINOv3-Interactive-Patch-Cosine-Similarity",
     "CV-People-Tracker-Counter-RealTime",
     "Autonomous-warehouse-car",
-    "ball-beam-vision"
+    "ball-beam-vision",
+    "Easy-RAG-PDF",
+    "Slides-helper",
   ]
 }
