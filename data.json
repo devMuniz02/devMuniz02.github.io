@@ -138,7 +138,7 @@
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/Job-Search-scraper/master/assets/scrapexample.png"
       ],
-      "updated_at": "2026-03-02T07:44:59Z",
+      "updated_at": "2026-03-03T07:38:10Z",
       "stars": 1
     },
     {
@@ -148,6 +148,17 @@
       "topics": [],
       "assets": [],
       "updated_at": "2026-02-13T01:01:27Z",
+      "stars": 0
+    },
+    {
+      "name": "my-trade-portfolio",
+      "description": "This repo contains my number of trades and PnL. Daily, Weekly, Monthly, and All-Time. This portfolio is based on predicitons and probalities of the trades only, no speculations, politics nor anything related.",
+      "url": "https://github.com/devMuniz02/my-trade-portfolio",
+      "topics": [],
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/my-trade-portfolio/main/assets/performance_animation.gif"
+      ],
+      "updated_at": "2026-03-04T02:02:38Z",
       "stars": 0
     },
     {
