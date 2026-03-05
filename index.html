@@ -63,7 +63,11 @@
       overflow: hidden; position: relative; transition: transform 0.4s ease;
     }
     .gallery-item:hover { transform: scale(1.03); border-color: var(--accent); z-index: 5; }
-    .gallery-item img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
+    .gallery-item img { 
+      width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;
+      image-rendering: -webkit-optimize-contrast; /* Better scaling in WebKit browsers */
+      image-rendering: crisp-edges; /* Sharper pixel art/scaled images */
+    }
     .gallery-caption { 
       padding: 10px; font-size: 11px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); 
       position: absolute; bottom: 0; width: 100%; color: #fff;
@@ -115,8 +119,7 @@
     <div id="loader">Fetching latest project data...</div>
 
     <div id="content-area" style="display: none;">
-        <div class="section-header"><h2>Visual Reel</h2><div class="line"></div></div>
-        <div id="gallery" class="gallery"></div>
+        <div id="visual-reel-container"></div>
 
         <div class="section-header"><h2>Project Index</h2><div class="line"></div></div>
         <div class="controls">
@@ -155,33 +158,31 @@
         if (data.huggingface) document.getElementById("hfBtn").href = data.huggingface;
         if (data.linkedin) document.getElementById("liBtn").href = data.linkedin;
 
-        // 1. Render Gallery (Top Visual Reel)
-        const galleryEl = document.getElementById("gallery");
-        // Prioritize starred repos (from config), then the rest by most recent
-        const starredList = (config.staredrepos || data.staredrepos || []).filter(Boolean);
-        const starOrder = new Map(starredList.map((name, idx) => [name, idx]));
-        const starredRepos = repos
-          .filter(r => starOrder.has(r.name))
-          .sort((a, b) => starOrder.get(a.name) - starOrder.get(b.name));
-        const remainingRepos = repos
-          .filter(r => !starOrder.has(r.name))
-          .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
-        const orderedRepos = [...starredRepos, ...remainingRepos];
-
-        const allAssets = orderedRepos.flatMap(r =>
-          (r.assets || []).map(url => ({ url, name: r.name, href: r.url }))
-        );
-        
-        if (allAssets.length > 0) {
-          galleryEl.innerHTML = allAssets.slice(0, 20).map(a => `
-            <div class="gallery-item">
-              <a href="${a.href}" target="_blank"><img src="${a.url}" loading="lazy"></a>
-              <div class="gallery-caption">${a.name}</div>
-            </div>
-          `).join('');
-        } else {
-          galleryEl.innerHTML = "<p style='color: var(--text-dim)'>No visual assets found in /assets folders.</p>";
+        // 1. Render Visual Sections
+        let staredrepos = config.staredrepos || {};
+        if (Array.isArray(staredrepos)) {
+          staredrepos = { "Visual Reel": staredrepos };
         }
+        let visualSectionsHTML = '';
+        Object.entries(staredrepos).forEach(([topic, repoList]) => {
+          const orderMap = new Map(repoList.map((name, idx) => [name, idx]));
+          const topicRepos = repos.filter(r => repoList.includes(r.name)).sort((a, b) => orderMap.get(a.name) - orderMap.get(b.name));
+          const assets = topicRepos.flatMap(r => (r.assets || []).map(url => ({ url, name: r.name, href: r.url })));
+          if (assets.length > 0) {
+            visualSectionsHTML += `
+              <div class="section-header"><h2>${topic}</h2><div class="line"></div></div>
+              <div class="gallery">
+                ${assets.map(a => `
+                  <div class="gallery-item">
+                    <a href="${a.href}" target="_blank"><img src="${a.url}" loading="lazy"></a>
+                    <div class="gallery-caption">${a.name}</div>
+                  </div>
+                `).join('')}
+              </div>
+            `;
+          }
+        });
+        document.getElementById("visual-reel-container").innerHTML = visualSectionsHTML;
 
         // 2. Setup Automatic Slideshow for Cards
         function initSlideshow(repo, imgElement) {

@@ -5,19 +5,50 @@
     "Building-a-Simple-API-with-Copilot",
     "BlazorCourseraProject",
     "devMuniz02.github.io",
-    "Courses-taken"
+    "Courses-taken",
+    "Job-Search-scrapper",
+    "template-repo",
+    "repo-orchestrator"
   ],
-  "staredrepos": [
-    "my-trade-portfolio",
-    "VoiceCloning",
-    "RAG-Any-File",
-    "UDEM-CXR-Reporting-Thesis-2025",
-    "Image-Attention-Visualizer",
-    "DINOv3-Interactive-Patch-Cosine-Similarity",
-    "CV-People-Tracker-Counter-RealTime",
-    "Autonomous-warehouse-car",
-    "ball-beam-vision",
-    "Easy-RAG-PDF",
-    "Slides-helper"
-  ]
+  "staredrepos": {
+    "Healthcare & Transformer Attention Research": [
+      "UDEM-CXR-Reporting-Thesis-2025",
+      "Image-Attention-Visualizer",
+      "DINOv3-Interactive-Patch-Cosine-Similarity",
+      "Token-Attention-Viewer"
+    ],
+    "NLP, Quantization, LoRA, Model Alignment & ONNX": [
+      "Model-Quantization",
+      "fine-tune-distilbert-imdb-lora",
+      "Onnx-conversion",
+      "EfficientAlign-ONNX",
+      "VoiceCloning",
+      "Translate-EN-to-ES-from-image-"
+    ],
+    "RAG": [
+      "RAG-Any-File",
+      "Easy-RAG-PDF",
+      "Slides-helper"
+    ],
+    "Robotics": [
+      "Robot-3-DOF-Reinforcement-learning-control",
+      "Autonomous-warehouse-car",
+      "Autonomous-car-control",
+      "Self-Drive-Airism",
+      "Universal-Robots-UR3e-3-Multi-Tool-Station"
+    ],
+    "CV": [
+      "ball-beam-vision",
+      "CV-People-Tracker-Counter-RealTime",
+      "Image-Color-Detection",
+      "Car-lane-detector",
+      "Tomato-Detect-YOLO",
+      "QR-Reader"
+    ],
+    "Finance": [
+      "my-trade-portfolio",
+      "Reinforcement-Learning-Stock-Porfolio-Managment",
+      "Stock-prediction-LSTM-Sentiment-Analysis-Python"
+    ]
+  }
 }

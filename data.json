@@ -131,17 +131,6 @@
       "stars": 0
     },
     {
-      "name": "Job-Search-scraper",
-      "description": "This is the scrapper i use to find jobs that fit my description",
-      "url": "https://github.com/devMuniz02/Job-Search-scraper",
-      "topics": [],
-      "assets": [
-        "https://raw.githubusercontent.com/devMuniz02/Job-Search-scraper/master/assets/scrapexample.png"
-      ],
-      "updated_at": "2026-03-04T07:34:31Z",
-      "stars": 1
-    },
-    {
       "name": "Model-Quantization",
       "description": "Effortlessly quantize and deploy Hugging Face models. This repo provides a streamlined pipeline to convert any HF model into a compressed format and upload it directly to your HF profile. Ideal for optimizing Large Language Models (LLMs) for resource-constrained environments.",
       "url": "https://github.com/devMuniz02/Model-Quantization",
@@ -289,17 +278,6 @@
       ],
       "updated_at": "2025-12-22T03:09:10Z",
       "stars": 1
-    },
-    {
-      "name": "template-repo",
-      "description": "A standardized boilerplate for new projects. Includes a pre-configured MIT License, universal .gitignore, and a structured README template to ensure consistency across all repositories.",
-      "url": "https://github.com/devMuniz02/template-repo",
-      "topics": [],
-      "assets": [
-        "https://raw.githubusercontent.com/devMuniz02/template-repo/main/assets/templateREADME.png"
-      ],
-      "updated_at": "2026-02-02T23:55:08Z",
-      "stars": 0
     },
     {
       "name": "Token-Attention-Viewer",
