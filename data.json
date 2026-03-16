@@ -41,6 +41,17 @@
       "stars": 0
     },
     {
+      "name": "btc-hourly-tournament",
+      "description": null,
+      "url": "https://github.com/devMuniz02/btc-hourly-tournament",
+      "topics": [],
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/templateREADME.png"
+      ],
+      "updated_at": "2026-03-15T21:11:56Z",
+      "stars": 0
+    },
+    {
       "name": "Car-lane-detector",
       "description": "Car lane detector based on images",
       "url": "https://github.com/devMuniz02/Car-lane-detector",
@@ -138,7 +149,7 @@
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/Job-Search-scraper/master/assets/scrapexample.png"
       ],
-      "updated_at": "2026-03-14T07:31:50Z",
+      "updated_at": "2026-03-15T07:40:29Z",
       "stars": 1
     },
     {
@@ -158,7 +169,7 @@
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/my-trade-portfolio/main/assets/performance_animation.gif"
       ],
-      "updated_at": "2026-03-14T02:38:21Z",
+      "updated_at": "2026-03-15T03:16:40Z",
       "stars": 0
     },
     {
