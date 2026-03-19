@@ -48,7 +48,7 @@
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dashboard.png"
       ],
-      "updated_at": "2026-03-18T02:01:54Z",
+      "updated_at": "2026-03-19T02:07:56Z",
       "stars": 0
     },
     {
@@ -153,6 +153,22 @@
       "stars": 1
     },
     {
+      "name": "layer-wise-anatomical-attention",
+      "description": "Code for arXiv paper: https://arxiv.org/abs/2512.16841",
+      "url": "https://github.com/devMuniz02/layer-wise-anatomical-attention",
+      "topics": [],
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/layer-wise-anatomical-attention/main/assets/AnatomicalAttention.gif",
+        "https://raw.githubusercontent.com/devMuniz02/layer-wise-anatomical-attention/main/assets/barplot_MIMIC_Complete_Analysis_color.png",
+        "https://raw.githubusercontent.com/devMuniz02/layer-wise-anatomical-attention/main/assets/barplot_mimic_performance.png",
+        "https://raw.githubusercontent.com/devMuniz02/layer-wise-anatomical-attention/main/assets/hf_space_qr.png",
+        "https://raw.githubusercontent.com/devMuniz02/layer-wise-anatomical-attention/main/assets/reportresults.png",
+        "https://raw.githubusercontent.com/devMuniz02/layer-wise-anatomical-attention/main/assets/training_loss_color.png"
+      ],
+      "updated_at": "2026-03-18T18:42:53Z",
+      "stars": 0
+    },
+    {
       "name": "Model-Quantization",
       "description": "Effortlessly quantize and deploy Hugging Face models. This repo provides a streamlined pipeline to convert any HF model into a compressed format and upload it directly to your HF profile. Ideal for optimizing Large Language Models (LLMs) for resource-constrained environments.",
       "url": "https://github.com/devMuniz02/Model-Quantization",
@@ -169,7 +185,7 @@
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/my-trade-portfolio/main/assets/performance_animation.gif"
       ],
-      "updated_at": "2026-03-17T02:42:32Z",
+      "updated_at": "2026-03-18T02:49:02Z",
       "stars": 0
     },
     {
