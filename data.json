@@ -46,9 +46,10 @@
       "url": "https://github.com/devMuniz02/btc-hourly-tournament",
       "topics": [],
       "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dailydashboard.png",
         "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dashboard.png"
       ],
-      "updated_at": "2026-03-21T01:06:30Z",
+      "updated_at": "2026-03-22T01:04:29Z",
       "stars": 0
     },
     {
@@ -165,7 +166,7 @@
         "https://raw.githubusercontent.com/devMuniz02/layer-wise-anatomical-attention/main/assets/reportresults.png",
         "https://raw.githubusercontent.com/devMuniz02/layer-wise-anatomical-attention/main/assets/training_loss_color.png"
       ],
-      "updated_at": "2026-03-21T01:59:41Z",
+      "updated_at": "2026-03-21T22:32:44Z",
       "stars": 0
     },
     {
@@ -185,7 +186,7 @@
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/my-trade-portfolio/main/assets/performance_animation.gif"
       ],
-      "updated_at": "2026-03-20T02:41:11Z",
+      "updated_at": "2026-03-21T02:34:44Z",
       "stars": 0
     },
     {
@@ -353,7 +354,7 @@
         "https://raw.githubusercontent.com/devMuniz02/UDEM-CXR-Reporting-Thesis-2025/main/assets/training_loss_color.png"
       ],
       "updated_at": "2025-12-27T03:12:53Z",
-      "stars": 0
+      "stars": 1
     },
     {
       "name": "Universal-Robots-UR3e-3-Multi-Tool-Station",
