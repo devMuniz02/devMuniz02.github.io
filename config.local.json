@@ -1,6 +1,427 @@
 {
   "huggingface": "https://huggingface.co/manu02",
   "linkedin": "https://www.linkedin.com/in/devmuniz",
+  "sectionSkills": {
+    "Project Index": [
+      "Python",
+      "Machine Learning",
+      "Open Source",
+      "Data Science",
+      "MLOps",
+      "Research Engineering",
+      "Model Deployment",
+      "Interactive Demos",
+      "Technical Writing",
+      "Experiment Tracking",
+      "Prototyping"
+    ],
+    "Healthcare & Transformer Attention Research": [
+      "PyTorch",
+      "Transformers",
+      "Medical Imaging",
+      "Vision Transformers",
+      "Attention Maps",
+      "Radiology AI",
+      "Explainability",
+      "Multimodal Learning",
+      "DICOM",
+      "Chest X-rays",
+      "MIMIC-CXR",
+      "GPT-2 Decoder",
+      "Vision-Language Models",
+      "Clinical Report Generation",
+      "Anatomical Priors",
+      "Patch Similarity",
+      "Cosine Similarity",
+      "Self-Supervised Vision",
+      "CheXbert",
+      "RadGraph",
+      "Gradio",
+      "Hugging Face Spaces",
+      "CheXpert Labeler",
+      "Ablation Studies",
+      "Autoregressive Generation",
+      "Clinical Grounding",
+      "Segmentation Masks"
+    ],
+    "NLP, Quantization, LoRA, Model Alignment & ONNX": [
+      "NLP",
+      "LoRA",
+      "ONNX",
+      "Quantization",
+      "LLM Fine-Tuning",
+      "Model Compression",
+      "Inference Optimization",
+      "Distillation",
+      "Alignment",
+      "QLoRA",
+      "PEFT",
+      "DPO",
+      "RLHF",
+      "DistilBERT",
+      "Sentiment Classification",
+      "Hugging Face Hub",
+      "ONNX Runtime",
+      "Graph Validation",
+      "Cross-Framework Conversion",
+      "Speech Synthesis",
+      "Voice Cloning",
+      "OCR Translation",
+      "Text Classification",
+      "Model Export",
+      "Consumer GPU Deployment",
+      "Low-Resource AI",
+      "Jupyter Notebooks"
+    ],
+    "RAG": [
+      "Retrieval",
+      "Embeddings",
+      "Vector Search",
+      "Semantic Search",
+      "Chunking",
+      "Prompt Engineering",
+      "Document QA",
+      "Knowledge Bases",
+      "LangChain",
+      "FAISS",
+      "Local LLMs",
+      "Ollama",
+      "LM Studio",
+      "Multimodal Retrieval",
+      "PDF Parsing",
+      "Codebase Search",
+      "Citation Grounding",
+      "Flask",
+      "Desktop Apps",
+      "Slide Analysis",
+      "Executive Summaries",
+      "Presentation Assistance",
+      "DOCX Parsing",
+      "PPTX Parsing",
+      "XLSX Parsing",
+      "Persistent Chat History",
+      "Local-First AI",
+      "Native Desktop UI"
+    ],
+    "Robotics": [
+      "ROS",
+      "Control",
+      "Simulation",
+      "Reinforcement Learning",
+      "Kinematics",
+      "Motion Planning",
+      "Automation",
+      "Path Planning",
+      "Industrial Robotics",
+      "UR3e",
+      "TurboPi",
+      "Arduino",
+      "Ultrasonic Sensors",
+      "Robot Coordination",
+      "Warehouse Automation",
+      "PID Control",
+      "MPU-6050",
+      "AirSim",
+      "Unreal Engine",
+      "Lane Following",
+      "Obstacle Sensing",
+      "GUI Control Systems",
+      "Robot Arm Control",
+      "Grid Navigation",
+      "Pick and Place",
+      "Servo Control",
+      "Omnidirectional Drive"
+    ],
+    "CV": [
+      "OpenCV",
+      "Detection",
+      "Tracking",
+      "YOLO",
+      "Segmentation",
+      "Image Processing",
+      "Real-Time Vision",
+      "Feature Extraction",
+      "Object Counting",
+      "People Counting",
+      "Lane Detection",
+      "Roboflow",
+      "YOLOv11",
+      "Webcam Inference",
+      "Color Detection",
+      "QR Codes",
+      "Agricultural Vision",
+      "Perspective Transform",
+      "Polynomial Lane Fitting",
+      "Video Analytics",
+      "Bounding Boxes",
+      "Multi-Object Tracking",
+      "Detection Pipelines",
+      "Camera Calibration"
+    ],
+    "Finance": [
+      "Time Series",
+      "Reinforcement Learning",
+      "Trading",
+      "Quantitative Analysis",
+      "Portfolio Optimization",
+      "Forecasting",
+      "Sentiment Analysis",
+      "Algorithmic Trading",
+      "Risk Modeling",
+      "LSTM",
+      "TensorFlow",
+      "yfinance",
+      "FRED API",
+      "Market Data Pipelines",
+      "News Analytics",
+      "PnL Tracking",
+      "Performance Dashboards",
+      "Crypto Trading",
+      "Trade Journaling",
+      "Hourly Forecasting",
+      "Backtesting",
+      "Trade Analytics",
+      "Macro Indicators"
+    ]
+  },
+  "projectSkills": {
+    "Autonomous-car-control": [
+      "Lane Following",
+      "Control",
+      "OpenCV",
+      "Robot Coordination",
+      "GUI Control Systems"
+    ],
+    "Autonomous-warehouse-car": [
+      "UR3e",
+      "TurboPi",
+      "Warehouse Automation",
+      "Grid Navigation",
+      "Pick and Place",
+      "Arduino",
+      "Robot Coordination"
+    ],
+    "ball-beam-vision": [
+      "PID Control",
+      "OpenCV",
+      "MPU-6050",
+      "Servo Control",
+      "Real-Time Vision",
+      "Control"
+    ],
+    "btc-hourly-tournament": [
+      "Crypto Trading",
+      "Hourly Forecasting",
+      "Market Data Pipelines",
+      "Performance Dashboards",
+      "Backtesting"
+    ],
+    "Car-lane-detector": [
+      "OpenCV",
+      "Lane Detection",
+      "Image Processing",
+      "Perspective Transform"
+    ],
+    "CV-People-Tracker-Counter-RealTime": [
+      "OpenCV",
+      "People Counting",
+      "Multi-Object Tracking",
+      "Detection Pipelines",
+      "Video Analytics",
+      "Bounding Boxes"
+    ],
+    "DINOv3-Interactive-Patch-Cosine-Similarity": [
+      "Vision Transformers",
+      "Patch Similarity",
+      "Cosine Similarity",
+      "Self-Supervised Vision",
+      "Gradio",
+      "Hugging Face Spaces"
+    ],
+    "Easy-RAG-PDF": [
+      "PDF Parsing",
+      "Document QA",
+      "Local LLMs",
+      "Citation Grounding",
+      "Local-First AI",
+      "Desktop Apps"
+    ],
+    "EfficientAlign-ONNX": [
+      "QLoRA",
+      "PEFT",
+      "DPO",
+      "RLHF",
+      "ONNX Runtime",
+      "Model Export",
+      "Consumer GPU Deployment",
+      "Low-Resource AI"
+    ],
+    "fine-tune-distilbert-imdb-lora": [
+      "DistilBERT",
+      "LoRA",
+      "Sentiment Classification",
+      "Text Classification",
+      "Hugging Face Hub",
+      "Jupyter Notebooks"
+    ],
+    "Image-Attention-Visualizer": [
+      "Attention Maps",
+      "Vision-Language Models",
+      "Explainability",
+      "Gradio",
+      "Hugging Face Spaces"
+    ],
+    "Image-Color-Detection": [
+      "OpenCV",
+      "Color Detection",
+      "Image Processing"
+    ],
+    "Job-Search-scraper": [
+      "Python",
+      "Data Science",
+      "Open Source",
+      "Prototyping"
+    ],
+    "layer-wise-anatomical-attention": [
+      "Medical Imaging",
+      "Chest X-rays",
+      "MIMIC-CXR",
+      "GPT-2 Decoder",
+      "Clinical Report Generation",
+      "Anatomical Priors",
+      "CheXbert",
+      "RadGraph"
+    ],
+    "Model-Quantization": [
+      "Quantization",
+      "Model Compression",
+      "Inference Optimization",
+      "Hugging Face Hub",
+      "Consumer GPU Deployment",
+      "Low-Resource AI"
+    ],
+    "my-trade-portfolio": [
+      "Trading",
+      "PnL Tracking",
+      "Performance Dashboards",
+      "Trade Analytics",
+      "Trade Journaling"
+    ],
+    "Onnx-conversion": [
+      "ONNX",
+      "ONNX Runtime",
+      "Cross-Framework Conversion",
+      "Graph Validation",
+      "Model Export",
+      "Inference Optimization"
+    ],
+    "Porfolio-Code-AI-projects": [
+      "Machine Learning",
+      "Interactive Demos",
+      "Technical Writing",
+      "Prototyping",
+      "Open Source"
+    ],
+    "QR-Reader": [
+      "QR Codes",
+      "OpenCV",
+      "Image Processing",
+      "Detection Pipelines"
+    ],
+    "RAG-Any-File": [
+      "Multimodal Retrieval",
+      "Codebase Search",
+      "Semantic Search",
+      "Local-First AI",
+      "Persistent Chat History",
+      "Native Desktop UI"
+    ],
+    "Reinforcement-Learning-Stock-Porfolio-Managment": [
+      "Reinforcement Learning",
+      "Portfolio Optimization",
+      "Algorithmic Trading",
+      "Risk Modeling",
+      "Backtesting"
+    ],
+    "Robot-3-DOF-Reinforcement-learning-control": [
+      "Reinforcement Learning",
+      "Kinematics",
+      "Motion Planning",
+      "Robot Arm Control",
+      "Servo Control"
+    ],
+    "Self-Drive-Airism": [
+      "AirSim",
+      "Unreal Engine",
+      "Lane Following",
+      "OpenCV",
+      "Perspective Transform",
+      "Polynomial Lane Fitting"
+    ],
+    "Slides-helper": [
+      "Slide Analysis",
+      "Executive Summaries",
+      "Presentation Assistance",
+      "LM Studio",
+      "LangChain",
+      "Local-First AI",
+      "Multimodal Retrieval"
+    ],
+    "Stock-prediction-LSTM-Sentiment-Analysis-Python": [
+      "LSTM",
+      "TensorFlow",
+      "Sentiment Analysis",
+      "yfinance",
+      "News Analytics",
+      "Forecasting",
+      "Time Series"
+    ],
+    "Token-Attention-Viewer": [
+      "Attention Maps",
+      "Transformers",
+      "Autoregressive Generation",
+      "Explainability",
+      "Gradio",
+      "Hugging Face Spaces"
+    ],
+    "Tomato-Detect-YOLO": [
+      "YOLO",
+      "Agricultural Vision",
+      "Object Counting",
+      "Detection Pipelines",
+      "Real-Time Vision",
+      "Bounding Boxes"
+    ],
+    "Translate-EN-to-ES-from-image-": [
+      "OCR Translation",
+      "NLP",
+      "Prototyping"
+    ],
+    "UDEM-CXR-Reporting-Thesis-2025": [
+      "Medical Imaging",
+      "Chest X-rays",
+      "MIMIC-CXR",
+      "Vision-Language Models",
+      "Clinical Report Generation",
+      "GPT-2 Decoder",
+      "CheXbert",
+      "RadGraph"
+    ],
+    "Universal-Robots-UR3e-3-Multi-Tool-Station": [
+      "UR3e",
+      "Industrial Robotics",
+      "Robot Arm Control",
+      "Automation",
+      "Motion Planning",
+      "Servo Control"
+    ],
+    "VoiceCloning": [
+      "Voice Cloning",
+      "Speech Synthesis",
+      "Model Deployment",
+      "Prototyping"
+    ]
+  },
   "ignoreRepos": [
     "Building-a-Simple-API-with-Copilot",
     "BlazorCourseraProject",
@@ -12,6 +433,7 @@
   ],
   "staredrepos": {
     "Healthcare & Transformer Attention Research": [
+      "layer-wise-anatomical-attention",
       "UDEM-CXR-Reporting-Thesis-2025",
       "Image-Attention-Visualizer",
       "DINOv3-Interactive-Patch-Cosine-Similarity",
@@ -30,6 +452,12 @@
       "Easy-RAG-PDF",
       "Slides-helper"
     ],
+    "Finance": [
+      "btc-hourly-tournament",
+      "my-trade-portfolio",
+      "Reinforcement-Learning-Stock-Porfolio-Managment",
+      "Stock-prediction-LSTM-Sentiment-Analysis-Python"
+    ],
     "Robotics": [
       "Robot-3-DOF-Reinforcement-learning-control",
       "Autonomous-warehouse-car",
@@ -44,11 +472,6 @@
       "Car-lane-detector",
       "Tomato-Detect-YOLO",
       "QR-Reader"
-    ],
-    "Finance": [
-      "my-trade-portfolio",
-      "Reinforcement-Learning-Stock-Porfolio-Managment",
-      "Stock-prediction-LSTM-Sentiment-Analysis-Python"
     ]
   }
 }

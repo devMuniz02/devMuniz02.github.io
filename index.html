@@ -42,35 +42,310 @@
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
 
-    .hero-p { font-size: 1.2rem; color: var(--text-dim); max-width: 600px; margin: 0 auto 32px; }
-
-    .header-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .btn { 
-      padding: 12px 24px; border-radius: 12px; font-weight: 600; text-decoration: none;
-      transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px;
-      font-size: 0.95rem; border: 1px solid var(--border); color: var(--text-main);
-      background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px);
+    .hero-p { font-size: 1.2rem; color: var(--text-dim); max-width: 680px; margin: 0 auto 24px; }
+    .hero-summary {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.5fr);
+      gap: 14px;
+      max-width: 920px;
+      margin: 0 auto 34px;
     }
-    .btn:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 10px 20px -10px var(--accent); }
+    .hero-stat {
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      text-align: left;
+    }
+    .hero-stat-primary {
+      background:
+        radial-gradient(circle at top right, rgba(79, 124, 255, 0.18), transparent 42%),
+        linear-gradient(180deg, rgba(79,124,255,0.12), rgba(255,255,255,0.03));
+      border-color: rgba(79, 124, 255, 0.24);
+      box-shadow: 0 18px 40px -32px rgba(79, 124, 255, 0.45);
+    }
+    .hero-stat-value {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: #fff;
+    }
+    .hero-stat-label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.76rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .hero-stat-copy {
+      font-size: 0.92rem;
+      line-height: 1.45;
+      color: #cbd5e1;
+    }
+    .hero-focus-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .hero-focus-pill {
+      font-size: 0.76rem;
+      color: #dbeafe;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(79, 124, 255, 0.12);
+      border: 1px solid rgba(79, 124, 255, 0.22);
+      white-space: nowrap;
+    }
 
-    .section-header { display: flex; align-items: center; gap: 15px; margin: 60px 0 30px; }
+    .header-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .btn { 
+      padding: 0;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.22s ease, filter 0.22s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+    }
+    .btn-badge-img {
+      display: block;
+      height: 28px;
+      width: auto;
+      border-radius: 999px;
+      box-shadow: 0 10px 24px -18px rgba(0, 0, 0, 0.9);
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: minmax(0, auto) 1fr;
+      align-items: center;
+      gap: 15px;
+      margin: 60px 0 18px;
+    }
+    .section-heading { display: flex; flex-direction: column; gap: 10px; }
     .section-header h2 { font-size: 1.5rem; font-weight: 700; margin: 0; }
     .section-header .line { flex-grow: 1; height: 1px; background: var(--border); }
+    .section-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-count {
+      font-size: 0.76rem;
+      color: #cbd5e1;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .section-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .section-skill {
+      font-size: 0.76rem;
+      color: #dbeafe;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(79, 124, 255, 0.12);
+      border: 1px solid rgba(79, 124, 255, 0.2);
+      white-space: nowrap;
+    }
 
-    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+    .gallery { display: grid; gap: 18px; }
+    .gallery-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+    .gallery-media {
+      display: grid;
+      grid-template-columns: minmax(0, 6.8fr) minmax(0, 3.2fr);
+      align-items: center;
+      gap: 0;
+      padding: 0;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      min-height: 220px;
+      overflow: hidden;
+      isolation: isolate;
+      content-visibility: auto;
+      contain-intrinsic-size: 360px;
+    }
+    .gallery-media.is-single {
+      grid-template-columns: 1fr;
+    }
+    .gallery-preview {
+      min-width: 0;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      max-width: 100%;
+      border-radius: 0;
+      border: 0;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      background:
+        radial-gradient(circle at top, rgba(148, 163, 184, 0.1), transparent 55%),
+        #020617;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: center;
+      overflow: hidden;
+      contain: layout paint;
+      min-height: 0;
+      padding: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .gallery-preview img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      background: #020617;
+      image-rendering: auto;
+      margin: auto;
+    }
+    .gallery-preview img.is-widescreen-fit {
+      object-fit: contain;
+    }
+    .gallery-preview img.is-portrait-crop {
+      object-fit: cover;
+      object-position: center;
+      aspect-ratio: 1 / 1;
+      height: auto;
+      max-height: 100%;
+      align-self: center;
+    }
+    .gallery-thumbs {
+      display: grid;
+      grid-template-columns: repeat(var(--gallery-cols, 1), minmax(0, 1fr));
+      grid-template-rows: repeat(var(--gallery-rows, 1), minmax(0, 1fr));
+      gap: 0;
+      min-width: 0;
+      max-width: 100%;
+      align-items: stretch;
+      align-content: stretch;
+      overflow: hidden;
+      contain: layout paint;
+      position: relative;
+      z-index: 2;
+      padding-left: 0;
+    }
+    .gallery-thumbs .gallery-item {
+      aspect-ratio: auto;
+      height: 100%;
+      min-height: 0;
+    }
     .gallery-item { 
-      background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; 
-      overflow: hidden; position: relative; transition: transform 0.4s ease;
+      background: rgba(255, 255, 255, 0.02);
+      border: 0;
+      border-left: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 0; 
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: var(--repo-aspect, 1 / 1);
+      min-width: 0;
+      min-height: 0;
+      transition: transform 0.28s ease, border-color 0.28s ease, opacity 0.28s ease, box-shadow 0.28s ease;
+      background:
+        radial-gradient(circle at top, rgba(148, 163, 184, 0.08), transparent 52%),
+        rgba(255, 255, 255, 0.02);
     }
-    .gallery-item:hover { transform: scale(1.03); border-color: var(--accent); z-index: 5; }
+    .gallery-thumbs:hover .gallery-item {
+      opacity: 0.72;
+      transform: none;
+    }
+    .gallery-thumbs .gallery-item:hover,
+    .gallery-item.is-active {
+      opacity: 1;
+      box-shadow: inset 0 0 0 1px rgba(147, 197, 253, 0.35);
+      transform: none;
+      z-index: 2;
+    }
     .gallery-item img { 
-      width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;
-      image-rendering: -webkit-optimize-contrast; /* Better scaling in WebKit browsers */
-      image-rendering: crisp-edges; /* Sharper pixel art/scaled images */
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      background: #020617;
+      image-rendering: auto;
     }
-    .gallery-caption { 
-      padding: 10px; font-size: 11px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); 
-      position: absolute; bottom: 0; width: 100%; color: #fff;
+    .gallery-item.is-widescreen-fit img {
+      object-fit: contain;
+    }
+    .gallery-item.is-portrait-crop {
+      aspect-ratio: 1 / 1;
+    }
+    .gallery-item.is-portrait-crop img {
+      object-fit: cover;
+      object-position: center;
+    }
+    .gallery-trigger,
+    .thumb-trigger {
+      width: 100%;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      background: transparent;
+      color: inherit;
+      text-align: left;
+      cursor: pointer;
+      display: block;
+    }
+    .gallery-details {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px;
+      display: grid;
+      align-content: start;
+      gap: 14px;
+    }
+    .gallery-title {
+      margin: 0;
+      font-size: 1.35rem;
+      line-height: 1.25;
+      color: #fff;
+    }
+    .gallery-copy {
+      margin: 0;
+      font-size: 0.96rem;
+      line-height: 1.55;
+      color: #cbd5e1;
+    }
+    .project-section-badge {
+      align-self: flex-start;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #cbd5e1;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
     }
 
     .controls { display: flex; gap: 15px; margin: 40px 0; padding: 15px; background: rgba(255,255,255,0.02); border-radius: 16px; border: 1px solid var(--border); }
@@ -82,20 +357,134 @@
     /* Improve placeholder visibility on dark background */
     input::placeholder { color: var(--text-dim); opacity: 1; }
 
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
-    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; backdrop-filter: blur(12px); transition: all 0.3s ease; display: flex; flex-direction: column; }
-    .card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; align-items: stretch; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; backdrop-filter: blur(12px); transition: border-color 0.25s ease, transform 0.25s ease; display: flex; flex-direction: column; position: relative; height: 100%; }
+    .card.is-expanded { border-color: var(--accent); transform: translateY(-4px); }
     
-    .thumb-container { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; overflow: hidden; }
+    .thumb-container { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; overflow: hidden; z-index: 2; }
+    .thumb-frame {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 24px 24px 0 0;
+      background: #000;
+    }
     .thumb { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.6s ease; }
+    .skill-popover-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-pill {
+      font-size: 0.73rem;
+      line-height: 1.2;
+      color: #e5eefc;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(79, 124, 255, 0.12);
+      border: 1px solid rgba(79, 124, 255, 0.18);
+    }
+    .expand-panel {
+      display: grid;
+      align-content: start;
+      gap: 14px;
+      padding: 0 18px 18px;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.28s ease, opacity 0.22s ease, padding-top 0.22s ease;
+    }
+    .card.card-static .expand-panel {
+      flex: 1 1 auto;
+    }
+    .expand-panel[data-side="right"] {
+      border-left: 3px solid rgba(79, 124, 255, 0.3);
+    }
+    .expand-panel[data-side="left"] {
+      border-right: 3px solid rgba(79, 124, 255, 0.3);
+    }
+    .card.is-expanded .expand-panel,
+    .card.card-static .expand-panel,
+    .gallery-details .expand-panel,
+    .gallery-item.is-expanded .expand-panel {
+      max-height: 420px;
+      opacity: 1;
+      padding-top: 16px;
+    }
+    .card.card-static .expand-panel {
+      max-height: none;
+    }
+    .gallery-details .expand-panel {
+      max-height: none;
+      padding: 0;
+      border: 0;
+    }
+    .expand-meta {
+      display: grid;
+      align-content: start;
+      gap: 12px;
+    }
+    .expand-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .expand-url {
+      color: #93c5fd;
+      word-break: break-all;
+      text-decoration: none;
+      font-size: 0.88rem;
+    }
+    .expand-url:hover { text-decoration: underline; }
+    @media (max-width: 900px) {
+      .hero-summary {
+        grid-template-columns: 1fr;
+      }
+      .gallery-row {
+        grid-template-columns: 1fr;
+      }
+      .gallery-media {
+        grid-template-columns: 1fr;
+      }
+      .gallery-preview {
+        min-height: 220px;
+      }
+      .gallery-media.is-single {
+        grid-template-columns: 1fr;
+      }
+      .gallery-thumbs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: none;
+      }
+      .gallery-item,
+      .gallery-thumbs:hover .gallery-item,
+      .gallery-thumbs .gallery-item:hover,
+      .gallery-item.is-active {
+        opacity: 1;
+        transform: none;
+      }
+      .expand-panel[data-side="right"],
+      .expand-panel[data-side="left"] {
+        border-left: 0;
+        border-right: 0;
+        border-top: 3px solid rgba(79, 124, 255, 0.3);
+      }
+    }
     
-    .card-body { padding: 24px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1; }
-    .card-title { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.25rem; display: block; }
+    .card-body { padding: 24px; display: flex; flex-direction: column; gap: 12px; flex-grow: 0; }
+    .card-title {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.25rem;
+      display: block;
+      line-height: 1.3;
+      min-height: calc(1.3em * 2);
+      align-content: start;
+    }
     .desc { font-size: 0.95rem; color: var(--text-dim); line-height: 1.5; }
     
-    .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; padding-top: 15px; }
-    .tag { font-size: 0.75rem; padding: 4px 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); }
-
     footer { padding: 80px 24px 40px; text-align: center; color: var(--text-dim); font-size: 0.85rem; }
 
     /* Loading state */
@@ -107,11 +496,27 @@
   <header class="container">
     <span class="profile-tag">@devMuniz02</span>
     <h1>Emmanuel Muñiz</h1>
-    <p class="hero-p">A collection of technical projects, open-source experiments, and architectural explorations.</p>
+    <p class="hero-p">AI engineer focused on multimodal healthcare AI, retrieval systems, robotics, computer vision, and practical model deployment.</p>
+    <div id="hero-summary" class="hero-summary"></div>
     <div class="header-actions">
-      <a class="btn" href="https://github.com/devMuniz02" target="_blank">GitHub</a>
-      <a id="hfBtn" class="btn" href="#" target="_blank">Hugging Face</a>
-      <a id="liBtn" class="btn" href="#" target="_blank">LinkedIn</a>
+      <a class="btn btn-github" href="https://github.com/devMuniz02" target="_blank" rel="noreferrer">
+        <img
+          class="btn-badge-img"
+          src="https://img.shields.io/badge/GitHub-devMuniz02-181717?logo=github&logoColor=white"
+          alt="GitHub devMuniz02 badge">
+      </a>
+      <a id="hfBtn" class="btn btn-hf" href="#" target="_blank" rel="noreferrer">
+        <img
+          class="btn-badge-img"
+          src="https://img.shields.io/badge/Hugging%20Face-manu02-FFD21E?logo=huggingface&logoColor=yellow"
+          alt="Hugging Face manu02 badge">
+      </a>
+      <a id="liBtn" class="btn btn-linkedin" href="#" target="_blank" rel="noreferrer">
+        <img
+          class="btn-badge-img"
+          src="https://img.shields.io/badge/LinkedIn-devmuniz-0A66C2?logo=linkedin&logoColor=white"
+          alt="LinkedIn devmuniz badge">
+      </a>
     </div>
   </header>
 
@@ -121,7 +526,7 @@
     <div id="content-area" style="display: none;">
         <div id="visual-reel-container"></div>
 
-        <div class="section-header"><h2>Project Index</h2><div class="line"></div></div>
+        <div id="project-index-header"></div>
         <div class="controls">
           <input id="search" placeholder="Search by name, description or tag..." />
           <select id="sort">
@@ -149,6 +554,8 @@
           if (confRes.ok) config = await confRes.json();
         } catch {}
         const repos = data.projects;
+        const sectionSkills = config.sectionSkills || {};
+        const projectSkills = config.projectSkills || {};
 
         // Hide loader and show content
         document.getElementById("loader").style.display = "none";
@@ -158,31 +565,311 @@
         if (data.huggingface) document.getElementById("hfBtn").href = data.huggingface;
         if (data.linkedin) document.getElementById("liBtn").href = data.linkedin;
 
-        // 1. Render Visual Sections
+        function escapeHtml(value) {
+          return String(value).replace(/[&<>"']/g, char => ({
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            "\"": "&quot;",
+            "'": "&#39;"
+          }[char]));
+        }
+
+        function renderSectionHeader(title, repoCount = null) {
+          const skills = Array.isArray(sectionSkills[title]) ? sectionSkills[title] : [];
+          const countHtml = typeof repoCount === "number"
+            ? `<span class="section-count">${repoCount} project${repoCount === 1 ? "" : "s"}</span>`
+            : "";
+          const skillsHtml = skills.length
+            ? `<div class="section-skills">${skills.map(skill => `<span class="section-skill">${escapeHtml(skill)}</span>`).join('')}</div>`
+            : "";
+
+          return `
+            <div class="section-header">
+              <div class="section-heading">
+                <h2>${escapeHtml(title)}</h2>
+                <div class="section-meta">${countHtml}</div>
+                ${skillsHtml}
+              </div>
+              <div class="line"></div>
+            </div>
+          `;
+        }
+
+        function formatProjectName(name) {
+          const cleaned = String(name).replace(/[-_]+/g, " ").trim();
+          return cleaned ? cleaned.charAt(0).toUpperCase() + cleaned.slice(1) : "";
+        }
+
         let staredrepos = config.staredrepos || {};
         if (Array.isArray(staredrepos)) {
           staredrepos = { "Visual Reel": staredrepos };
         }
+        const sectionByRepo = new Map();
+        Object.entries(staredrepos).forEach(([section, repoList]) => {
+          repoList.forEach(repoName => sectionByRepo.set(repoName, section));
+        });
+        const trackedRepoNames = new Set(Object.values(staredrepos).flat());
+        const focusAreas = Object.keys(staredrepos).length;
+        const totalProjects = repos.length;
+
+        document.getElementById("hero-summary").innerHTML = `
+          <div class="hero-stat">
+            <span class="hero-stat-value">${totalProjects}</span>
+            <span class="hero-stat-label">Projects</span>
+            <div class="hero-stat-copy">Applied AI work across research, prototypes, automation, and deployment-oriented builds.</div>
+          </div>
+          <div class="hero-stat hero-stat-primary">
+            <span class="hero-stat-value">${focusAreas}</span>
+            <span class="hero-stat-label">Focus Areas</span>
+            <div class="hero-focus-list">
+              <span class="hero-focus-pill">Healthcare AI</span>
+              <span class="hero-focus-pill">NLP</span>
+              <span class="hero-focus-pill">RL</span>
+              <span class="hero-focus-pill">Finance</span>
+              <span class="hero-focus-pill">Robotics</span>
+              <span class="hero-focus-pill">Computer Vision</span>
+            </div>
+          </div>
+        `;
+
+        document.getElementById("project-index-header").innerHTML = renderSectionHeader("Project Index", totalProjects);
+
+        function getProjectSkills(repo) {
+          const mergedSkills = [];
+          const seen = new Set();
+
+          function pushSkills(list) {
+            if (!Array.isArray(list)) return;
+            list.forEach(skill => {
+              const normalized = String(skill).trim();
+              if (!normalized) return;
+              const key = normalized.toLowerCase();
+              if (seen.has(key)) return;
+              seen.add(key);
+              mergedSkills.push(normalized);
+            });
+          }
+
+          pushSkills(projectSkills[repo.name]);
+
+          const section = sectionByRepo.get(repo.name);
+          if (!mergedSkills.length && section && Array.isArray(sectionSkills[section])) {
+            pushSkills(sectionSkills[section]);
+          }
+
+          pushSkills(repo.topics);
+          return mergedSkills;
+        }
+
+        function renderExpandPanel(repo, side = "right") {
+          const skills = getProjectSkills(repo);
+          const description = repo.description || "Experimental implementation and technical research.";
+          return `
+            <div class="expand-panel" data-side="${side}">
+              <div class="expand-meta">
+                <div>
+                  <div class="expand-label">Description</div>
+                  <div class="desc">${escapeHtml(description)}</div>
+                </div>
+                <div>
+                  <div class="expand-label">Skills</div>
+                  <div class="skill-popover-list">
+                    ${skills.map(skill => `<span class="skill-pill">${escapeHtml(skill)}</span>`).join("")}
+                  </div>
+                </div>
+                <div>
+                  <div class="expand-label">Project URL</div>
+                  <a class="expand-url" href="${escapeHtml(repo.url)}" target="_blank" rel="noreferrer">${escapeHtml(repo.url)}</a>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+
+        function updateExpandableSides() {
+          document.querySelectorAll("[data-expandable]").forEach(container => {
+            const panel = container.querySelector(".expand-panel");
+            if (!panel) return;
+            const rect = container.getBoundingClientRect();
+            const side = rect.left + rect.width / 2 < window.innerWidth / 2 ? "right" : "left";
+            panel.dataset.side = side;
+          });
+        }
+
+        function setupGalleryMedia(scope = document) {
+          scope.querySelectorAll(".gallery-media").forEach(media => {
+            const previewImg = media.querySelector(".gallery-preview img");
+            const images = Array.from(media.querySelectorAll(".gallery-item img"));
+            const hasThumbs = media.querySelector(".gallery-thumbs");
+            let hasHorizontalImage = false;
+            const widescreenRatio = 16 / 9;
+            const widescreenTolerance = 0.08;
+
+            const applySharedAspect = () => {
+              let maxWidth = 1;
+              let maxHeight = 1;
+
+              const sourceImages = images.length ? images : (previewImg ? [previewImg] : []);
+              sourceImages.forEach(img => {
+                if (!img.naturalWidth || !img.naturalHeight) return;
+                maxWidth = Math.max(maxWidth, img.naturalWidth);
+                maxHeight = Math.max(maxHeight, img.naturalHeight);
+                if (img.naturalWidth >= img.naturalHeight) {
+                  hasHorizontalImage = true;
+                }
+              });
+
+              const imageCount = images.length;
+              const cols = imageCount >= 7 ? 3 : imageCount >= 4 ? 2 : 1;
+              const rows = Math.ceil(imageCount / cols);
+
+              media.style.setProperty("--repo-aspect", `${maxWidth} / ${maxHeight}`);
+              media.style.setProperty("--gallery-rows", rows);
+              media.style.setProperty("--gallery-cols", cols);
+              if (images.length <= 1 || !hasThumbs) {
+                media.classList.add("is-single");
+              }
+
+              if (!images.length && previewImg) {
+                previewImg.classList.remove("is-portrait-crop");
+                previewImg.classList.remove("is-widescreen-fit");
+                if (previewImg.naturalWidth && previewImg.naturalHeight) {
+                  const ratio = previewImg.naturalWidth / previewImg.naturalHeight;
+                  if (Math.abs(ratio - widescreenRatio) <= widescreenTolerance) {
+                    previewImg.classList.add("is-widescreen-fit");
+                  }
+                }
+              } else {
+                media.querySelectorAll(".gallery-item").forEach(item => {
+                  item.classList.remove("is-portrait-crop");
+                  item.classList.remove("is-widescreen-fit");
+                  const width = Number(item.dataset.naturalWidth || 0);
+                  const height = Number(item.dataset.naturalHeight || 0);
+                  if (width && height) {
+                    const ratio = width / height;
+                    if (Math.abs(ratio - widescreenRatio) <= widescreenTolerance) {
+                      item.classList.add("is-widescreen-fit");
+                    }
+                  }
+                  if (height > width) {
+                    item.classList.add("is-portrait-crop");
+                  }
+                });
+              }
+            };
+
+            const setActiveItem = item => {
+              media.querySelectorAll(".gallery-item").forEach(node => node.classList.remove("is-active"));
+              if (!item) return;
+              item.classList.add("is-active");
+              const src = item.dataset.fullSrc;
+              const alt = item.dataset.alt || "";
+              if (previewImg && src) {
+                previewImg.src = src;
+                previewImg.alt = alt;
+                previewImg.classList.toggle("is-portrait-crop", item.classList.contains("is-portrait-crop"));
+                previewImg.classList.toggle("is-widescreen-fit", item.classList.contains("is-widescreen-fit"));
+              }
+            };
+
+            media.querySelectorAll(".gallery-item").forEach((item, index) => {
+              item.addEventListener("mouseenter", () => setActiveItem(item));
+              item.addEventListener("focusin", () => setActiveItem(item));
+              if (index === 0) setActiveItem(item);
+            });
+
+            let pending = 0;
+            images.forEach(img => {
+              const item = img.closest(".gallery-item");
+              const storeDimensions = () => {
+                if (!item || !img.naturalWidth || !img.naturalHeight) return;
+                item.dataset.naturalWidth = String(img.naturalWidth);
+                item.dataset.naturalHeight = String(img.naturalHeight);
+              };
+
+              if (!img.complete) {
+                pending += 1;
+                img.addEventListener("load", () => {
+                  storeDimensions();
+                  pending -= 1;
+                  if (pending <= 0) applySharedAspect();
+                }, { once: true });
+              } else {
+                storeDimensions();
+              }
+            });
+
+            if (!images.length && previewImg && !previewImg.complete) {
+              pending += 1;
+              previewImg.addEventListener("load", () => {
+                pending -= 1;
+                if (pending <= 0) applySharedAspect();
+              }, { once: true });
+            }
+
+            if (pending === 0) {
+              applySharedAspect();
+            }
+          });
+        }
+
+        function wireExpandables(scope = document) {
+          scope.querySelectorAll("[data-expand-trigger]").forEach(trigger => {
+            trigger.addEventListener("click", () => {
+              const container = trigger.closest("[data-expandable]");
+              if (!container) return;
+              container.classList.toggle("is-expanded");
+              updateExpandableSides();
+            });
+          });
+        }
+
+        // 1. Render Visual Sections
         let visualSectionsHTML = '';
         Object.entries(staredrepos).forEach(([topic, repoList]) => {
           const orderMap = new Map(repoList.map((name, idx) => [name, idx]));
           const topicRepos = repos.filter(r => repoList.includes(r.name)).sort((a, b) => orderMap.get(a.name) - orderMap.get(b.name));
-          const assets = topicRepos.flatMap(r => (r.assets || []).map(url => ({ url, name: r.name, href: r.url })));
-          if (assets.length > 0) {
-            visualSectionsHTML += `
-              <div class="section-header"><h2>${topic}</h2><div class="line"></div></div>
-              <div class="gallery">
-                ${assets.map(a => `
-                  <div class="gallery-item">
-                    <a href="${a.href}" target="_blank"><img src="${a.url}" loading="lazy"></a>
-                    <div class="gallery-caption">${a.name}</div>
+          const repoRowsHtml = topicRepos.map(repo => {
+            const repoAssets = (repo.assets || []).map(url => ({ url, repo }));
+            if (!repoAssets.length) return "";
+
+            return `
+              <div class="gallery-row">
+                <div class="gallery-media ${repoAssets.length <= 1 ? "is-single" : ""}">
+                  <div class="gallery-preview">
+                    <img src="${repoAssets[0].url}" loading="lazy" decoding="async" fetchpriority="low" alt="${escapeHtml(repo.name)} preview">
                   </div>
-                `).join('')}
+                  ${repoAssets.length > 1 ? `
+                  <div class="gallery-thumbs">
+                  ${repoAssets.map(a => `
+                    <div class="gallery-item" data-full-src="${a.url}" data-alt="${escapeHtml(a.repo.name)}">
+                      <img src="${a.url}" loading="lazy" decoding="async" fetchpriority="low" alt="${escapeHtml(a.repo.name)}">
+                    </div>
+                  `).join('')}
+                  </div>
+                  ` : ""}
+                </div>
+                <div class="gallery-details">
+                  <h3 class="gallery-title">${escapeHtml(formatProjectName(repo.name))}</h3>
+                  <p class="gallery-copy">${escapeHtml(repo.description || "Experimental implementation and technical research.")}</p>
+                  ${renderExpandPanel(repo)}
+                </div>
+              </div>
+            `;
+          }).filter(Boolean).join('');
+
+          if (repoRowsHtml) {
+            visualSectionsHTML += `
+              ${renderSectionHeader(topic, topicRepos.length)}
+              <div class="gallery">
+                ${repoRowsHtml}
               </div>
             `;
           }
         });
         document.getElementById("visual-reel-container").innerHTML = visualSectionsHTML;
+        setupGalleryMedia(document.getElementById("visual-reel-container"));
 
         // 2. Setup Automatic Slideshow for Cards
         function initSlideshow(repo, imgElement) {
@@ -213,17 +900,19 @@
 
           const gridEl = document.getElementById("grid");
           gridEl.innerHTML = filtered.map(r => `
-            <div class="card">
+            <div class="card card-static">
               <div class="thumb-container">
-                <img class="thumb" id="img-${r.name.replace(/\s+/g, '-')}" 
-                     src="${r.assets[0] || 'https://placehold.co/600x400/030712/4f7cff?text='+r.name}" 
-                     alt="${r.name}">
+                <div class="thumb-frame">
+                  <img class="thumb" id="img-${r.name.replace(/\s+/g, '-')}" 
+                       src="${r.assets[0] || 'https://placehold.co/600x400/030712/4f7cff?text='+r.name}" 
+                       alt="${escapeHtml(r.name)}">
+                </div>
               </div>
               <div class="card-body">
-                <a href="${r.url}" target="_blank" class="card-title">${r.name}</a>
-                <p class="desc">${r.description || "Experimental implementation and technical research."}</p>
-                <div class="tags">${r.topics.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+                <div class="project-section-badge">${escapeHtml(sectionByRepo.get(r.name) || "Additional project")}</div>
+                <div class="card-title">${escapeHtml(formatProjectName(r.name))}</div>
               </div>
+              ${renderExpandPanel(r)}
             </div>
           `).join('');
 
@@ -232,12 +921,15 @@
             const el = document.getElementById(`img-${r.name.replace(/\s+/g, '-')}`);
             if (el) initSlideshow(r, el);
           });
+          wireExpandables(gridEl);
+          updateExpandableSides();
         }
 
         // Initial render and listeners
         render();
         document.getElementById("search").addEventListener("input", render);
         document.getElementById("sort").addEventListener("change", render);
+        window.addEventListener("resize", updateExpandableSides);
 
       } catch (e) { 
         document.getElementById("loader").innerHTML = `<span style="color: #ef4444;">Error: ${e.message}</span>`;
