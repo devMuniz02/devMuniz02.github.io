@@ -47,9 +47,11 @@
       "topics": [],
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dailydashboard.png",
-        "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dashboard.png"
+        "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dashboard.png",
+        "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dashboard_market_hours.png",
+        "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dashboard_market_hours_daily.png"
       ],
-      "updated_at": "2026-03-25T01:12:10Z",
+      "updated_at": "2026-03-26T02:39:59Z",
       "stars": 0
     },
     {
@@ -175,7 +177,7 @@
         "https://raw.githubusercontent.com/devMuniz02/layer-wise-anatomical-attention/main/assets/reportresults.png",
         "https://raw.githubusercontent.com/devMuniz02/layer-wise-anatomical-attention/main/assets/training_loss_color.png"
       ],
-      "updated_at": "2026-03-24T16:40:26Z",
+      "updated_at": "2026-03-26T01:37:05Z",
       "stars": 0
     },
     {
