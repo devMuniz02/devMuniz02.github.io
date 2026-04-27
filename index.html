@@ -1,944 +1,1770 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Emmanuel Muñiz | Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emmanuel Muñiz | AI Research Portfolio</title>
+  <script>
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark" || (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  </script>
+  <meta
+    name="description"
+    content="AI researcher focused on multimodal architectures, transformer interpretability, custom attention mechanisms, and deep knowledge representation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,700&display=swap"
+    rel="stylesheet">
   <style>
-    :root { 
-      --accent: #4f7cff; 
-      --accent-glow: rgba(79, 124, 255, 0.2);
-      --bg: #030712; 
-      --card-bg: rgba(17, 24, 39, 0.7); 
-      --border: rgba(255, 255, 255, 0.08); 
-      --text-main: #f9fafb;
-      --text-dim: #9ca3af;
+    :root {
+      --bg: #f4f0e8;
+      --bg-soft: #fbf8f2;
+      --surface: rgba(255, 252, 246, 0.84);
+      --surface-strong: #fffdf8;
+      --surface-ink: #f1ebe2;
+      --line: rgba(58, 49, 41, 0.14);
+      --line-strong: rgba(58, 49, 41, 0.24);
+      --text: #1f1b18;
+      --muted: #655d56;
+      --accent: #0e5a63;
+      --accent-strong: #0a4349;
+      --accent-soft: rgba(14, 90, 99, 0.1);
+      --gold: #b17d2f;
+      --shadow: 0 22px 70px -38px rgba(45, 35, 24, 0.32);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --container: 1180px;
     }
 
-    body { 
-      font-family: 'Inter', system-ui, -apple-system, sans-serif; 
-      margin: 40px 0 0; 
-      background: var(--bg); 
-      color: var(--text-main); 
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(177, 125, 47, 0.12), transparent 32%),
+        radial-gradient(circle at right 20%, rgba(14, 90, 99, 0.1), transparent 28%),
+        linear-gradient(180deg, #f7f2e9 0%, #f4f0e8 40%, #efe9df 100%);
       line-height: 1.6;
-      background-image: 
-        radial-gradient(circle at 0% 0%, rgba(79, 124, 255, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 100% 100%, rgba(126, 166, 255, 0.05) 0%, transparent 50%);
-      background-attachment: fixed;
     }
 
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-    header { padding: 60px 24px 60px; text-align: center; }
-    
-    .profile-tag {
-      font-family: monospace; color: var(--accent); background: rgba(79, 124, 255, 0.1);
-      padding: 6px 14px; border-radius: 30px; font-size: 0.85rem;
-      border: 1px solid var(--accent-glow); margin-bottom: 20px; display: inline-block;
-    }
-
-    h1 { 
-      margin: 0 0 16px; font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 800; 
-      letter-spacing: -0.04em; background: linear-gradient(to bottom, #fff 40%, #64748b);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-
-    .hero-p { font-size: 1.2rem; color: var(--text-dim); max-width: 680px; margin: 0 auto 24px; }
-    .hero-summary {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.5fr);
-      gap: 14px;
-      max-width: 920px;
-      margin: 0 auto 34px;
-    }
-    .hero-stat {
-      padding: 16px 18px;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-      text-align: left;
-    }
-    .hero-stat-primary {
-      background:
-        radial-gradient(circle at top right, rgba(79, 124, 255, 0.18), transparent 42%),
-        linear-gradient(180deg, rgba(79,124,255,0.12), rgba(255,255,255,0.03));
-      border-color: rgba(79, 124, 255, 0.24);
-      box-shadow: 0 18px 40px -32px rgba(79, 124, 255, 0.45);
-    }
-    .hero-stat-value {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 1.55rem;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      color: #fff;
-    }
-    .hero-stat-label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.76rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-    }
-    .hero-stat-copy {
-      font-size: 0.92rem;
-      line-height: 1.45;
-      color: #cbd5e1;
-    }
-    .hero-focus-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
-    .hero-focus-pill {
-      font-size: 0.76rem;
-      color: #dbeafe;
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(79, 124, 255, 0.12);
-      border: 1px solid rgba(79, 124, 255, 0.22);
-      white-space: nowrap;
-    }
-
-    .header-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-    .btn { 
-      padding: 0;
-      border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform 0.22s ease, filter 0.22s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 0;
-      background: transparent;
-      box-shadow: none;
-    }
-    .btn:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.06);
-    }
-    .btn-badge-img {
-      display: block;
-      height: 28px;
-      width: auto;
-      border-radius: 999px;
-      box-shadow: 0 10px 24px -18px rgba(0, 0, 0, 0.9);
-    }
-
-    .section-header {
-      display: grid;
-      grid-template-columns: minmax(0, auto) 1fr;
-      align-items: center;
-      gap: 15px;
-      margin: 60px 0 18px;
-    }
-    .section-heading { display: flex; flex-direction: column; gap: 10px; }
-    .section-header h2 { font-size: 1.5rem; font-weight: 700; margin: 0; }
-    .section-header .line { flex-grow: 1; height: 1px; background: var(--border); }
-    .section-meta {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 10px;
-    }
-    .section-count {
-      font-size: 0.76rem;
-      color: #cbd5e1;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-    .section-skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .section-skill {
-      font-size: 0.76rem;
-      color: #dbeafe;
-      padding: 5px 10px;
-      border-radius: 999px;
-      background: rgba(79, 124, 255, 0.12);
-      border: 1px solid rgba(79, 124, 255, 0.2);
-      white-space: nowrap;
-    }
-
-    .gallery { display: grid; gap: 18px; }
-    .gallery-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
-      gap: 18px;
-      align-items: stretch;
-    }
-    .gallery-media {
-      display: grid;
-      grid-template-columns: minmax(0, 6.8fr) minmax(0, 3.2fr);
-      align-items: center;
-      gap: 0;
-      padding: 0;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      min-height: 220px;
-      overflow: hidden;
-      isolation: isolate;
-      content-visibility: auto;
-      contain-intrinsic-size: 360px;
-    }
-    .gallery-media.is-single {
-      grid-template-columns: 1fr;
-    }
-    .gallery-preview {
-      min-width: 0;
-      aspect-ratio: 16 / 9;
-      width: 100%;
+    img {
       max-width: 100%;
-      border-radius: 0;
-      border: 0;
-      border-right: 1px solid rgba(255, 255, 255, 0.08);
-      background:
-        radial-gradient(circle at top, rgba(148, 163, 184, 0.1), transparent 55%),
-        #020617;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      align-self: center;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .shell {
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .page-frame {
+      position: relative;
       overflow: hidden;
-      contain: layout paint;
-      min-height: 0;
-      padding: 0;
+    }
+
+    .page-frame::before,
+    .page-frame::after {
+      content: "";
+      position: fixed;
+      inset: auto;
+      pointer-events: none;
+      z-index: 0;
+      width: 28rem;
+      height: 28rem;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.3;
+    }
+
+    .page-frame::before {
+      top: -8rem;
+      right: -6rem;
+      background: rgba(14, 90, 99, 0.18);
+    }
+
+    .page-frame::after {
+      bottom: -10rem;
+      left: -8rem;
+      background: rgba(177, 125, 47, 0.15);
+    }
+
+    header,
+    main,
+    footer {
       position: relative;
       z-index: 1;
     }
-    .gallery-preview img {
-      max-width: 100%;
-      max-height: 100%;
-      width: auto;
-      height: auto;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      background: #020617;
-      image-rendering: auto;
-      margin: auto;
+
+    .site-header {
+      padding: 28px 0 12px;
     }
-    .gallery-preview img.is-widescreen-fit {
-      object-fit: contain;
-    }
-    .gallery-preview img.is-portrait-crop {
-      object-fit: cover;
-      object-position: center;
-      aspect-ratio: 1 / 1;
-      height: auto;
-      max-height: 100%;
-      align-self: center;
-    }
-    .gallery-thumbs {
-      display: grid;
-      grid-template-columns: repeat(var(--gallery-cols, 1), minmax(0, 1fr));
-      grid-template-rows: repeat(var(--gallery-rows, 1), minmax(0, 1fr));
-      gap: 0;
-      min-width: 0;
-      max-width: 100%;
-      align-items: stretch;
-      align-content: stretch;
-      overflow: hidden;
-      contain: layout paint;
-      position: relative;
-      z-index: 2;
-      padding-left: 0;
-    }
-    .gallery-thumbs .gallery-item {
-      aspect-ratio: auto;
-      height: 100%;
-      min-height: 0;
-    }
-    .gallery-item { 
-      background: rgba(255, 255, 255, 0.02);
-      border: 0;
-      border-left: 1px solid rgba(255, 255, 255, 0.08);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 0; 
-      overflow: hidden;
-      position: relative;
+
+    .topbar {
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 10px 14px 10px 18px;
+      background: rgba(255, 253, 248, 0.72);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 10px 35px -30px rgba(0, 0, 0, 0.45);
+    }
+
+    .topbar-name {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .topbar-name strong {
+      font-size: 0.97rem;
+      letter-spacing: 0.02em;
+    }
+
+    .topbar-name span,
+    .topbar-nav a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .topbar-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 16px;
+    }
+
+    .topbar-nav a {
+      padding: 8px 0;
+      border-radius: 999px;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+
+    .topbar-nav a:hover {
+      color: var(--accent);
+      background: rgba(14, 90, 99, 0.06);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding: 34px 0 22px;
+    }
+
+    .panel,
+    .feature-card,
+    .publication-card,
+    .timeline-card,
+    .archive-card,
+    .highlight-panel,
+    .loader-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-copy {
+      padding: 34px;
+      display: grid;
+      gap: 20px;
+      background:
+        radial-gradient(circle at top right, rgba(177, 125, 47, 0.16), transparent 28%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.12)),
+        var(--surface);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(14, 90, 99, 0.18);
+      background: rgba(14, 90, 99, 0.08);
+      color: var(--accent-strong);
+      font-size: 0.77rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(177, 125, 47, 0.12);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .hero-kicker {
+      font-family: "Newsreader", serif;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(3.2rem, 7vw, 6rem);
+      max-width: 9.4ch;
+    }
+
+    .hero-kicker {
+      font-size: 1.35rem;
+      color: var(--accent-strong);
+    }
+
+    .hero-copy p {
+      margin: 0;
+      font-size: 1.04rem;
+      color: var(--muted);
+      max-width: 64ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      aspect-ratio: var(--repo-aspect, 1 / 1);
-      min-width: 0;
-      min-height: 0;
-      transition: transform 0.28s ease, border-color 0.28s ease, opacity 0.28s ease, box-shadow 0.28s ease;
-      background:
-        radial-gradient(circle at top, rgba(148, 163, 184, 0.08), transparent 52%),
-        rgba(255, 255, 255, 0.02);
-    }
-    .gallery-thumbs:hover .gallery-item {
-      opacity: 0.72;
-      transform: none;
-    }
-    .gallery-thumbs .gallery-item:hover,
-    .gallery-item.is-active {
-      opacity: 1;
-      box-shadow: inset 0 0 0 1px rgba(147, 197, 253, 0.35);
-      transform: none;
-      z-index: 2;
-    }
-    .gallery-item img { 
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      background: #020617;
-      image-rendering: auto;
-    }
-    .gallery-item.is-widescreen-fit img {
-      object-fit: contain;
-    }
-    .gallery-item.is-portrait-crop {
-      aspect-ratio: 1 / 1;
-    }
-    .gallery-item.is-portrait-crop img {
-      object-fit: cover;
-      object-position: center;
-    }
-    .gallery-trigger,
-    .thumb-trigger {
-      width: 100%;
-      border: 0;
-      padding: 0;
-      margin: 0;
-      background: transparent;
-      color: inherit;
-      text-align: left;
-      cursor: pointer;
-      display: block;
-    }
-    .gallery-details {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 22px;
-      display: grid;
-      align-content: start;
-      gap: 14px;
-    }
-    .gallery-title {
-      margin: 0;
-      font-size: 1.35rem;
-      line-height: 1.25;
-      color: #fff;
-    }
-    .gallery-copy {
-      margin: 0;
-      font-size: 0.96rem;
-      line-height: 1.55;
-      color: #cbd5e1;
-    }
-    .project-section-badge {
-      align-self: flex-start;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #cbd5e1;
-      padding: 6px 10px;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 18px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
+      border: 1px solid transparent;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     }
 
-    .controls { display: flex; gap: 15px; margin: 40px 0; padding: 15px; background: rgba(255,255,255,0.02); border-radius: 16px; border: 1px solid var(--border); }
-    input, select { background: transparent; border: 1px solid var(--border); color: var(--text-main); padding: 12px; border-radius: 10px; outline: none; flex-grow: 1; }
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 28px -24px rgba(0, 0, 0, 0.5);
+    }
 
-    /* Ensure native <select> dropdown text is readable */
-    select option { color: var(--text-main); background-color: var(--bg); }
-    select optgroup { color: var(--text-main); background-color: var(--bg); }
-    /* Improve placeholder visibility on dark background */
-    input::placeholder { color: var(--text-dim); opacity: 1; }
+    .button-primary {
+      background: var(--accent);
+      color: #f6f6f2;
+    }
 
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; align-items: stretch; }
-    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; backdrop-filter: blur(12px); transition: border-color 0.25s ease, transform 0.25s ease; display: flex; flex-direction: column; position: relative; height: 100%; }
-    .card.is-expanded { border-color: var(--accent); transform: translateY(-4px); }
-    
-    .thumb-container { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; overflow: hidden; z-index: 2; }
-    .thumb-frame {
-      width: 100%;
-      height: 100%;
+    .button-secondary {
+      background: rgba(255, 255, 255, 0.5);
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .hero-facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .fact-pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.48);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 16px;
+    }
+
+    .portrait-card {
+      padding: 18px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .portrait-placeholder {
+      aspect-ratio: 4 / 5;
+      border-radius: 24px;
+    }
+
+    .placeholder {
+      position: relative;
       overflow: hidden;
-      border-radius: 24px 24px 0 0;
-      background: #000;
+      background:
+        linear-gradient(135deg, rgba(14, 90, 99, 0.07), rgba(177, 125, 47, 0.14)),
+        repeating-linear-gradient(
+          -45deg,
+          rgba(255, 255, 255, 0.1) 0,
+          rgba(255, 255, 255, 0.1) 14px,
+          rgba(0, 0, 0, 0.02) 14px,
+          rgba(0, 0, 0, 0.02) 28px
+        );
+      border: 1px dashed rgba(14, 90, 99, 0.22);
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      min-height: 100%;
     }
-    .thumb { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.6s ease; }
-    .skill-popover-list {
+
+    .placeholder::after {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border-radius: inherit;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      pointer-events: none;
+    }
+
+    .placeholder-content {
+      display: grid;
+      gap: 8px;
+      text-align: center;
+      max-width: 18rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .placeholder-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 800;
+      color: var(--accent-strong);
+    }
+
+    .placeholder-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .portrait-meta {
+      display: grid;
+      gap: 12px;
+    }
+
+    .portrait-meta strong {
+      font-size: 1rem;
+    }
+
+    .portrait-meta span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric-card {
+      padding: 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.42);
+      min-height: 128px;
+      display: grid;
+      align-content: space-between;
+      gap: 10px;
+    }
+
+    .metric-label {
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .metric-value {
+      font-family: "Newsreader", serif;
+      font-size: 2.35rem;
+      line-height: 0.95;
+    }
+
+    .metric-copy {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    main {
+      padding: 12px 0 80px;
+    }
+
+    section {
+      margin-top: 34px;
+    }
+
+    section + section {
+      padding-top: 10px;
+    }
+
+    .section-heading {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .section-heading::before {
+      content: "";
+      width: 84px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      margin-bottom: 2px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2.05rem, 4vw, 3rem);
+    }
+
+    .section-heading p {
+      max-width: 70ch;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 22px;
+    }
+
+    .current-role-card,
+    .profile-card {
+      padding: 28px;
+      display: grid;
+      gap: 20px;
+    }
+
+    .role-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .role-head h3,
+    .feature-copy h3,
+    .publication-card h3,
+    .timeline-card h3,
+    .archive-card h3 {
+      font-size: 1.65rem;
+    }
+
+    .role-meta,
+    .mini-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .meta-chip,
+    .stack-chip,
+    .tag-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(14, 90, 99, 0.08);
+      border: 1px solid rgba(14, 90, 99, 0.12);
+      font-size: 0.83rem;
+      color: var(--accent-strong);
+      font-weight: 700;
+      width: fit-content;
+    }
+
+    .meta-chip.is-warm,
+    .tag-chip {
+      background: rgba(177, 125, 47, 0.1);
+      border-color: rgba(177, 125, 47, 0.14);
+      color: #8b5d17;
+    }
+
+    .bullet-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .bullet-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.66em;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--gold);
+    }
+
+    .stack-row,
+    .tag-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
-    .skill-pill {
-      font-size: 0.73rem;
-      line-height: 1.2;
-      color: #e5eefc;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(79, 124, 255, 0.12);
-      border: 1px solid rgba(79, 124, 255, 0.18);
+
+    .highlight-panel {
+      padding: 24px;
+      display: grid;
+      gap: 18px;
+      background:
+        linear-gradient(180deg, rgba(14, 90, 99, 0.1), rgba(255, 255, 255, 0.18)),
+        var(--surface);
     }
-    .expand-panel {
+
+    .highlight-panel .placeholder {
+      aspect-ratio: 16 / 8;
+      border-radius: 22px;
+    }
+
+    .highlight-panel p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .feature-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .feature-card {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.92fr) minmax(0, 1.08fr);
+      overflow: hidden;
+      min-height: 320px;
+      max-height: 450px;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .feature-card:hover,
+    .archive-card:hover,
+    .timeline-card:hover,
+    .publication-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 72px -42px rgba(45, 35, 24, 0.45);
+      border-color: var(--line-strong);
+    }
+
+    .feature-card.is-active {
+      min-height: 220px;
+      grid-template-columns: 200px 1fr !important;
+    }
+    .feature-card.is-active .feature-copy {
+      padding: 20px 26px;
+      gap: 10px;
+    }
+    .feature-card.is-active h3 {
+      font-size: 1.38rem;
+    }
+    .feature-card.is-active .bullet-list {
+      gap: 8px;
+    }
+
+    .feature-card:nth-child(even) {
+      grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.92fr);
+    }
+
+    .feature-card:nth-child(even) .feature-media {
+      order: 2;
+    }
+
+    .feature-card:nth-child(even) .feature-copy {
+      order: 1;
+    }
+
+    .feature-media {
+      position: relative;
+      min-height: 100%;
+      background: linear-gradient(180deg, rgba(14, 90, 99, 0.08), rgba(0, 0, 0, 0.04));
+    }
+
+    .feature-media::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 42%;
+      background: linear-gradient(180deg, rgba(10, 10, 10, 0), rgba(10, 10, 10, 0.14));
+      pointer-events: none;
+    }
+
+    .feature-media img,
+    .feature-media .placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .feature-media .placeholder {
+      border: 0;
+      border-right: 1px solid var(--line);
+      border-radius: 0;
+      min-height: 100%;
+    }
+
+    .feature-copy {
+      padding: 28px;
       display: grid;
       align-content: start;
-      gap: 14px;
-      padding: 0 18px 18px;
-      max-height: 0;
-      opacity: 0;
-      overflow: hidden;
-      transition: max-height 0.28s ease, opacity 0.22s ease, padding-top 0.22s ease;
+      gap: 15px;
     }
-    .card.card-static .expand-panel {
-      flex: 1 1 auto;
+
+    .feature-copy p {
+      margin: 0;
+      color: var(--muted);
     }
-    .expand-panel[data-side="right"] {
-      border-left: 3px solid rgba(79, 124, 255, 0.3);
+
+    .feature-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
     }
-    .expand-panel[data-side="left"] {
-      border-right: 3px solid rgba(79, 124, 255, 0.3);
+
+    .link-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.52);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
     }
-    .card.is-expanded .expand-panel,
-    .card.card-static .expand-panel,
-    .gallery-details .expand-panel,
-    .gallery-item.is-expanded .expand-panel {
-      max-height: 420px;
-      opacity: 1;
-      padding-top: 16px;
+
+    .link-chip:hover {
+      border-color: var(--line-strong);
     }
-    .card.card-static .expand-panel {
-      max-height: none;
+
+    .timeline {
+      display: grid;
+      gap: 16px;
     }
-    .gallery-details .expand-panel {
-      max-height: none;
-      padding: 0;
-      border: 0;
+
+    .timeline-card {
+      padding: 24px 26px;
+      display: grid;
+      grid-template-columns: minmax(190px, 0.55fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: stretch;
     }
-    .expand-meta {
+
+    .timeline-rail {
       display: grid;
       align-content: start;
       gap: 12px;
+      padding-right: 6px;
+      border-right: 1px solid rgba(58, 49, 41, 0.1);
     }
-    .expand-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-    }
-    .expand-url {
-      color: #93c5fd;
-      word-break: break-all;
-      text-decoration: none;
-      font-size: 0.88rem;
-    }
-    .expand-url:hover { text-decoration: underline; }
-    @media (max-width: 900px) {
-      .hero-summary {
-        grid-template-columns: 1fr;
-      }
-      .gallery-row {
-        grid-template-columns: 1fr;
-      }
-      .gallery-media {
-        grid-template-columns: 1fr;
-      }
-      .gallery-preview {
-        min-height: 220px;
-      }
-      .gallery-media.is-single {
-        grid-template-columns: 1fr;
-      }
-      .gallery-thumbs {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-rows: none;
-      }
-      .gallery-item,
-      .gallery-thumbs:hover .gallery-item,
-      .gallery-thumbs .gallery-item:hover,
-      .gallery-item.is-active {
-        opacity: 1;
-        transform: none;
-      }
-      .expand-panel[data-side="right"],
-      .expand-panel[data-side="left"] {
-        border-left: 0;
-        border-right: 0;
-        border-top: 3px solid rgba(79, 124, 255, 0.3);
-      }
-    }
-    
-    .card-body { padding: 24px; display: flex; flex-direction: column; gap: 12px; flex-grow: 0; }
-    .card-title {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.25rem;
-      display: block;
-      line-height: 1.3;
-      min-height: calc(1.3em * 2);
-      align-content: start;
-    }
-    .desc { font-size: 0.95rem; color: var(--text-dim); line-height: 1.5; }
-    
-    footer { padding: 80px 24px 40px; text-align: center; color: var(--text-dim); font-size: 0.85rem; }
 
-    /* Loading state */
-    #loader { text-align: center; padding: 50px; color: var(--accent); font-weight: bold; }
+    .timeline-period {
+      font-family: "Newsreader", serif;
+      font-size: 1.3rem;
+      line-height: 1.08;
+    }
+
+    .timeline-location {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .timeline-body {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-summary {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .timeline-media {
+      width: min(240px, 100%);
+      aspect-ratio: 16 / 9;
+      border-radius: 18px;
+    }
+
+    .publication-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 18px;
+    }
+
+    .publication-column {
+      display: grid;
+      gap: 16px;
+    }
+
+    .publication-card {
+      padding: 24px 26px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .publication-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .archive-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .archive-tools input,
+    .archive-tools select {
+      min-height: 50px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.62);
+      padding: 0 16px;
+      color: var(--text);
+    }
+
+    .archive-tools input {
+      flex: 1 1 320px;
+    }
+
+    .archive-tools select {
+      flex: 0 0 220px;
+    }
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 16px;
+    }
+
+    .archive-card {
+      overflow: hidden;
+      display: grid;
+      min-height: 100%;
+      transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+    }
+
+    .archive-media {
+      aspect-ratio: 16 / 9;
+      background: var(--surface-ink);
+    }
+
+    .archive-media img,
+    .archive-media .placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .archive-media .placeholder {
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+    }
+
+    .archive-copy {
+      padding: 20px;
+      display: grid;
+      align-content: start;
+      gap: 12px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.12)),
+        transparent;
+    }
+
+    .archive-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .archive-copy .tag-row {
+      margin-top: 2px;
+    }
+
+    .loader-card {
+      padding: 36px 28px;
+      text-align: center;
+    }
+
+    .loader-card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .section-anchor {
+      position: relative;
+      top: -30px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: rise 0.65s ease forwards;
+    }
+
+    @keyframes rise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      padding: 12px 0 46px;
+    }
+
+    .footer-card {
+      padding: 18px 22px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.5);
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1040px) {
+      .hero,
+      .profile-grid,
+      .publication-grid,
+      .feature-card {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card:nth-child(even) .feature-media,
+      .feature-card:nth-child(even) .feature-copy {
+        order: initial;
+      }
+
+      .feature-media .placeholder {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .timeline-card {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-rail {
+        border-right: 0;
+        border-bottom: 1px solid rgba(58, 49, 41, 0.1);
+        padding-right: 0;
+        padding-bottom: 12px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      body {
+        font-size: 15px;
+      }
+
+      .shell {
+        width: min(var(--container), calc(100% - 20px));
+      }
+
+      .site-header {
+        padding-top: 18px;
+      }
+
+      .topbar {
+        border-radius: 24px;
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .topbar-nav {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .topbar-nav a {
+        text-align: center;
+        padding: 10px 12px;
+        background: rgba(255, 255, 255, 0.56);
+        border: 1px solid var(--line);
+      }
+
+      .hero-copy,
+      .current-role-card,
+      .profile-card,
+      .publication-card,
+      .highlight-panel,
+      .feature-copy {
+        padding: 22px;
+      }
+
+      .portrait-card {
+        padding: 16px;
+      }
+
+      .metrics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .archive-tools select {
+        flex-basis: 100%;
+      }
+
+      h1 {
+        font-size: clamp(2.55rem, 12vw, 3.8rem);
+        max-width: 8.6ch;
+        line-height: 0.94;
+      }
+
+      .hero-kicker {
+        font-size: 1.12rem;
+      }
+
+      .hero-copy p {
+        font-size: 0.98rem;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .feature-copy h3,
+      .publication-card h3,
+      .timeline-card h3,
+      .archive-card h3,
+      .role-head h3 {
+        font-size: 1.42rem;
+      }
+
+      .feature-media {
+        min-height: 240px;
+      }
+
+      .feature-copy {
+        gap: 13px;
+      }
+
+      .tag-row,
+      .stack-row,
+      .feature-links {
+        gap: 9px;
+      }
+
+      .footer-card {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-nav {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    [data-theme="dark"] {
+      --bg: #121212;
+      --bg-soft: #181818;
+      --surface: rgba(30, 30, 30, 0.84);
+      --surface-strong: #242424;
+      --surface-ink: #2a2a2a;
+      --line: rgba(255, 255, 255, 0.14);
+      --line-strong: rgba(255, 255, 255, 0.24);
+      --text: #e0e0e0;
+      --muted: #a0a0a0;
+      --accent: #5abecd;
+      --accent-strong: #85d8e3;
+      --accent-soft: rgba(90, 190, 205, 0.15);
+      --gold: #dfac5a;
+      --shadow: 0 22px 70px -38px rgba(0, 0, 0, 0.8);
+    }
+    [data-theme="dark"] body {
+      background:
+        radial-gradient(circle at top left, rgba(223, 172, 90, 0.08), transparent 32%),
+        radial-gradient(circle at right 20%, rgba(90, 190, 205, 0.08), transparent 28%),
+        linear-gradient(180deg, #181818 0%, #121212 40%, #0a0a0a 100%);
+    }
+    [data-theme="dark"] .page-frame::before { background: rgba(90, 190, 205, 0.12); }
+    [data-theme="dark"] .page-frame::after { background: rgba(223, 172, 90, 0.12); }
+    [data-theme="dark"] .topbar { background: rgba(30, 30, 30, 0.72); }
+    [data-theme="dark"] .topbar-nav a:hover { background: rgba(255, 255, 255, 0.08); }
+    [data-theme="dark"] .hero-copy, [data-theme="dark"] .highlight-panel {
+      background:
+        radial-gradient(circle at top right, rgba(223, 172, 90, 0.1), transparent 28%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+        var(--surface);
+    }
+    [data-theme="dark"] .eyebrow {
+      border-color: rgba(90, 190, 205, 0.2);
+      background: rgba(90, 190, 205, 0.1);
+    }
+    [data-theme="dark"] .eyebrow::before { box-shadow: 0 0 0 4px rgba(223, 172, 90, 0.15); }
+    [data-theme="dark"] .button-secondary { background: rgba(255, 255, 255, 0.1); }
+    [data-theme="dark"] .fact-pill, [data-theme="dark"] .metric-card, [data-theme="dark"] .footer-card { background: rgba(255, 255, 255, 0.08); }
+    [data-theme="dark"] .placeholder {
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+        repeating-linear-gradient(
+          -45deg,
+          rgba(255, 255, 255, 0.03) 0,
+          rgba(255, 255, 255, 0.03) 14px,
+          transparent 14px,
+          transparent 28px
+        );
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    [data-theme="dark"] .meta-chip, [data-theme="dark"] .stack-chip {
+      background: rgba(90, 190, 205, 0.1);
+      border-color: rgba(90, 190, 205, 0.2);
+    }
+    [data-theme="dark"] .meta-chip.is-warm, [data-theme="dark"] .tag-chip {
+      background: rgba(223, 172, 90, 0.1);
+      border-color: rgba(223, 172, 90, 0.2);
+      color: #dfac5a;
+    }
+    [data-theme="dark"] .feature-media { background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent); }
+    [data-theme="dark"] .link-chip, [data-theme="dark"] .archive-tools input, [data-theme="dark"] .archive-tools select { background: rgba(255, 255, 255, 0.08); }
+    [data-theme="dark"] .archive-copy {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01)),
+        transparent;
+    }
+    @media (max-width: 720px) {
+      [data-theme="dark"] .topbar-nav a { background: rgba(255, 255, 255, 0.08); }
+    }
+
+    .theme-toggle {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 6px 12px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+      color: inherit;
+    }
+    .theme-toggle:hover {
+      background: rgba(14, 90, 99, 0.06);
+    }
+    [data-theme="dark"] .theme-toggle:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
   </style>
 </head>
 <body>
-
-  <header class="container">
-    <span class="profile-tag">@devMuniz02</span>
-    <h1>Emmanuel Muñiz</h1>
-    <p class="hero-p">AI engineer focused on multimodal healthcare AI, retrieval systems, robotics, computer vision, and practical model deployment.</p>
-    <div id="hero-summary" class="hero-summary"></div>
-    <div class="header-actions">
-      <a class="btn btn-github" href="https://github.com/devMuniz02" target="_blank" rel="noreferrer">
-        <img
-          class="btn-badge-img"
-          src="https://img.shields.io/badge/GitHub-devMuniz02-181717?logo=github&logoColor=white"
-          alt="GitHub devMuniz02 badge">
-      </a>
-      <a id="hfBtn" class="btn btn-hf" href="#" target="_blank" rel="noreferrer">
-        <img
-          class="btn-badge-img"
-          src="https://img.shields.io/badge/Hugging%20Face-manu02-FFD21E?logo=huggingface&logoColor=yellow"
-          alt="Hugging Face manu02 badge">
-      </a>
-      <a id="liBtn" class="btn btn-linkedin" href="#" target="_blank" rel="noreferrer">
-        <img
-          class="btn-badge-img"
-          src="https://img.shields.io/badge/LinkedIn-devmuniz-0A66C2?logo=linkedin&logoColor=white"
-          alt="LinkedIn devmuniz badge">
-      </a>
-    </div>
-  </header>
-
-  <main class="container">
-    <div id="loader">Fetching latest project data...</div>
-
-    <div id="content-area" style="display: none;">
-        <div id="visual-reel-container"></div>
-
-        <div id="project-index-header"></div>
-        <div class="controls">
-          <input id="search" placeholder="Search by name, description or tag..." />
-          <select id="sort">
-            <option value="updated">Recently Updated</option>
-            <option value="stars">Most Stars</option>
-            <option value="name">A-Z</option>
-          </select>
+  <div class="page-frame">
+    <header class="site-header">
+      <div class="shell">
+        <div class="topbar">
+          <div class="topbar-name">
+            <strong>Emmanuel Muñiz</strong>
+            <span>AI Researcher • Transformer Architecture • Knowledge Representation</span>
+          </div>
+          <nav class="topbar-nav" aria-label="Section navigation">
+            <a href="#research">Research</a>
+            <a href="#trading">Trading</a>
+            <a href="#robotics">Robotics & Vision</a>
+            <a href="#timeline">Timeline</a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+          </nav>
         </div>
-        <div id="grid" class="grid"></div>
-    </div>
-  </main>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="hero fade-in">
+        <div class="hero-copy panel">
+          <span class="eyebrow">AI Research Portfolio</span>
+          <div>
+            <p class="hero-kicker">AI Researcher</p>
+            <h1>Emmanuel Muñiz</h1>
+          </div>
+          <p>
+            A curated collection of my work in Research, Trading, and Robotics. Each project entry details my process, technical implementation, and the tools utilized. Only featured repositories and their associated media are displayed here to ensure a focused overview of my technical expertise.
+          </p>
+          <div style="margin: 8px 0; display: grid; gap: 10px;">
+            <div class="tag-row">
+              <span class="tag-chip">Multimodal AI</span>
+              <span class="tag-chip">Transformers</span>
+              <span class="tag-chip">Interpretability (XAI)</span>
+              <span class="tag-chip">GenAI</span>
+              <span class="tag-chip">LLMs & SLMs</span>
+              <span class="tag-chip">Self-Supervised</span>
+              <span class="tag-chip">Reinforcement Learning</span>
+              <span class="tag-chip">CV & NLP</span>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-secondary" href="https://github.com/devMuniz02" target="_blank" rel="noreferrer">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+              GitHub
+            </a>
+            <a class="button button-secondary" href="https://huggingface.co/manu02" target="_blank" rel="noreferrer">
+              🤗 Hugging Face
+            </a>
+            <a class="button button-secondary" href="https://www.linkedin.com/in/devmuniz" target="_blank" rel="noreferrer">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M14.82 0H1.18A1.16 1.16 0 000 1.15v13.69A1.16 1.16 0 001.18 16h13.64A1.16 1.16 0 0016 14.84V1.15A1.16 1.16 0 0014.82 0zM4.74 13.64H2.37V6H4.74v7.64zM3.56 4.96A1.38 1.38 0 114.93 3.58a1.38 1.38 0 01-1.37 1.38zM13.64 13.64h-2.37V9.93c0-.88-.02-2.02-1.23-2.02-1.23 0-1.42.96-1.42 1.95v3.78H6.25V6h2.27v1.04h.03c.32-.6 1.09-1.23 2.24-1.23 2.4 0 2.84 1.58 2.84 3.63v4.2z"></path></svg>
+              LinkedIn
+            </a>
+          </div>
+          <div class="hero-facts">
+            <a href="https://arxiv.org/abs/2512.16841" target="_blank" rel="noreferrer" style="text-decoration: none; display: inline-flex; transition: opacity 0.2s ease; cursor: pointer;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">
+              <img src="https://img.shields.io/badge/arXiv-2512.16841-b31b1b.svg?style=for-the-badge" alt="arXiv Badge" style="height: 28px; border-radius: 4px;">
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="research">
+        <span class="section-anchor" aria-hidden="true"></span>
+        <div class="section-heading fade-in">
+          <h2>Research</h2>
+          <div class="section-overview" style="margin-top: 16px;">
+            <p class="muted">Medical AI research focusing on two primary domains: radiology and cerebral palsy.</p>
+          </div>
+        </div>
+        
+        <h3 style="margin: 2rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;" class="fade-in">Radiology Report Generation Research</h3>
+        <div class="section-overview" style="margin-bottom: 2rem;">
+          <p class="muted" style="margin-bottom: 0.25rem;"><strong>What I did:</strong> Developed a novel implementation distinct from current SOTA approaches to maximize information retention in radiology report generation. This led to <a href="https://huggingface.co/collections/manu02/lana" target="_blank" rel="noreferrer" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px; font-weight: 800;">LAnA ↗</a> (Layerwise Anatomical Attention), an anatomy-guided model collection that mimics a doctor's diagnostic perception. The model is lightweight, runs on a standard CPU in ~10 seconds, and has garnered over 3,000 Hugging Face downloads.</p>
+          <p class="muted" style="margin-bottom: 0.25rem;"><strong>How I did it:</strong> Rather than relying on prompt engineering, I explicitly injected segmented clinical regions into the model by modifying GPT-2's internal attention mechanisms layer-by-layer. Trained entirely on GCP under a strict $300 budget, this architectural innovation outperformed vanilla baselines and was published to arXiv and deployed as an interactive Hugging Face Space.</p>
+          <p class="muted" style="margin-bottom: 0;"><strong>What I used:</strong> PyTorch, Hugging Face (Transformers, PEFT, Accelerate), DINOv3, GPT-based Decoders, Layer-Wise Anatomical Attention, LoRA/QLoRA, Vertex AI (GCP), Docker, and NVIDIA A100.</p>
+        </div>
+        <div class="publication-card fade-in" style="margin-bottom: 1.5rem; padding: 1.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; border-left: 4px solid var(--accent);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <span class="meta-chip">Publication • December 2025</span>
+              <h4 style="margin: 0.5rem 0; font-size: 1.1rem;">Radiology Report Generation with Layer-Wise Anatomical Attention</h4>
+              <p class="muted" style="margin: 0; font-size: 0.95rem;">First Author & Lead Researcher • arXiv:2512.16841</p>
+            </div>
+            <a class="button button-secondary" href="https://arxiv.org/abs/2512.16841" target="_blank" rel="noreferrer" style="white-space: nowrap;">Read Paper ↗</a>
+          </div>
+        </div>
+        <div id="radiology-research-grid" class="feature-grid"></div>
+
+        <h3 style="margin: 3rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;" class="fade-in">Cerebral Palsy Research</h3>
+        <div class="section-overview" style="margin-bottom: 2rem;">
+          <p class="muted" style="margin-bottom: 0.25rem;"><strong>What I did:</strong> Applied advanced clustering and predictive modeling to a dataset of 4,000+ medical records to identify neonatal risk phenotypes and improve early detection of cerebral palsy.</p>
+          <p class="muted" style="margin-bottom: 0.25rem;"><strong>How I did it:</strong> Developed a robust analytical pipeline using Random Forest models for classification and K-Means/Hierarchical clustering for phenotype discovery. Validated model performance and stability using Bootstrap ARI and Silhouette metrics, achieving 92% accuracy in high-risk group identification.</p>
+          <p class="muted" style="margin-bottom: 0;"><strong>What I used:</strong> Scikit-learn, Pandas, NumPy, Random Forest, K-Means, Hierarchical Clustering, Bootstrap ARI, Silhouette Metrics, and Matplotlib/Seaborn.</p>
+        </div>
+        <div class="publication-card fade-in" style="margin-bottom: 1.5rem; padding: 1.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; border-left: 4px solid var(--accent);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <span class="meta-chip">Journal Submission • 2026</span>
+              <h4 style="margin: 0.5rem 0; font-size: 1.1rem;">Neonatal Risk Phenotypes for Cerebral Palsy Based on Integrated Perinatal Exposures: A Cohort Study</h4>
+              <p class="muted" style="margin: 0; font-size: 0.95rem;">Co-Author • European Journal of Paediatric Neurology</p>
+            </div>
+          </div>
+        </div>
+        <div id="cp-research-grid" class="feature-grid"></div>
+      </section>
+
+      <section id="trading">
+        <span class="section-anchor" aria-hidden="true"></span>
+        <div class="section-heading fade-in">
+          <h2>Trading Projects</h2>
+          <div class="section-overview" style="margin-top: 16px;">
+            <p class="muted"><strong>What I did:</strong> Developed systematic, probability-driven automated trading strategies and portfolio management algorithms.</p>
+            <p class="muted"><strong>How I did it:</strong> By applying reinforcement learning for dynamic portfolio balancing and training deep sequential models on time-series and sentiment data.</p>
+            <p class="muted"><strong>What I used:</strong> Reinforcement Learning (Stable Baselines3), OpenAI Gymnasium, LSTMs, Time Series Modeling, VADER (Sentiment Analysis), and Python/Pandas.</p>
+          </div>
+        </div>
+        <div id="trading-grid" class="feature-grid"></div>
+      </section>
+
+      <section id="robotics">
+        <span class="section-anchor" aria-hidden="true"></span>
+        <div class="section-heading fade-in">
+          <h2>Robotics & Vision</h2>
+          <div class="section-overview" style="margin-top: 16px;">
+            <p class="muted"><strong>What I did:</strong> Built autonomous navigation, physical manipulation, and real-time computer vision tracking systems.</p>
+            <p class="muted"><strong>How I did it:</strong> Integrated software models with physical actuators (UR3e, omnidirectional cars) and simulated environments (AirSim) using real-time visual feedback loops.</p>
+            <p class="muted"><strong>What I used:</strong> Computer Vision, OpenCV, YOLO, ROS, Universal Robots SDK, PID Controllers, Path Planning, and Arduino/C++.</p>
+          </div>
+        </div>
+        <div id="robotics-grid" class="feature-grid"></div>
+      </section>
+
+      <section id="timeline">
+        <span class="section-anchor" aria-hidden="true"></span>
+        <div class="section-heading fade-in">
+          <h2>Experience timeline</h2>
+          <p>Resume-backed roles and research milestones.</p>
+        </div>
+        <div id="timeline-grid" class="timeline"></div>
+      </section>
+    </main>
+
+    <footer class="shell">
+      <div class="footer-card">
+        <span>Emmanuel Muñiz • AI Research Portfolio</span>
+        <span id="footer-note">Resume updated April 2026 • Portfolio powered by static GitHub Pages data.</span>
+      </div>
+    </footer>
+  </div>
 
   <script>
-    async function main() {
-      try {
-        // Fetch the pre-generated data file from your repo
-        const res = await fetch("data.json", { cache: "no-store" });
-        if (!res.ok) throw new Error("Data file not found. Ensure GitHub Action has run successfully.");
-        
-        const data = await res.json();
-        // Try loading optional local config overrides (e.g., starred repos)
-        let config = {};
-        try {
-          const confRes = await fetch("config.local.json", { cache: "no-store" });
-          if (confRes.ok) config = await confRes.json();
-        } catch {}
-        const repos = data.projects;
-        const sectionSkills = config.sectionSkills || {};
-        const projectSkills = config.projectSkills || {};
+    const RADIOLOGY_REPOS = [
+      "layer-wise-anatomical-attention",
+      "DINOv3-Interactive-Patch-Cosine-Similarity",
+      "Token-Attention-Viewer"
+    ];
 
-        // Hide loader and show content
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("content-area").style.display = "block";
-        
-        // Update Social Links from data.json
-        if (data.huggingface) document.getElementById("hfBtn").href = data.huggingface;
-        if (data.linkedin) document.getElementById("liBtn").href = data.linkedin;
+    const CP_REPOS = [];
 
-        function escapeHtml(value) {
-          return String(value).replace(/[&<>"']/g, char => ({
-            "&": "&amp;",
-            "<": "&lt;",
-            ">": "&gt;",
-            "\"": "&quot;",
-            "'": "&#39;"
-          }[char]));
-        }
+    const TRADING_REPOS = [
+      "my-trade-portfolio",
+      "Reinforcement-Learning-Stock-Porfolio-Managment",
+      "btc-hourly-tournament",
+      "Stock-prediction-LSTM-Sentiment-Analysis-Python"
+    ];
 
-        function renderSectionHeader(title, repoCount = null) {
-          const skills = Array.isArray(sectionSkills[title]) ? sectionSkills[title] : [];
-          const countHtml = typeof repoCount === "number"
-            ? `<span class="section-count">${repoCount} project${repoCount === 1 ? "" : "s"}</span>`
-            : "";
-          const skillsHtml = skills.length
-            ? `<div class="section-skills">${skills.map(skill => `<span class="section-skill">${escapeHtml(skill)}</span>`).join('')}</div>`
-            : "";
+    const ROBOTICS_REPOS = [
+      "Autonomous-warehouse-car",
+      "Robot-3-DOF-Reinforcement-learning-control",
+      "ball-beam-vision",
+      "Self-Drive-Airism"
+    ];
 
-          return `
-            <div class="section-header">
-              <div class="section-heading">
-                <h2>${escapeHtml(title)}</h2>
-                <div class="section-meta">${countHtml}</div>
-                ${skillsHtml}
-              </div>
-              <div class="line"></div>
-            </div>
-          `;
-        }
+    const PROJECT_DETAILS = {
+      // Research
+      "layer-wise-anatomical-attention": {
+        title: "LAnA: Layer-Wise Anatomical Attention",
+        fit: "contain",
+        process: "First-author thesis research focused on integrating DINOv3 with GPT-based decoders for multimodal chest X-ray report generation.",
+        implementation: "Developed an anatomy-guided attention control layer that targets clinically relevant regions to improve accuracy and grounding without excessive parameter counts.",
+        tools: "PyTorch, Transformers, DINOv3, Vertex AI, Hugging Face"
+      },
+      "DINOv3-Interactive-Patch-Cosine-Similarity": {
+        process: "Developed an interactive analysis environment for exploring self-supervised vision models.",
+        implementation: "Mapped patch-level similarity behavior to uncover localized representation patterns in DINOv3.",
+        tools: "Python, Gradio, Vision Transformers"
+      },
+      "Token-Attention-Viewer": {
+        process: "Created a viewer for explaining model focus patterns token by token.",
+        implementation: "Extracted and mapped self-attention weights inside transformer layers during autoregressive generation.",
+        tools: "Transformers, Attention Mechanisms, Interpretability Tools"
+      },
+      // Trading
+      "my-trade-portfolio": {
+        process: "Systematized trading logic based purely on statistical probabilities rather than market speculation.",
+        implementation: "Developed a portfolio tracking system to log daily, weekly, and all-time PnL and trade counts.",
+        tools: "Python, Pandas, Financial APIs"
+      },
+      "Reinforcement-Learning-Stock-Porfolio-Managment": {
+        process: "Explored RL for automated portfolio balancing and trade execution.",
+        implementation: "Trained an RL agent to maximize expected returns while managing risk across multiple assets.",
+        tools: "Reinforcement Learning, Stable Baselines3, OpenAI Gym"
+      },
+      "btc-hourly-tournament": {
+        process: "Created a predictive tournament model for short-term BTC price action.",
+        implementation: "Engineered a time-series forecasting model operating on hourly intervals to generate trade signals.",
+        tools: "Machine Learning, Time Series Analysis"
+      },
+      "Stock-prediction-LSTM-Sentiment-Analysis-Python": {
+        process: "Combined market sentiment with historical price data for next-day predictions.",
+        implementation: "Built an LSTM network processing historical prices and a sentiment analyzer parsing general market news.",
+        tools: "LSTM, Keras, Sentiment Analysis, Web Scraping"
+      },
+      // Robotics
+      "Autonomous-warehouse-car": {
+        process: "Designed an autonomous routing system for a warehouse environment.",
+        implementation: "Integrated a Hiwonder omnidirectional car with a Universal Robot UR3e for automated pick-and-place routing.",
+        tools: "Robotics, Path Planning, UR3e SDK",
+        position: "top"
+      },
+      "Robot-3-DOF-Reinforcement-learning-control": {
+        process: "Applied reinforcement learning for precise robotic arm control.",
+        implementation: "Utilized stable baselines to train a policy for a 3-DOF robot arm to consistently reach target coordinates.",
+        tools: "RL, Stable Baselines, Kinematics Simulation"
+      },
+      "ball-beam-vision": {
+        process: "Engineered a real-time stabilization system using computer vision feedback.",
+        implementation: "Implemented a PID controller combined with MPU-6050 tilt sensing and OpenCV ball tracking.",
+        tools: "Arduino, Python, OpenCV, PID Control"
+      },
+      "Self-Drive-Airism": {
+        process: "Built a lane detection and tracking pipeline for autonomous vehicles in simulation.",
+        implementation: "Used OpenCV to process Unreal Engine feeds via color filtering, perspective transforms, and polynomial fitting.",
+        tools: "Microsoft AirSim, OpenCV, Autonomous Navigation"
+      }
+    };
 
-        function formatProjectName(name) {
-          const cleaned = String(name).replace(/[-_]+/g, " ").trim();
-          return cleaned ? cleaned.charAt(0).toUpperCase() + cleaned.slice(1) : "";
-        }
+    const CURRENT_PROJECTS = {
+      radiology: {
+        name: "Testing Gemma 3 Implementation",
+        process: "Currently investigating Gemma 3 architecture for processing multimodal inputs.",
+        implementation: "Developing a new prompt training structure to handle multiple high-res images and previous clinical reports simultaneously.",
+        tools: "Gemma 3, PyTorch, Accelerate, Multimodal Learning, Prompt Engineering",
+        url: "#",
+        assets: []
+      },
 
-        let staredrepos = config.staredrepos || {};
-        if (Array.isArray(staredrepos)) {
-          staredrepos = { "Visual Reel": staredrepos };
-        }
-        const sectionByRepo = new Map();
-        Object.entries(staredrepos).forEach(([section, repoList]) => {
-          repoList.forEach(repoName => sectionByRepo.set(repoName, section));
-        });
-        const trackedRepoNames = new Set(Object.values(staredrepos).flat());
-        const focusAreas = Object.keys(staredrepos).length;
-        const totalProjects = repos.length;
+      trading: {
+        name: "Live Trading Strategy",
+        process: "Currently working on deploying an automated live trading strategy.",
+        implementation: "Connecting real-time data feeds to a low-latency execution engine for live market deployment.",
+        tools: "WebSockets, Python, Exchange APIs",
+        url: "#",
+        assets: []
+      }
+    };
 
-        document.getElementById("hero-summary").innerHTML = `
-          <div class="hero-stat">
-            <span class="hero-stat-value">${totalProjects}</span>
-            <span class="hero-stat-label">Projects</span>
-            <div class="hero-stat-copy">Applied AI work across research, prototypes, automation, and deployment-oriented builds.</div>
+    const EXPERIENCE_ENTRIES = [
+      {
+        title: "AI Instructor - Samsung Innovation Campus",
+        org: "Universidad de Monterrey",
+        location: "Monterrey, México",
+        range: "January 2026 - Present",
+        periodLabel: "Jan 2026 - Present",
+        summary: "Teaching advanced ML/DL, mentoring student teams, and building course tooling that makes technical content searchable and deployment-ready.",
+        bullets: [
+          "Orchestrated advanced ML/DL curriculum delivery for 30 engineering students.",
+          "Directed 7 AI capstone projects from ideation to deployment.",
+          "Architected a RAG-based engine over PDFs and PPTX course content.",
+          "Implemented semantic search for real-time technical support."
+        ],
+        stack: ["Python", "TensorFlow", "Keras", "LangChain", "LlamaIndex", "OpenAI API", "ChromaDB", "Semantic Search"],
+        placeholder: "Classroom or Lab Image"
+      },
+      {
+        title: "Lead AI Researcher (First Author) - arXiv",
+        org: "Universidad de Monterrey",
+        location: "Monterrey, México",
+        range: "August 2025 - December 2025",
+        periodLabel: "Aug 2025 - Dec 2025",
+        summary: "Led publication work on anatomy-guided transformer attention for radiology report generation with clinically motivated grounding.",
+        bullets: [
+          "Published 'Radiology Report Generation with Layer-Wise Anatomical Attention' (arXiv:2512.16841).",
+          "Proposed a layer-wise anatomical attention mechanism targeting clinically relevant regions.",
+          "Improved Macro-F1 by +168% on MIMIC-CXR with a compact 250M-parameter multimodal model.",
+          "Ran evaluation and ablation studies with deployment-conscious compute decisions."
+        ],
+        stack: ["PyTorch", "Transformers", "DINOv3", "GPT", "RadGraph", "Docker", "NVIDIA A100", "Research"],
+        placeholder: "Paper Figure"
+      },
+      {
+        title: "AI Research Scientist - Automated Radiology Report Generation using Multimodal LLMs",
+        org: "Universidad de Monterrey",
+        location: "Monterrey, México",
+        range: "July 2025 - December 2025",
+        periodLabel: "Jul 2025 - Dec 2025",
+        summary: "Designed a sub-1B multimodal model linking DINOv3 to GPT-2 through lightweight adapters for chest X-ray report generation.",
+        bullets: [
+          "Built an anatomy-guided attention system focused on lungs and heart regions.",
+          "Trained on GCP for under $300 USD while maintaining strong performance.",
+          "Deployed the final model to Hugging Face Spaces for open evaluation.",
+          "Extended context and optimized training with mixed precision and adapter tuning."
+        ],
+        stack: ["PyTorch", "GPT-2", "DINOv3", "Vertex AI", "GCP", "Docker", "Hugging Face Spaces", "TensorBoard"],
+        placeholder: "Model Diagram"
+      },
+      {
+        title: "AI Research Scientist - Analysis of Cerebral Palsy Risk",
+        org: "Universidad de Monterrey",
+        location: "Monterrey, México",
+        range: "August 2024 - June 2025",
+        periodLabel: "Aug 2024 - Jun 2025",
+        summary: "Applied clustering and predictive modeling to 4,000+ medical records to study neonatal cerebral palsy risk factors.",
+        bullets: [
+          "Analyzed medical records to identify risk phenotypes through patient clustering.",
+          "Built Random Forest models reaching 92% accuracy in early high-risk detection.",
+          "Validated results using Bootstrap ARI and Silhouette metrics.",
+          "Co-authored a medical journal submission currently under review."
+        ],
+        stack: ["Scikit-learn", "Pandas", "NumPy", "Random Forest", "K-Means", "Hierarchical Clustering", "Matplotlib"],
+        placeholder: "Clinical Analysis Visual"
+      },
+      {
+        title: "Knowledge Retrieval Researcher - Multimodal RAG Suite",
+        org: "Personal",
+        location: "Monterrey, México",
+        range: "January 2026 - February 2026",
+        periodLabel: "Jan 2026 - Feb 2026",
+        summary: "Investigated retrieval methodologies covering files, PDFs, and slide decks with multimodal ingestion and local-first operation.",
+        bullets: [
+          "Built a unified ingestion engine for DOCX, XLSX, Markdown, and additional file formats.",
+          "Developed retrieval workflows aimed at studying knowledge representation and reducing hallucinations.",
+          "Engineered a vision-RAG pipeline to describe and index multimodal slide decks."
+        ],
+        stack: ["LangChain", "LlamaIndex", "OpenAI API", "ChromaDB", "Representation Learning", "Knowledge Embedding"],
+        placeholder: "Product Screenshot"
+      },
+      {
+        title: "Vision Transformer Researcher - DINOv3 Similarity Visualizer",
+        org: "Personal",
+        location: "Monterrey, México",
+        range: "August 2025 - September 2025",
+        periodLabel: "Aug 2025 - Sep 2025",
+        summary: "Created an interactive visual analysis tool for studying DINOv3 patch embeddings and local cosine similarity structure.",
+        bullets: [
+          "Mapped patch-level similarity behavior in real time to understand attention mechanics.",
+          "Built an explainability interface for localized feature clusters.",
+          "Deployed a benchmarking app to Hugging Face Spaces for community access."
+        ],
+        stack: ["PyTorch", "DINOv3", "Cosine Similarity", "Vision Transformers", "Attention Interpretability"],
+        placeholder: "Demo Screenshot"
+      }
+    ];
+
+    const PUBLICATIONS = [
+      {
+        label: "arXiv",
+        title: "Radiology Report Generation with Layer-Wise Anatomical Attention",
+        meta: "December 2025 • First Author and Lead Researcher",
+        description: "Publication introducing a clinically grounded attention strategy for chest X-ray report generation.",
+        href: "https://arxiv.org/abs/2512.16841"
+      },
+      {
+        label: "Journal Submission",
+        title: "Neonatal Risk Phenotypes for Cerebral Palsy Based on Integrated Perinatal Exposures: A Cohort Study",
+        meta: "2026 • Under review at the European Journal of Paediatric Neurology",
+        description: "Co-authored medical research on cerebral palsy risk phenotyping using integrated clinical exposure analysis.",
+        href: "https://www.linkedin.com/in/devmuniz/details/certifications"
+      }
+    ];
+
+    const CURRENT_ROLE_STACK = [
+      "Python",
+      "PyTorch",
+      "Transformers",
+      "Representation Learning",
+      "Attention Mechanisms",
+      "Deep Learning Theory",
+      "LangChain",
+      "OpenAI API",
+      "ChromaDB"
+    ];
+
+    const themeToggle = document.getElementById("theme-toggle");
+    
+    function updateToggleIcon() {
+      if (document.documentElement.getAttribute("data-theme") === "dark") {
+        themeToggle.textContent = "☀️";
+      } else {
+        themeToggle.textContent = "🌙";
+      }
+    }
+    
+    updateToggleIcon();
+
+    themeToggle.addEventListener("click", () => {
+      let theme = document.documentElement.getAttribute("data-theme");
+      if (theme === "dark") {
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("theme", "light");
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+      }
+      updateToggleIcon();
+    });
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "\"": "&quot;",
+        "'": "&#39;"
+      }[char]));
+    }
+
+    function formatProjectName(name) {
+      const cleaned = String(name || "").replace(/[-_]+/g, " ").trim();
+      return cleaned ? cleaned.charAt(0).toUpperCase() + cleaned.slice(1) : "";
+    }
+
+    function formatMonthYear(isoDate) {
+      if (!isoDate) return "Date unavailable";
+      const date = new Date(isoDate);
+      return new Intl.DateTimeFormat("en", { month: "short", year: "numeric" }).format(date);
+    }
+
+    function formatDuration(startYear, startMonthIndex) {
+      const start = new Date(startYear, startMonthIndex, 1);
+      const now = new Date();
+      let months = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth());
+      if (months < 0) months = 0;
+      const years = Math.floor(months / 12);
+      const remainingMonths = months % 12;
+      const parts = [];
+      if (years > 0) parts.push(`${years} yr${years === 1 ? "" : "s"}`);
+      if (remainingMonths > 0 || !parts.length) parts.push(`${remainingMonths} mo${remainingMonths === 1 ? "" : "s"}`);
+      return parts.join(" ");
+    }
+
+    function metricCard(label, value, copy) {
+      return `
+        <div class="metric-card fade-in">
+          <span class="metric-label">${escapeHtml(label)}</span>
+          <span class="metric-value">${escapeHtml(value)}</span>
+          <p class="metric-copy">${escapeHtml(copy)}</p>
+        </div>
+      `;
+    }
+
+    function stackChips(items, className = "stack-chip", maxItems = items.length) {
+      return items.slice(0, maxItems).map(item => `<span class="${className}">${escapeHtml(item)}</span>`).join("");
+    }
+
+    function placeholderMarkup(label, copy) {
+      return `
+        <div class="placeholder">
+          <div class="placeholder-content">
+            <div class="placeholder-label">${escapeHtml(label)}</div>
+            <p class="placeholder-copy">${escapeHtml(copy)}</p>
           </div>
-          <div class="hero-stat hero-stat-primary">
-            <span class="hero-stat-value">${focusAreas}</span>
-            <span class="hero-stat-label">Focus Areas</span>
-            <div class="hero-focus-list">
-              <span class="hero-focus-pill">Healthcare AI</span>
-              <span class="hero-focus-pill">NLP</span>
-              <span class="hero-focus-pill">RL</span>
-              <span class="hero-focus-pill">Finance</span>
-              <span class="hero-focus-pill">Robotics</span>
-              <span class="hero-focus-pill">Computer Vision</span>
+        </div>
+      `;
+    }
+
+    function getProjectSkills(repo, config, sectionByRepo) {
+      const projectSkills = config.projectSkills || {};
+      const sectionSkills = config.sectionSkills || {};
+      const result = [];
+      const seen = new Set();
+
+      const push = items => {
+        if (!Array.isArray(items)) return;
+        items.forEach(item => {
+          const value = String(item || "").trim();
+          if (!value) return;
+          const key = value.toLowerCase();
+          if (seen.has(key)) return;
+          seen.add(key);
+          result.push(value);
+        });
+      };
+
+      push(projectSkills[repo.name]);
+      push(repo.topics);
+
+      const section = sectionByRepo.get(repo.name);
+      if (result.length < 5 && section) push(sectionSkills[section]);
+      return result;
+    }
+
+    function renderSection(containerId, repoNames, currentProjectObj, allRepos) {
+      const repoMap = new Map(allRepos.map(repo => [repo.name, repo]));
+      let html = "";
+      
+      if (currentProjectObj) {
+        html += `
+          <article class="feature-card is-active fade-in">
+            <div class="feature-media">
+              ${placeholderMarkup("Active Development", "Currently working on")}
             </div>
+            <div class="feature-copy">
+              <span class="meta-chip is-warm">Active Project</span>
+              <h3>${escapeHtml(currentProjectObj.name)}</h3>
+              <div class="bullet-list" style="margin-top: 8px; margin-bottom: 8px;">
+                <li><strong>Process:</strong> ${escapeHtml(currentProjectObj.process)}</li>
+                <li><strong>Implementation:</strong> ${escapeHtml(currentProjectObj.implementation)}</li>
+                <li><strong>Tools:</strong> ${escapeHtml(currentProjectObj.tools)}</li>
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      html += repoNames.map(name => {
+        const repo = repoMap.get(name);
+        if (!repo) return "";
+        const details = PROJECT_DETAILS[name] || { process: repo.description, implementation: "Technical implementation.", tools: "Various" };
+        const primaryImage = Array.isArray(repo.assets) && repo.assets.length ? repo.assets[0] : "";
+        
+        let media = "";
+        if (primaryImage) {
+          let styles = [];
+          if (details.fit === "contain") {
+            styles.push("object-fit: contain", "background: var(--surface-ink)", "padding: 8px");
+          }
+          if (details.position) {
+            styles.push(`object-position: center ${details.position}`);
+          }
+          const fitStyle = styles.length ? `style="${styles.join("; ")}"` : "";
+          media = `<img src="${escapeHtml(primaryImage)}" alt="${escapeHtml(formatProjectName(repo.name))} preview" loading="lazy" decoding="async" ${fitStyle}>`;
+        } else {
+          media = placeholderMarkup("Project Screenshot", "Visual reserved for a future update.");
+        }
+
+        return `
+          <article class="feature-card fade-in">
+            <div class="feature-media">${media}</div>
+            <div class="feature-copy">
+              <h3>${escapeHtml(details.title || formatProjectName(repo.name))}</h3>
+              <div class="bullet-list" style="margin-top: 12px; margin-bottom: 16px;">
+                <li><strong>Process:</strong> ${escapeHtml(details.process)}</li>
+                <li><strong>Implementation:</strong> ${escapeHtml(details.implementation)}</li>
+                <li><strong>Tools:</strong> ${escapeHtml(details.tools)}</li>
+              </div>
+              <div class="feature-links">
+                <a class="link-chip" href="${escapeHtml(repo.url)}" target="_blank" rel="noreferrer">Repository</a>
+                ${name === "layer-wise-anatomical-attention" ? '<a class="link-chip" href="https://github.com/devMuniz02/UDEM-CXR-Reporting-Thesis-2025" target="_blank" rel="noreferrer">Thesis Repo</a>' : ""}
+                ${name === "layer-wise-anatomical-attention" ? '<a class="link-chip" href="https://huggingface.co/spaces/manu02/CXR-Findings-AI" target="_blank" rel="noreferrer">Demo</a>' : ""}
+                ${name === "layer-wise-anatomical-attention" ? '<a class="link-chip" href="https://arxiv.org/abs/2512.16841" target="_blank" rel="noreferrer">Paper</a>' : ""}
+                ${name === "layer-wise-anatomical-attention" ? '<a class="link-chip" href="https://huggingface.co/collections/manu02/lana" target="_blank" rel="noreferrer">Collection</a>' : ""}
+                ${name === "DINOv3-Interactive-Patch-Cosine-Similarity" ? '<a class="link-chip" href="https://huggingface.co/spaces/manu02/DINOv3-Interactive-Patch-Cosine-Similarity" target="_blank" rel="noreferrer">Demo</a>' : ""}
+              </div>
+            </div>
+          </article>
+        `;
+      }).filter(Boolean).join("");
+
+      const fallbackHtml = containerId === "cp-research-grid" ? "" : `
+        <div class="loader-card">
+          <strong>No projects found in this section.</strong>
+        </div>
+      `;
+      document.getElementById(containerId).innerHTML = html || fallbackHtml;
+    }
+
+    function renderTimeline() {
+      const html = EXPERIENCE_ENTRIES.map(entry => `
+        <article class="timeline-card fade-in">
+          <div class="timeline-rail">
+            <span class="meta-chip">${escapeHtml(entry.org)}</span>
+            <div class="timeline-period">${escapeHtml(entry.periodLabel)}</div>
+            <div class="timeline-location">${escapeHtml(entry.location)}</div>
+          </div>
+          <div class="timeline-body">
+            <div>
+              <h3>${escapeHtml(entry.title)}</h3>
+              <p class="timeline-summary">${escapeHtml(entry.summary)}</p>
+            </div>
+            <ul class="bullet-list">
+              ${entry.bullets.map(item => `<li>${escapeHtml(item)}</li>`).join("")}
+            </ul>
+            <div class="stack-row">${stackChips(entry.stack, "stack-chip", 7)}</div>
+          </div>
+        </article>
+      `).join("");
+
+      document.getElementById("timeline-grid").innerHTML = html;
+    }
+
+
+
+    async function loadData() {
+      const [dataResponse, configResponse] = await Promise.all([
+        fetch("data.json", { cache: "no-store" }),
+        fetch("config.local.json", { cache: "no-store" }).catch(() => null)
+      ]);
+
+      if (!dataResponse.ok) {
+        throw new Error("Unable to load data.json");
+      }
+
+      const data = await dataResponse.json();
+      let config = {};
+      if (configResponse && configResponse.ok) {
+        config = await configResponse.json();
+      }
+      return { data, config };
+    }
+
+    function hydrateStaticSections() {
+      renderTimeline();
+    }
+
+    async function main() {
+      hydrateStaticSections();
+
+      try {
+        const { data } = await loadData();
+        const repos = Array.isArray(data.projects) ? data.projects : [];
+
+        renderSection("radiology-research-grid", RADIOLOGY_REPOS, CURRENT_PROJECTS.radiology, repos);
+        renderSection("cp-research-grid", CP_REPOS, null, repos);
+        renderSection("trading-grid", TRADING_REPOS, CURRENT_PROJECTS.trading, repos);
+        renderSection("robotics-grid", ROBOTICS_REPOS, null, repos);
+      } catch (error) {
+        const fallback = `
+          <div class="loader-card">
+            <strong>Portfolio data could not be loaded.</strong>
+            <span class="muted">${escapeHtml(error.message)}</span>
           </div>
         `;
+        document.getElementById("radiology-research-grid").innerHTML = fallback;
+        document.getElementById("cp-research-grid").innerHTML = fallback;
+        document.getElementById("trading-grid").innerHTML = fallback;
+        document.getElementById("robotics-grid").innerHTML = fallback;
 
-        document.getElementById("project-index-header").innerHTML = renderSectionHeader("Project Index", totalProjects);
-
-        function getProjectSkills(repo) {
-          const mergedSkills = [];
-          const seen = new Set();
-
-          function pushSkills(list) {
-            if (!Array.isArray(list)) return;
-            list.forEach(skill => {
-              const normalized = String(skill).trim();
-              if (!normalized) return;
-              const key = normalized.toLowerCase();
-              if (seen.has(key)) return;
-              seen.add(key);
-              mergedSkills.push(normalized);
-            });
-          }
-
-          pushSkills(projectSkills[repo.name]);
-
-          const section = sectionByRepo.get(repo.name);
-          if (!mergedSkills.length && section && Array.isArray(sectionSkills[section])) {
-            pushSkills(sectionSkills[section]);
-          }
-
-          pushSkills(repo.topics);
-          return mergedSkills;
-        }
-
-        function renderExpandPanel(repo, side = "right") {
-          const skills = getProjectSkills(repo);
-          const description = repo.description || "Experimental implementation and technical research.";
-          return `
-            <div class="expand-panel" data-side="${side}">
-              <div class="expand-meta">
-                <div>
-                  <div class="expand-label">Description</div>
-                  <div class="desc">${escapeHtml(description)}</div>
-                </div>
-                <div>
-                  <div class="expand-label">Skills</div>
-                  <div class="skill-popover-list">
-                    ${skills.map(skill => `<span class="skill-pill">${escapeHtml(skill)}</span>`).join("")}
-                  </div>
-                </div>
-                <div>
-                  <div class="expand-label">Project URL</div>
-                  <a class="expand-url" href="${escapeHtml(repo.url)}" target="_blank" rel="noreferrer">${escapeHtml(repo.url)}</a>
-                </div>
-              </div>
-            </div>
-          `;
-        }
-
-        function updateExpandableSides() {
-          document.querySelectorAll("[data-expandable]").forEach(container => {
-            const panel = container.querySelector(".expand-panel");
-            if (!panel) return;
-            const rect = container.getBoundingClientRect();
-            const side = rect.left + rect.width / 2 < window.innerWidth / 2 ? "right" : "left";
-            panel.dataset.side = side;
-          });
-        }
-
-        function setupGalleryMedia(scope = document) {
-          scope.querySelectorAll(".gallery-media").forEach(media => {
-            const previewImg = media.querySelector(".gallery-preview img");
-            const images = Array.from(media.querySelectorAll(".gallery-item img"));
-            const hasThumbs = media.querySelector(".gallery-thumbs");
-            let hasHorizontalImage = false;
-            const widescreenRatio = 16 / 9;
-            const widescreenTolerance = 0.08;
-
-            const applySharedAspect = () => {
-              let maxWidth = 1;
-              let maxHeight = 1;
-
-              const sourceImages = images.length ? images : (previewImg ? [previewImg] : []);
-              sourceImages.forEach(img => {
-                if (!img.naturalWidth || !img.naturalHeight) return;
-                maxWidth = Math.max(maxWidth, img.naturalWidth);
-                maxHeight = Math.max(maxHeight, img.naturalHeight);
-                if (img.naturalWidth >= img.naturalHeight) {
-                  hasHorizontalImage = true;
-                }
-              });
-
-              const imageCount = images.length;
-              const cols = imageCount >= 7 ? 3 : imageCount >= 4 ? 2 : 1;
-              const rows = Math.ceil(imageCount / cols);
-
-              media.style.setProperty("--repo-aspect", `${maxWidth} / ${maxHeight}`);
-              media.style.setProperty("--gallery-rows", rows);
-              media.style.setProperty("--gallery-cols", cols);
-              if (images.length <= 1 || !hasThumbs) {
-                media.classList.add("is-single");
-              }
-
-              if (!images.length && previewImg) {
-                previewImg.classList.remove("is-portrait-crop");
-                previewImg.classList.remove("is-widescreen-fit");
-                if (previewImg.naturalWidth && previewImg.naturalHeight) {
-                  const ratio = previewImg.naturalWidth / previewImg.naturalHeight;
-                  if (Math.abs(ratio - widescreenRatio) <= widescreenTolerance) {
-                    previewImg.classList.add("is-widescreen-fit");
-                  }
-                }
-              } else {
-                media.querySelectorAll(".gallery-item").forEach(item => {
-                  item.classList.remove("is-portrait-crop");
-                  item.classList.remove("is-widescreen-fit");
-                  const width = Number(item.dataset.naturalWidth || 0);
-                  const height = Number(item.dataset.naturalHeight || 0);
-                  if (width && height) {
-                    const ratio = width / height;
-                    if (Math.abs(ratio - widescreenRatio) <= widescreenTolerance) {
-                      item.classList.add("is-widescreen-fit");
-                    }
-                  }
-                  if (height > width) {
-                    item.classList.add("is-portrait-crop");
-                  }
-                });
-              }
-            };
-
-            const setActiveItem = item => {
-              media.querySelectorAll(".gallery-item").forEach(node => node.classList.remove("is-active"));
-              if (!item) return;
-              item.classList.add("is-active");
-              const src = item.dataset.fullSrc;
-              const alt = item.dataset.alt || "";
-              if (previewImg && src) {
-                previewImg.src = src;
-                previewImg.alt = alt;
-                previewImg.classList.toggle("is-portrait-crop", item.classList.contains("is-portrait-crop"));
-                previewImg.classList.toggle("is-widescreen-fit", item.classList.contains("is-widescreen-fit"));
-              }
-            };
-
-            media.querySelectorAll(".gallery-item").forEach((item, index) => {
-              item.addEventListener("mouseenter", () => setActiveItem(item));
-              item.addEventListener("focusin", () => setActiveItem(item));
-              if (index === 0) setActiveItem(item);
-            });
-
-            let pending = 0;
-            images.forEach(img => {
-              const item = img.closest(".gallery-item");
-              const storeDimensions = () => {
-                if (!item || !img.naturalWidth || !img.naturalHeight) return;
-                item.dataset.naturalWidth = String(img.naturalWidth);
-                item.dataset.naturalHeight = String(img.naturalHeight);
-              };
-
-              if (!img.complete) {
-                pending += 1;
-                img.addEventListener("load", () => {
-                  storeDimensions();
-                  pending -= 1;
-                  if (pending <= 0) applySharedAspect();
-                }, { once: true });
-              } else {
-                storeDimensions();
-              }
-            });
-
-            if (!images.length && previewImg && !previewImg.complete) {
-              pending += 1;
-              previewImg.addEventListener("load", () => {
-                pending -= 1;
-                if (pending <= 0) applySharedAspect();
-              }, { once: true });
-            }
-
-            if (pending === 0) {
-              applySharedAspect();
-            }
-          });
-        }
-
-        function wireExpandables(scope = document) {
-          scope.querySelectorAll("[data-expand-trigger]").forEach(trigger => {
-            trigger.addEventListener("click", () => {
-              const container = trigger.closest("[data-expandable]");
-              if (!container) return;
-              container.classList.toggle("is-expanded");
-              updateExpandableSides();
-            });
-          });
-        }
-
-        // 1. Render Visual Sections
-        let visualSectionsHTML = '';
-        Object.entries(staredrepos).forEach(([topic, repoList]) => {
-          const orderMap = new Map(repoList.map((name, idx) => [name, idx]));
-          const topicRepos = repos.filter(r => repoList.includes(r.name)).sort((a, b) => orderMap.get(a.name) - orderMap.get(b.name));
-          const repoRowsHtml = topicRepos.map(repo => {
-            const repoAssets = (repo.assets || []).map(url => ({ url, repo }));
-            if (!repoAssets.length) return "";
-
-            return `
-              <div class="gallery-row">
-                <div class="gallery-media ${repoAssets.length <= 1 ? "is-single" : ""}">
-                  <div class="gallery-preview">
-                    <img src="${repoAssets[0].url}" loading="lazy" decoding="async" fetchpriority="low" alt="${escapeHtml(repo.name)} preview">
-                  </div>
-                  ${repoAssets.length > 1 ? `
-                  <div class="gallery-thumbs">
-                  ${repoAssets.map(a => `
-                    <div class="gallery-item" data-full-src="${a.url}" data-alt="${escapeHtml(a.repo.name)}">
-                      <img src="${a.url}" loading="lazy" decoding="async" fetchpriority="low" alt="${escapeHtml(a.repo.name)}">
-                    </div>
-                  `).join('')}
-                  </div>
-                  ` : ""}
-                </div>
-                <div class="gallery-details">
-                  <h3 class="gallery-title">${escapeHtml(formatProjectName(repo.name))}</h3>
-                  <p class="gallery-copy">${escapeHtml(repo.description || "Experimental implementation and technical research.")}</p>
-                  ${renderExpandPanel(repo)}
-                </div>
-              </div>
-            `;
-          }).filter(Boolean).join('');
-
-          if (repoRowsHtml) {
-            visualSectionsHTML += `
-              ${renderSectionHeader(topic, topicRepos.length)}
-              <div class="gallery">
-                ${repoRowsHtml}
-              </div>
-            `;
-          }
-        });
-        document.getElementById("visual-reel-container").innerHTML = visualSectionsHTML;
-        setupGalleryMedia(document.getElementById("visual-reel-container"));
-
-        // 2. Setup Automatic Slideshow for Cards
-        function initSlideshow(repo, imgElement) {
-          if (!repo.assets || repo.assets.length <= 1) return;
-          let idx = 0;
-          setInterval(() => {
-            idx = (idx + 1) % repo.assets.length;
-            imgElement.style.opacity = 0;
-            setTimeout(() => { 
-                imgElement.src = repo.assets[idx]; 
-                imgElement.style.opacity = 1; 
-            }, 600);
-          }, 5000);
-        }
-
-        // 3. Render Project Grid
-        function render() {
-          const q = document.getElementById("search").value.toLowerCase();
-          const sort = document.getElementById("sort").value;
-          
-          let filtered = repos.filter(r => 
-            `${r.name} ${r.description} ${r.topics.join(' ')}`.toLowerCase().includes(q)
-          );
-          
-          if (sort === "updated") filtered.sort((a,b) => new Date(b.updated_at) - new Date(a.updated_at));
-          if (sort === "stars") filtered.sort((a,b) => b.stars - a.stars);
-          if (sort === "name") filtered.sort((a,b) => a.name.localeCompare(b.name));
-
-          const gridEl = document.getElementById("grid");
-          gridEl.innerHTML = filtered.map(r => `
-            <div class="card card-static">
-              <div class="thumb-container">
-                <div class="thumb-frame">
-                  <img class="thumb" id="img-${r.name.replace(/\s+/g, '-')}" 
-                       src="${r.assets[0] || 'https://placehold.co/600x400/030712/4f7cff?text='+r.name}" 
-                       alt="${escapeHtml(r.name)}">
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="project-section-badge">${escapeHtml(sectionByRepo.get(r.name) || "Additional project")}</div>
-                <div class="card-title">${escapeHtml(formatProjectName(r.name))}</div>
-              </div>
-              ${renderExpandPanel(r)}
-            </div>
-          `).join('');
-
-          // Re-initialize slideshows for the new set of filtered cards
-          filtered.forEach(r => {
-            const el = document.getElementById(`img-${r.name.replace(/\s+/g, '-')}`);
-            if (el) initSlideshow(r, el);
-          });
-          wireExpandables(gridEl);
-          updateExpandableSides();
-        }
-
-        // Initial render and listeners
-        render();
-        document.getElementById("search").addEventListener("input", render);
-        document.getElementById("sort").addEventListener("change", render);
-        window.addEventListener("resize", updateExpandableSides);
-
-      } catch (e) { 
-        document.getElementById("loader").innerHTML = `<span style="color: #ef4444;">Error: ${e.message}</span>`;
-        console.error(e); 
       }
     }
 
     main();
   </script>
-  <footer><p>Created by Emmanuel Muñiz • 2025</p></footer>
 </body>
 </html>

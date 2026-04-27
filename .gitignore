@@ -1,6 +1,7 @@
 # Ignore testing scripts
 *.py
 *.txt
+*.pdf
 
 # Ignore virtual environment folders
 venv/
