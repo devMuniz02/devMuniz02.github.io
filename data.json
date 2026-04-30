@@ -45,21 +45,8 @@
       "description": "Bitcoin hourly forecasting and tournament-style model evaluation project.",
       "url": "https://github.com/devMuniz02/btc-hourly-tournament",
       "topics": [],
-      "assets": [
-        "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dailydashboard.png",
-        "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dailydashboard_market_hours.png",
-        "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dailydashboard_market_hours_reverse.png",
-        "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dailydashboard_reverse.png",
-        "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dashboard.png",
-        "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dashboard_market_hours.png",
-        "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dashboard_market_hours_daily.png",
-        "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dashboard_market_hours_daily_reverse.png",
-        "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dashboard_market_hours_from_24h.png",
-        "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dashboard_market_hours_from_24h_reverse.png",
-        "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dashboard_market_hours_reverse.png",
-        "https://raw.githubusercontent.com/devMuniz02/btc-hourly-tournament/main/assets/dashboard_reverse.png"
-      ],
-      "updated_at": "2026-04-29T03:08:39Z",
+      "assets": [],
+      "updated_at": "2026-04-30T03:07:56Z",
       "stars": 1
     },
     {
@@ -207,7 +194,7 @@
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/my-trade-portfolio/main/assets/performance_animation.gif"
       ],
-      "updated_at": "2026-04-28T19:16:00Z",
+      "updated_at": "2026-04-29T03:45:02Z",
       "stars": 0
     },
     {
