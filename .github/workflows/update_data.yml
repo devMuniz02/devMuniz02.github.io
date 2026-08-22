@@ -36,12 +36,12 @@ jobs:
               # Fetch topics
               topics = requests.get(f\"https://api.github.com/repos/{r['full_name']}/topics\", headers=headers).json().get('names', [])
               
-              # Fetch images in assets/
+              # Fetch media in assets/
               assets = []
               assets_res = requests.get(f\"https://api.github.com/repos/{r['full_name']}/contents/assets\", headers=headers)
               if assets_res.status_code == 200:
                   assets = [f\"https://raw.githubusercontent.com/{r['full_name']}/{r['default_branch']}/{item['path']}\" 
-                            for item in assets_res.json() if item['name'].lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.webp'))]
+                            for item in assets_res.json() if item['name'].lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.webp', '.mp4', '.webm'))]
 
               data['projects'].append({
                   'name': r['name'],
