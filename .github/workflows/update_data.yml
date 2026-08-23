@@ -40,8 +40,28 @@ jobs:
               assets = []
               assets_res = requests.get(f\"https://api.github.com/repos/{r['full_name']}/contents/assets\", headers=headers)
               if assets_res.status_code == 200:
-                  assets = [f\"https://raw.githubusercontent.com/{r['full_name']}/{r['default_branch']}/{item['path']}\" 
-                            for item in assets_res.json() if item['name'].lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.webp', '.mp4', '.webm'))]
+                  supported_exts = ('.png', '.jpg', '.jpeg', '.gif', '.webp', '.mp4', '.webm')
+                  media_items = [
+                      item for item in assets_res.json()
+                      if item['name'].lower().endswith(supported_exts)
+                  ]
+                  video_stems = {
+                      os.path.splitext(item['name'].lower())[0]
+                      for item in media_items
+                      if item['name'].lower().endswith(('.mp4', '.webm'))
+                  }
+                  media_items = [
+                      item for item in media_items
+                      if not (
+                          item['name'].lower().endswith('.gif') and
+                          os.path.splitext(item['name'].lower())[0] in video_stems
+                      )
+                  ]
+                  media_items.sort(key=lambda item: item['name'].lower())
+                  assets = [
+                      f\"https://raw.githubusercontent.com/{r['full_name']}/{r['default_branch']}/{item['path']}\"
+                      for item in media_items
+                  ]
 
               data['projects'].append({
                   'name': r['name'],
