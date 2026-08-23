@@ -8,9 +8,9 @@
       "url": "https://github.com/devMuniz02/Autonomous-car-control",
       "topics": [],
       "assets": [
-        "https://raw.githubusercontent.com/devMuniz02/Autonomous-car-control/main/assets/CarControl.gif"
+        "https://raw.githubusercontent.com/devMuniz02/Autonomous-car-control/main/assets/CarControl.mp4"
       ],
-      "updated_at": "2026-03-24T16:53:52Z",
+      "updated_at": "2026-08-23T17:07:48Z",
       "stars": 0
     },
     {
@@ -19,13 +19,13 @@
       "url": "https://github.com/devMuniz02/Autonomous-warehouse-car",
       "topics": [],
       "assets": [
-        "https://raw.githubusercontent.com/devMuniz02/Autonomous-warehouse-car/main/assets/RobotUR_Pick&Place.gif",
-        "https://raw.githubusercontent.com/devMuniz02/Autonomous-warehouse-car/main/assets/RobotUR_Pick&PlaceInspection.gif",
-        "https://raw.githubusercontent.com/devMuniz02/Autonomous-warehouse-car/main/assets/TESTRUN.gif",
+        "https://raw.githubusercontent.com/devMuniz02/Autonomous-warehouse-car/main/assets/RobotUR_Pick&Place.mp4",
+        "https://raw.githubusercontent.com/devMuniz02/Autonomous-warehouse-car/main/assets/RobotUR_Pick&PlaceInspection.mp4",
+        "https://raw.githubusercontent.com/devMuniz02/Autonomous-warehouse-car/main/assets/TESTRUN.mp4",
         "https://raw.githubusercontent.com/devMuniz02/Autonomous-warehouse-car/main/assets/TRACK.jpg",
-        "https://raw.githubusercontent.com/devMuniz02/Autonomous-warehouse-car/main/assets/TRIALRUN.gif"
+        "https://raw.githubusercontent.com/devMuniz02/Autonomous-warehouse-car/main/assets/TRIALRUN.mp4"
       ],
-      "updated_at": "2026-03-24T16:54:09Z",
+      "updated_at": "2026-08-23T17:07:54Z",
       "stars": 0
     },
     {
@@ -34,10 +34,10 @@
       "url": "https://github.com/devMuniz02/ball-beam-vision",
       "topics": [],
       "assets": [
-        "https://raw.githubusercontent.com/devMuniz02/ball-beam-vision/main/assets/simballandbeam.gif",
-        "https://raw.githubusercontent.com/devMuniz02/ball-beam-vision/main/assets/test.gif"
+        "https://raw.githubusercontent.com/devMuniz02/ball-beam-vision/main/assets/simballandbeam.mp4",
+        "https://raw.githubusercontent.com/devMuniz02/ball-beam-vision/main/assets/test.mp4"
       ],
-      "updated_at": "2026-03-24T19:31:18Z",
+      "updated_at": "2026-08-23T17:08:46Z",
       "stars": 0
     },
     {
@@ -87,11 +87,11 @@
       "topics": [],
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/DINOv3-Interactive-Patch-Cosine-Similarity/main/assets/DINOv3CameraTest.mp4",
-        "https://raw.githubusercontent.com/devMuniz02/DINOv3-Interactive-Patch-Cosine-Similarity/main/assets/GradioAppTest.gif",
-        "https://raw.githubusercontent.com/devMuniz02/DINOv3-Interactive-Patch-Cosine-Similarity/main/assets/Multiple_Interactive_test_video.gif",
-        "https://raw.githubusercontent.com/devMuniz02/DINOv3-Interactive-Patch-Cosine-Similarity/main/assets/Test_Interactive_video.gif"
+        "https://raw.githubusercontent.com/devMuniz02/DINOv3-Interactive-Patch-Cosine-Similarity/main/assets/GradioAppTest.mp4",
+        "https://raw.githubusercontent.com/devMuniz02/DINOv3-Interactive-Patch-Cosine-Similarity/main/assets/Multiple_Interactive_test_video.mp4",
+        "https://raw.githubusercontent.com/devMuniz02/DINOv3-Interactive-Patch-Cosine-Similarity/main/assets/Test_Interactive_video.mp4"
       ],
-      "updated_at": "2026-03-24T19:46:05Z",
+      "updated_at": "2026-08-23T17:08:02Z",
       "stars": 19
     },
     {
@@ -100,9 +100,9 @@
       "url": "https://github.com/devMuniz02/Easy-RAG-PDF",
       "topics": [],
       "assets": [
-        "https://raw.githubusercontent.com/devMuniz02/Easy-RAG-PDF/main/assets/PDFRAG.gif"
+        "https://raw.githubusercontent.com/devMuniz02/Easy-RAG-PDF/main/assets/PDFRAG.mp4"
       ],
-      "updated_at": "2026-03-24T16:56:20Z",
+      "updated_at": "2026-08-23T17:08:06Z",
       "stars": 0
     },
     {
@@ -166,14 +166,14 @@
       "url": "https://github.com/devMuniz02/layer-wise-anatomical-attention",
       "topics": [],
       "assets": [
-        "https://raw.githubusercontent.com/devMuniz02/layer-wise-anatomical-attention/main/assets/AnatomicalAttention.gif",
+        "https://raw.githubusercontent.com/devMuniz02/layer-wise-anatomical-attention/main/assets/AnatomicalAttention.mp4",
         "https://raw.githubusercontent.com/devMuniz02/layer-wise-anatomical-attention/main/assets/barplot_MIMIC_Complete_Analysis_color.png",
         "https://raw.githubusercontent.com/devMuniz02/layer-wise-anatomical-attention/main/assets/barplot_mimic_performance.png",
         "https://raw.githubusercontent.com/devMuniz02/layer-wise-anatomical-attention/main/assets/hf_space_qr.png",
         "https://raw.githubusercontent.com/devMuniz02/layer-wise-anatomical-attention/main/assets/reportresults.png",
         "https://raw.githubusercontent.com/devMuniz02/layer-wise-anatomical-attention/main/assets/training_loss_color.png"
       ],
-      "updated_at": "2026-04-14T20:55:22Z",
+      "updated_at": "2026-08-23T17:08:50Z",
       "stars": 0
     },
     {
@@ -195,7 +195,7 @@
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/my-trade-portfolio/main/assets/performance_animation.gif"
       ],
-      "updated_at": "2026-08-22T01:42:46Z",
+      "updated_at": "2026-08-23T01:50:21Z",
       "stars": 0
     },
     {
@@ -230,12 +230,12 @@
         "transfer-learning"
       ],
       "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/Porfolio-Code-AI-projects/main/assets/cartpole_policy.gif",
+        "https://raw.githubusercontent.com/devMuniz02/Porfolio-Code-AI-projects/main/assets/cartpole_training_graph.png",
         "https://raw.githubusercontent.com/devMuniz02/Porfolio-Code-AI-projects/main/assets/GradioAppTest.gif",
         "https://raw.githubusercontent.com/devMuniz02/Porfolio-Code-AI-projects/main/assets/LSMT_StockTest.png",
         "https://raw.githubusercontent.com/devMuniz02/Porfolio-Code-AI-projects/main/assets/LSTM_TextGen_Test.png",
-        "https://raw.githubusercontent.com/devMuniz02/Porfolio-Code-AI-projects/main/assets/Multiple_Interactive_test_video.gif",
-        "https://raw.githubusercontent.com/devMuniz02/Porfolio-Code-AI-projects/main/assets/cartpole_policy.gif",
-        "https://raw.githubusercontent.com/devMuniz02/Porfolio-Code-AI-projects/main/assets/cartpole_training_graph.png"
+        "https://raw.githubusercontent.com/devMuniz02/Porfolio-Code-AI-projects/main/assets/Multiple_Interactive_test_video.gif"
       ],
       "updated_at": "2026-03-24T16:57:52Z",
       "stars": 1
@@ -257,9 +257,9 @@
       "url": "https://github.com/devMuniz02/RAG-Any-File",
       "topics": [],
       "assets": [
-        "https://raw.githubusercontent.com/devMuniz02/RAG-Any-File/main/assets/RAGAnyFile.gif"
+        "https://raw.githubusercontent.com/devMuniz02/RAG-Any-File/main/assets/RAGAnyFile.mp4"
       ],
-      "updated_at": "2026-03-24T16:58:06Z",
+      "updated_at": "2026-08-23T17:08:09Z",
       "stars": 0
     },
     {
@@ -271,6 +271,35 @@
         "https://raw.githubusercontent.com/devMuniz02/Reinforcement-Learning-Stock-Porfolio-Managment/main/assets/RLPortfolio.jpg"
       ],
       "updated_at": "2026-03-24T16:58:15Z",
+      "stars": 0
+    },
+    {
+      "name": "robot",
+      "description": "Portfolio media assets for the Robot Resilience Through Failure active project.",
+      "url": "https://github.com/devMuniz02/robot",
+      "topics": [],
+      "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/robot/main/assets/BCRL.mp4",
+        "https://raw.githubusercontent.com/devMuniz02/robot/main/assets/BCRLRUN.mp4",
+        "https://raw.githubusercontent.com/devMuniz02/robot/main/assets/Fall.mp4",
+        "https://raw.githubusercontent.com/devMuniz02/robot/main/assets/g1_view.mp4",
+        "https://raw.githubusercontent.com/devMuniz02/robot/main/assets/ImitationActions.mp4",
+        "https://raw.githubusercontent.com/devMuniz02/robot/main/assets/JointsRange.mp4",
+        "https://raw.githubusercontent.com/devMuniz02/robot/main/assets/Screenshot From 2026-07-19 23-03-24.png",
+        "https://raw.githubusercontent.com/devMuniz02/robot/main/assets/Screenshot From 2026-07-19 23-19-34.png",
+        "https://raw.githubusercontent.com/devMuniz02/robot/main/assets/Screenshot From 2026-07-19 23-22-00.png",
+        "https://raw.githubusercontent.com/devMuniz02/robot/main/assets/Screenshot From 2026-07-29 22-40-46.png",
+        "https://raw.githubusercontent.com/devMuniz02/robot/main/assets/Screenshot From 2026-07-30 12-06-08.png",
+        "https://raw.githubusercontent.com/devMuniz02/robot/main/assets/Screenshot From 2026-07-31 12-07-41.png",
+        "https://raw.githubusercontent.com/devMuniz02/robot/main/assets/Screenshot From 2026-07-31 14-21-54.png",
+        "https://raw.githubusercontent.com/devMuniz02/robot/main/assets/Screenshot From 2026-07-31 18-24-49.png",
+        "https://raw.githubusercontent.com/devMuniz02/robot/main/assets/Screenshot From 2026-08-02 13-58-06.png",
+        "https://raw.githubusercontent.com/devMuniz02/robot/main/assets/Screenshot From 2026-08-03 22-35-33.png",
+        "https://raw.githubusercontent.com/devMuniz02/robot/main/assets/Screenshot From 2026-08-03 22-35-52.png",
+        "https://raw.githubusercontent.com/devMuniz02/robot/main/assets/Screenshot From 2026-08-04 18-24-43.png",
+        "https://raw.githubusercontent.com/devMuniz02/robot/main/assets/Screenshot From 2026-08-05 14-39-40.png"
+      ],
+      "updated_at": "2026-08-23T17:22:11Z",
       "stars": 0
     },
     {
@@ -291,9 +320,9 @@
       "url": "https://github.com/devMuniz02/Self-Drive-Airism",
       "topics": [],
       "assets": [
-        "https://raw.githubusercontent.com/devMuniz02/Self-Drive-Airism/main/assets/selfdrive.gif"
+        "https://raw.githubusercontent.com/devMuniz02/Self-Drive-Airism/main/assets/selfdrive.mp4"
       ],
-      "updated_at": "2026-03-24T20:19:29Z",
+      "updated_at": "2026-08-23T17:08:25Z",
       "stars": 0
     },
     {
@@ -302,9 +331,9 @@
       "url": "https://github.com/devMuniz02/Slides-helper",
       "topics": [],
       "assets": [
-        "https://raw.githubusercontent.com/devMuniz02/Slides-helper/main/assets/SlidesRAG.gif"
+        "https://raw.githubusercontent.com/devMuniz02/Slides-helper/main/assets/SlidesRAG.mp4"
       ],
-      "updated_at": "2026-03-24T16:58:45Z",
+      "updated_at": "2026-08-23T17:08:27Z",
       "stars": 0
     },
     {
@@ -335,9 +364,10 @@
       "url": "https://github.com/devMuniz02/Tomato-Detect-YOLO",
       "topics": [],
       "assets": [
-        "https://raw.githubusercontent.com/devMuniz02/Tomato-Detect-YOLO/main/assets/tomateyolo.gif"
+        "https://raw.githubusercontent.com/devMuniz02/Tomato-Detect-YOLO/main/assets/Test_yolo.mp4",
+        "https://raw.githubusercontent.com/devMuniz02/Tomato-Detect-YOLO/main/assets/tomateyolo.mp4"
       ],
-      "updated_at": "2026-03-24T20:33:05Z",
+      "updated_at": "2026-08-23T17:08:43Z",
       "stars": 0
     },
     {
