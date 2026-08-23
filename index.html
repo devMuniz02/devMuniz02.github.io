@@ -1630,7 +1630,7 @@
       robotics: {
         repoName: "robot",
         name: "Robot Resilience Through Failure",
-        process: "Training a Unitree G1 humanoid locomotion policy to keep moving after recursive limb failures, including free, locked, and missing branch modes.",
+        process: "Training a Unitree G1 humanoid locomotion policy to keep moving after recursive limb failures, including free, locked, and missing limb modes.",
         implementation: "Continuing a healthy walking baseline into Newton/PyTorch failure curricula with a fixed 129-value observation contract, branch-status masks, PPO updates, and MuJoCo visualization checks for recovery behavior.",
         tools: "PyTorch, CUDA, Newton, MuJoCo Warp, MJX, PPO, Behavior Cloning, Isaac Lab Assets",
         mediaLabel: "Robot Resilience",
@@ -1901,6 +1901,29 @@
       return introMediaPool;
     }
 
+    function introGridColumnCount() {
+      return window.matchMedia("(max-width: 720px)").matches ? 3 : 6;
+    }
+
+    function pickIntroMedia(available, previous, above) {
+      const candidates = available.filter(src => src !== previous && src !== above);
+      const nonPrevious = available.filter(src => src !== previous);
+      const pool = candidates.length ? candidates : (nonPrevious.length ? nonPrevious : available);
+      return pool[Math.floor(Math.random() * pool.length)];
+    }
+
+    function buildIntroMediaSequence(media, cellCount, columns) {
+      if (!media.length) return [];
+      const available = shuffleItems(media);
+      const sequence = [];
+      for (let index = 0; index < cellCount; index += 1) {
+        const previous = index % columns === 0 ? "" : sequence[index - 1];
+        const above = index >= columns ? sequence[index - columns] : "";
+        sequence.push(pickIntroMedia(available, previous, above));
+      }
+      return sequence;
+    }
+
     function setIntroMediaFromRepos(repos) {
       const fetchedAssets = repos.flatMap(repo => Array.isArray(repo.assets) ? repo.assets : []);
       const imageAssets = fetchedAssets.filter(src => !isVideoAsset(src));
@@ -1912,12 +1935,13 @@
       const grid = document.getElementById("intro-grid");
       if (!grid) return;
       const cellCount = window.matchMedia("(max-width: 720px)").matches ? 30 : 72;
-      const media = shuffleItems(getIntroMediaPool());
+      const media = getIntroMediaPool();
       if (!media.length) {
         grid.innerHTML = "";
         return;
       }
-      const cells = Array.from({ length: cellCount }, (_, index) => introCellMarkup(media[index % media.length]));
+      const columns = introGridColumnCount();
+      const cells = buildIntroMediaSequence(media, cellCount, columns).map(introCellMarkup);
       grid.innerHTML = `<div class="intro-track">${cells.join("")}</div>`;
     }
 
