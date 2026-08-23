@@ -86,6 +86,7 @@
       "url": "https://github.com/devMuniz02/DINOv3-Interactive-Patch-Cosine-Similarity",
       "topics": [],
       "assets": [
+        "https://raw.githubusercontent.com/devMuniz02/DINOv3-Interactive-Patch-Cosine-Similarity/main/assets/DINOv3CameraTest.mp4",
         "https://raw.githubusercontent.com/devMuniz02/DINOv3-Interactive-Patch-Cosine-Similarity/main/assets/GradioAppTest.gif",
         "https://raw.githubusercontent.com/devMuniz02/DINOv3-Interactive-Patch-Cosine-Similarity/main/assets/Multiple_Interactive_test_video.gif",
         "https://raw.githubusercontent.com/devMuniz02/DINOv3-Interactive-Patch-Cosine-Similarity/main/assets/Test_Interactive_video.gif"
@@ -194,7 +195,7 @@
       "assets": [
         "https://raw.githubusercontent.com/devMuniz02/my-trade-portfolio/main/assets/performance_animation.gif"
       ],
-      "updated_at": "2026-08-21T01:47:17Z",
+      "updated_at": "2026-08-22T01:42:46Z",
       "stars": 0
     },
     {
